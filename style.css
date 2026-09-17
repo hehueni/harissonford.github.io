@@ -1,1 +1,365 @@
+/* =========================
+   RÉINITIALISATION
+========================= */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   LIENS
+========================= */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #7c5cff;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(10, 10, 10, 0.92);
+    border-bottom: 1px solid #222;
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 20px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav strong {
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+nav div {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================
+   STRUCTURE
+========================= */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 110px 30px;
+    border-bottom: 1px solid #1c1c1c;
+}
+
+section h2 {
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   ACCUEIL
+========================= */
+
+#accueil {
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 900px;
+}
+
+#accueil p:first-child {
+    color: #7c5cff;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+#accueil h1 {
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+#accueil h2 {
+    font-size: 22px;
+    font-weight: normal;
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+#accueil > p:not(:first-child) {
+    max-width: 650px;
+    color: #aaa;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BOUTONS
+========================= */
+
+#accueil a {
+    display: inline-block;
+
+    padding: 13px 25px;
+    margin-right: 10px;
+
+    border: 1px solid #7c5cff;
+    border-radius: 8px;
+
+    color: white;
+
+    transition: 0.3s;
+}
+
+#accueil a:hover {
+    background: #7c5cff;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   À PROPOS
+========================= */
+
+#apropos p {
+    max-width: 800px;
+    color: #aaa;
+    margin-bottom: 20px;
+    font-size: 17px;
+}
+
+
+/* =========================
+   COMPÉTENCES
+========================= */
+
+#competences {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+#competences h2 {
+    grid-column: 1 / -1;
+}
+
+#competences h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+#competences ul {
+    list-style: none;
+}
+
+#competences li {
+    color: #aaa;
+    padding: 8px 0;
+    border-bottom: 1px solid #222;
+}
+
+
+/* =========================
+   PROJETS
+========================= */
+
+#projets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+#projets h2 {
+    grid-column: 1 / -1;
+}
+
+#projets article {
+    background: #111;
+    border: 1px solid #222;
+
+    padding: 30px;
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+#projets article:hover {
+    transform: translateY(-8px);
+    border-color: #7c5cff;
+}
+
+#projets h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+#projets p {
+    color: #999;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   EXPÉRIENCE
+========================= */
+
+#experience article {
+    margin-bottom: 50px;
+    padding-left: 25px;
+
+    border-left: 2px solid #7c5cff;
+}
+
+#experience h3 {
+    font-size: 25px;
+}
+
+#experience h4 {
+    color: #7c5cff;
+    margin-bottom: 15px;
+}
+
+#experience li {
+    color: #aaa;
+    margin-left: 20px;
+}
+
+
+/* =========================
+   FORMATION
+========================= */
+
+#formation article {
+    background: #111;
+    border: 1px solid #222;
+
+    padding: 25px;
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+}
+
+#formation h3 {
+    margin-bottom: 8px;
+}
+
+#formation p {
+    color: #999;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact {
+    text-align: center;
+}
+
+#contact p {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+#contact a {
+    color: #7c5cff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav div {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    section {
+        padding: 80px 20px;
+    }
+
+    #competences,
+    #projets {
+        grid-template-columns: 1fr;
+    }
+
+    #accueil h1 {
+        font-size: 50px;
+    }
+
+    #accueil h2 {
+        font-size: 18px;
+    }
+
+}
