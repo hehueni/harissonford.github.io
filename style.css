@@ -10,9 +10,10 @@
 
 :root {
 
-    --bg: #07070b;
-    --bg-secondary: #0d0d13;
-    --card: rgba(17, 17, 25, 0.78);
+    --bg: #050509;
+    --bg-secondary: #0b0b11;
+
+    --card: rgba(15, 15, 23, 0.78);
 
     --border: rgba(255, 255, 255, 0.09);
 
@@ -24,6 +25,8 @@
     --purple-light: #a78bfa;
 
     --blue: #3b82f6;
+    --blue-light: #70a7ff;
+
     --pink: #ec4899;
 
     --green: #4ade80;
@@ -54,7 +57,7 @@ html {
 
 body {
 
-    font-family: "Inter", sans-serif;
+    font-family: "Inter", Arial, sans-serif;
 
     background: var(--bg);
 
@@ -68,7 +71,15 @@ body {
 
 a {
     text-decoration: none;
+
     color: inherit;
+}
+
+
+img {
+    max-width: 100%;
+
+    display: block;
 }
 
 
@@ -78,9 +89,15 @@ a {
 }
 
 
-img {
-    max-width: 100%;
-    display: block;
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection {
+
+    background: var(--purple);
+
+    color: white;
 }
 
 
@@ -89,28 +106,33 @@ img {
 ========================================================= */
 
 ::-webkit-scrollbar {
+
     width: 8px;
 }
 
 
 ::-webkit-scrollbar-track {
-    background: #050507;
+
+    background: #030305;
 }
 
 
 ::-webkit-scrollbar-thumb {
-    background: #272332;
+
+    background: #282331;
+
     border-radius: 20px;
 }
 
 
 ::-webkit-scrollbar-thumb:hover {
+
     background: var(--purple);
 }
 
 
 /* =========================================================
-   BACKGROUND
+   BACKGROUND DIGITAL
 ========================================================= */
 
 .background {
@@ -127,101 +149,189 @@ img {
 
     background:
 
+        /* Halo violet */
         radial-gradient(
-            circle at 70% 10%,
-            rgba(139, 92, 246, 0.09),
+            circle at 75% 15%,
+            rgba(139, 92, 246, 0.18),
+            transparent 32%
+        ),
+
+        /* Halo bleu */
+        radial-gradient(
+            circle at 15% 70%,
+            rgba(59, 130, 246, 0.13),
             transparent 30%
         ),
 
+        /* Halo rose */
         radial-gradient(
-            circle at 20% 80%,
-            rgba(59, 130, 246, 0.06),
-            transparent 30%
+            circle at 90% 85%,
+            rgba(236, 72, 153, 0.08),
+            transparent 28%
         ),
 
-        #07070b;
+        /* Grille verticale */
+        linear-gradient(
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+
+        /* Grille horizontale */
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px
+        ),
+
+        #050509;
+
+    background-size:
+
+        auto,
+        auto,
+        auto,
+        60px 60px,
+        60px 60px,
+        auto;
+
+    background-position:
+
+        center,
+        center,
+        center,
+        center,
+        center,
+        center;
 }
 
 
-.background-grid {
+/* =========================================================
+   LUMIÈRE DIGITALE
+========================================================= */
+
+.background::before {
+
+    content: "";
 
     position: absolute;
 
     inset: 0;
 
-    opacity: 0.15;
+    opacity: 0.16;
 
-    background-image:
-
-        linear-gradient(
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
-        ),
+    background:
 
         linear-gradient(
             90deg,
-            rgba(255,255,255,0.035) 1px,
-            transparent 1px
+            transparent 0%,
+            rgba(139,92,246,0.14) 50%,
+            transparent 100%
         );
 
-    background-size: 60px 60px;
+    background-size: 320px 100%;
 
-    mask-image: linear-gradient(
-        to bottom,
-        black,
-        transparent 85%
-    );
+    animation: digitalMove 12s linear infinite;
 }
 
+
+/* =========================================================
+   VOILE SOMBRE
+========================================================= */
+
+.background::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(5,5,9,0.96) 0%,
+            rgba(5,5,9,0.86) 30%,
+            rgba(5,5,9,0.72) 60%,
+            rgba(5,5,9,0.92) 100%
+        ),
+
+        radial-gradient(
+            circle at center,
+            transparent 15%,
+            rgba(5,5,9,0.72) 100%
+        );
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
 
 .glow {
 
     position: absolute;
 
-    width: 450px;
-
-    height: 450px;
-
     border-radius: 50%;
 
-    filter: blur(120px);
+    filter: blur(110px);
 
-    opacity: 0.12;
+    opacity: 0.15;
+
+    pointer-events: none;
 }
 
 
 .glow-purple {
 
+    width: 500px;
+
+    height: 500px;
+
     background: var(--purple);
 
-    top: -200px;
+    top: -220px;
 
     right: 5%;
+
+    animation: glowFloat 8s ease-in-out infinite;
 }
 
 
 .glow-blue {
+
+    width: 450px;
+
+    height: 450px;
 
     background: var(--blue);
 
     bottom: 10%;
 
     left: -250px;
+
+    animation: glowFloat 10s ease-in-out infinite reverse;
 }
 
 
 .glow-pink {
 
+    width: 350px;
+
+    height: 350px;
+
     background: var(--pink);
 
-    bottom: -250px;
+    bottom: -180px;
 
-    right: 10%;
+    right: 15%;
+
+    animation: glowFloat 9s ease-in-out infinite;
 }
 
 
 /* =========================================================
-   MAIN STRUCTURE
+   STRUCTURE PRINCIPALE
 ========================================================= */
 
 .site-wrapper {
@@ -268,8 +378,8 @@ img {
 
         linear-gradient(
             180deg,
-            rgba(12,12,18,0.96),
-            rgba(7,7,11,0.96)
+            rgba(12,12,18,0.97),
+            rgba(5,5,9,0.97)
         );
 
     border-right: 1px solid var(--border);
@@ -277,6 +387,8 @@ img {
     z-index: 100;
 }
 
+
+/* Profil */
 
 .sidebar-profile {
 
@@ -421,7 +533,7 @@ img {
 }
 
 
-/* Availability */
+/* Disponibilité */
 
 .availability {
 
@@ -519,6 +631,8 @@ img {
     color: white;
 }
 
+
+/* Réseaux */
 
 .sidebar-social {
 
@@ -724,7 +838,9 @@ img {
 }
 
 
-/* Buttons */
+/* =========================================================
+   BOUTONS
+========================================================= */
 
 .button {
 
@@ -843,7 +959,7 @@ img {
 
 
 /* =========================================================
-   HERO VISUAL
+   VISUEL HERO
 ========================================================= */
 
 .hero-visual {
@@ -1024,6 +1140,8 @@ img {
 }
 
 
+/* Icônes flottantes */
+
 .floating-icon {
 
     position: absolute;
@@ -1046,7 +1164,10 @@ img {
 
     font-size: 20px;
 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    box-shadow:
+
+        0 15px 40px
+        rgba(0,0,0,0.4);
 
     z-index: 2;
 }
@@ -1335,7 +1456,7 @@ img {
 
 
 /* =========================================================
-   SKILLS
+   COMPÉTENCES
 ========================================================= */
 
 .skills-grid {
@@ -1495,7 +1616,7 @@ img {
 
 
 /* =========================================================
-   PROJECTS
+   PROJETS
 ========================================================= */
 
 .projects {
@@ -1615,7 +1736,7 @@ img {
 }
 
 
-/* Project window */
+/* Fenêtre projet */
 
 .project-window {
 
@@ -1629,7 +1750,10 @@ img {
 
     border: 1px solid rgba(255,255,255,0.1);
 
-    box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+    box-shadow:
+
+        0 30px 70px
+        rgba(0,0,0,0.5);
 
     transform: rotate(-4deg);
 
@@ -1671,6 +1795,8 @@ img {
 }
 
 
+/* Lecture Connaissance */
+
 .book-interface {
 
     padding: 30px;
@@ -1693,11 +1819,13 @@ img {
 
     font-weight: 800;
 
-    background: linear-gradient(
-        135deg,
-        var(--purple),
-        var(--blue)
-    );
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
 
     margin-bottom: 20px;
 }
@@ -1726,16 +1854,19 @@ img {
 
 
 .book-lines span:nth-child(1) {
+
     width: 80%;
 }
 
 
 .book-lines span:nth-child(2) {
+
     width: 60%;
 }
 
 
 .book-lines span:nth-child(3) {
+
     width: 70%;
 }
 
@@ -1782,7 +1913,10 @@ img {
 
     text-align: center;
 
-    box-shadow: 0 30px 70px rgba(0,0,0,0.45);
+    box-shadow:
+
+        0 30px 70px
+        rgba(0,0,0,0.45);
 }
 
 
@@ -1806,7 +1940,7 @@ img {
 
 .pointage-header i {
 
-    color: #70a7ff;
+    color: var(--blue-light);
 
     font-size: 18px;
 }
@@ -1830,7 +1964,7 @@ img {
 
     background: rgba(59,130,246,0.08);
 
-    color: #70a7ff;
+    color: var(--blue-light);
 
     font-size: 28px;
 
@@ -1851,7 +1985,7 @@ img {
 }
 
 
-/* Stagiaires */
+/* Application stagiaires */
 
 .ecommerce-interface {
 
@@ -1865,7 +1999,10 @@ img {
 
     border: 1px solid rgba(255,255,255,0.1);
 
-    box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+    box-shadow:
+
+        0 30px 70px
+        rgba(0,0,0,0.5);
 
     transform: rotate(3deg);
 
@@ -1971,7 +2108,7 @@ img {
 }
 
 
-/* Project content */
+/* Contenu projet */
 
 .project-content {
 
@@ -2100,7 +2237,7 @@ img {
 
 
 /* =========================================================
-   EXPERIENCE
+   EXPÉRIENCE
 ========================================================= */
 
 .timeline {
@@ -2543,11 +2680,13 @@ footer {
 
     font-size: 9px;
 
-    background: linear-gradient(
-        135deg,
-        var(--purple),
-        var(--blue)
-    );
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--purple),
+            var(--blue)
+        );
 }
 
 
@@ -2608,14 +2747,55 @@ footer {
 }
 
 
+@keyframes digitalMove {
+
+    0% {
+
+        transform: translateX(-160px);
+
+    }
+
+    50% {
+
+        transform: translateX(160px);
+
+    }
+
+    100% {
+
+        transform: translateX(-160px);
+
+    }
+}
+
+
+@keyframes glowFloat {
+
+    0%,
+    100% {
+
+        transform: translate(0, 0);
+
+    }
+
+    50% {
+
+        transform: translate(30px, -25px);
+
+    }
+}
+
+
 /* =========================================================
-   RESPONSIVE — TABLET
+   TABLET
 ========================================================= */
 
 @media (max-width: 1100px) {
 
     :root {
+
         --sidebar-width: 220px;
+
     }
 
 
@@ -2651,39 +2831,18 @@ footer {
         gap: 45px;
 
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE — MOBILE
+   MOBILE
 ========================================================= */
 
 @media (max-width: 800px) {
 
     :root {
+
         --sidebar-width: 0px;
-    }
-
-
-    body {
-        overflow-x: hidden;
-    }
-
-
-    .sidebar {
-
-        position: relative;
-
-        width: 100%;
-
-        height: auto;
-
-        padding: 18px;
-
-        border-right: none;
-
-        border-bottom: 1px solid var(--border);
 
     }
 
@@ -2700,6 +2859,23 @@ footer {
         width: 100%;
 
         margin-left: 0;
+
+    }
+
+
+    .sidebar {
+
+        position: relative;
+
+        width: 100%;
+
+        height: auto;
+
+        padding: 18px;
+
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
 
     }
 
@@ -2930,12 +3106,11 @@ footer {
         align-items: flex-start;
 
     }
-
 }
 
 
 /* =========================================================
-   RESPONSIVE — SMALL PHONES
+   PETITS TÉLÉPHONES
 ========================================================= */
 
 @media (max-width: 480px) {
@@ -3090,5 +3265,4 @@ footer {
         padding: 12px;
 
     }
-
 }
