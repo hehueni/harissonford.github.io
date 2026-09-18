@@ -1,125 +1,928 @@
 /* =====================================================
-   PROFIL PHOTO - HARISSON
+   INTERFACES DES PROJETS
 ===================================================== */
 
-.profile-card {
-    width: 320px;
-    max-width: 100%;
-    margin: 0 auto;
 
-    background: rgba(15, 15, 23, 0.94);
+/* =====================================================
+   PROJET 1 — LECTURE CONNAISSANCE
+===================================================== */
 
-    border: 1px solid rgba(255, 255, 255, 0.09);
+.library-interface {
+    width: 82%;
+    max-width: 430px;
 
-    border-radius: 22px;
+    background: rgba(13, 14, 24, 0.97);
 
-    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.10);
+
+    border-radius: 14px;
+
+    padding: 16px;
 
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.45),
-        0 0 80px rgba(124, 58, 237, 0.08);
-}
-
-
-/* Conteneur de la photo */
-
-.profile-image-wrapper {
-    width: 100%;
-    height: 360px;
-
-    position: relative;
+        0 25px 60px rgba(0,0,0,0.45),
+        0 0 50px rgba(124,58,237,0.08);
 
     overflow: hidden;
-
-    background: #11111a;
 }
 
 
-/* Photo */
+/* Barre supérieure */
 
-.profile-photo {
-    width: 100% !important;
-    height: 100% !important;
-
-    max-width: none !important;
-    max-height: none !important;
-
-    display: block;
-
-    object-fit: cover;
-
-    object-position: center;
-
-    border: none;
-
-    border-radius: 0;
-
-    margin: 0;
-}
-
-
-/* Informations sous la photo */
-
-.profile-card-info {
-    padding: 22px;
-}
-
-
-.profile-status {
+.library-top {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 
-    color: #8f8f9b;
+    padding-bottom: 14px;
 
-    font-size: 9px;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
+.library-logo {
+    width: 34px;
+    height: 34px;
 
-.profile-status span {
-    width: 7px;
-    height: 7px;
+    flex-shrink: 0;
 
-    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    background: #22c55e;
+    border-radius: 9px;
 
-    box-shadow: 0 0 12px #22c55e;
-}
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #4f46e5
+    );
 
-
-.profile-card-info h3 {
-    font-size: 22px;
-
-    margin-bottom: 4px;
-}
-
-
-.profile-card-info p {
-    color: #888894;
+    color: white;
 
     font-size: 12px;
+    font-weight: 800;
+
+    box-shadow:
+        0 8px 20px rgba(124,58,237,0.25);
+}
+
+
+.library-search {
+    flex: 1;
+
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 10px;
+
+    border-radius: 7px;
+
+    background: rgba(255,255,255,0.045);
+
+    border: 1px solid rgba(255,255,255,0.05);
+
+    color: #555562;
+
+    font-size: 8px;
+}
+
+.library-search i {
+    font-size: 9px;
+}
+
+
+.library-cart {
+    color: #8b7cf6;
+
+    font-size: 13px;
+}
+
+
+/* Titre */
+
+.library-title {
+    padding: 18px 3px 13px;
+}
+
+.library-title span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8b7cf6;
+
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+}
+
+.library-title h4 {
+    color: #eeeeF5;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* Catégories */
+
+.library-categories {
+    display: flex;
+
+    gap: 6px;
+
+    overflow: hidden;
 
     margin-bottom: 15px;
 }
 
+.library-categories span {
+    flex-shrink: 0;
 
-.profile-location {
+    padding: 5px 8px;
+
+    border-radius: 6px;
+
+    background: rgba(255,255,255,0.04);
+
+    color: #777782;
+
+    font-size: 7px;
+}
+
+.library-categories span.active {
+    background: rgba(124,58,237,0.18);
+
+    color: #b9a7ff;
+
+    border: 1px solid rgba(124,58,237,0.2);
+}
+
+
+/* Livres */
+
+.library-books {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 9px;
+}
+
+.library-book {
+    min-width: 0;
+}
+
+.book-cover {
+    height: 90px;
+
     display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    margin-bottom: 7px;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.25);
+}
+
+.book-cover strong {
+    font-size: 22px;
+
+    color: rgba(255,255,255,0.9);
+}
+
+.book-cover small {
+    margin-top: 3px;
+
+    font-size: 5px;
+
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,0.6);
+}
+
+.book-purple {
+    background:
+        linear-gradient(
+            145deg,
+            #7c3aed,
+            #312e81
+        );
+}
+
+.book-blue {
+    background:
+        linear-gradient(
+            145deg,
+            #2563eb,
+            #172554
+        );
+}
+
+.book-pink {
+    background:
+        linear-gradient(
+            145deg,
+            #db2777,
+            #4a044e
+        );
+}
+
+.library-book > span {
+    display: block;
+
+    color: #858590;
+
+    font-size: 7px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+.library-book > strong {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #eeeeF5;
+
+    font-size: 8px;
+}
+
+
+/* Bas */
+
+.library-bottom {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 15px;
+
+    padding-top: 12px;
+
+    border-top: 1px solid rgba(255,255,255,0.06);
+
+    color: #555562;
+
+    font-size: 7px;
+}
+
+.library-bottom span:last-child {
+    color: #a78bfa;
+}
+
+
+
+/* =====================================================
+   PROJET 2 — APPLICATION DE POINTAGE
+===================================================== */
+
+.attendance-interface {
+    width: 82%;
+    max-width: 430px;
+
+    padding: 17px;
+
+    background: rgba(13, 17, 27, 0.97);
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.45),
+        0 0 50px rgba(37,99,235,0.06);
+}
+
+
+/* Header */
+
+.attendance-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 13px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.attendance-header span {
+    display: block;
+
+    color: #626977;
+
+    font-size: 6px;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 4px;
+}
+
+.attendance-header strong {
+    font-size: 12px;
+
+    color: #e8eaf0;
+}
+
+.attendance-avatar {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(124,58,237,0.15);
+
+    color: #b9a7ff;
+
+    font-size: 8px;
+
+    font-weight: 700;
+}
+
+
+/* Statistiques */
+
+.attendance-stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7px;
+
+    margin: 13px 0;
+}
+
+.attendance-stat {
+    padding: 10px 8px;
+
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.attendance-stat span {
+    display: block;
+
+    color: #555d6a;
+
+    font-size: 6px;
+
+    letter-spacing: 0.8px;
+}
+
+.attendance-stat strong {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #e8eaf0;
+
+    font-size: 15px;
+}
+
+.attendance-stat strong.green {
+    color: #4ade80;
+}
+
+.attendance-stat strong.red {
+    color: #f87171;
+}
+
+
+/* Pointage */
+
+.attendance-check {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px;
+
+    border-radius: 9px;
+
+    background: rgba(34,197,94,0.055);
+
+    border: 1px solid rgba(34,197,94,0.12);
+}
+
+.fingerprint-circle {
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(34,197,94,0.10);
+
+    color: #4ade80;
+
+    font-size: 16px;
+}
+
+.attendance-check-text {
+    flex: 1;
+}
+
+.attendance-check-text strong {
+    display: block;
+
+    color: #d9e1dc;
+
+    font-size: 8px;
+}
+
+.attendance-check-text span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #56645a;
+
+    font-size: 6px;
+}
+
+.check-status {
+    width: 19px;
+    height: 19px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(34,197,94,0.15);
+
+    color: #4ade80;
+
+    font-size: 9px;
+}
+
+
+/* Liste */
+
+.attendance-list {
+    margin-top: 13px;
+}
+
+.attendance-person {
+    display: flex;
+
     align-items: center;
 
     gap: 8px;
 
-    color: #666673;
+    padding: 8px 0;
 
-    font-size: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.045);
+}
+
+.person-avatar {
+    width: 26px;
+    height: 26px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 7px;
+
+    background: rgba(37,99,235,0.13);
+
+    color: #7da7ff;
+
+    font-size: 6px;
+
+    font-weight: 700;
+}
+
+.attendance-person > div:nth-child(2) {
+    flex: 1;
+}
+
+.attendance-person strong {
+    display: block;
+
+    color: #a7acb6;
+
+    font-size: 7px;
+}
+
+.attendance-person span {
+    display: block;
+
+    color: #555d68;
+
+    font-size: 6px;
+}
+
+.attendance-person b {
+    font-size: 6px;
+
+    font-weight: 500;
+}
+
+.attendance-person b.present {
+    color: #4ade80;
 }
 
 
-.profile-location i {
-    color: #8b7cf6;
+
+/* =====================================================
+   PROJET 3 — STAGE MANAGER
+===================================================== */
+
+.stage-project {
+    background:
+        linear-gradient(
+            135deg,
+            #171126,
+            #0e1527
+        );
+}
+
+
+.intern-interface {
+    width: 82%;
+    max-width: 430px;
+
+    padding: 17px;
+
+    background: rgba(14, 14, 24, 0.97);
+
+    border: 1px solid rgba(255,255,255,0.09);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.45),
+        0 0 50px rgba(124,58,237,0.07);
+}
+
+
+/* Header */
+
+.intern-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    padding-bottom: 13px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.intern-header strong {
+    display: block;
+
+    color: #e8e6f0;
+
+    font-size: 11px;
+}
+
+.intern-header span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #5e5c69;
+
+    font-size: 6px;
+}
+
+.intern-header i {
+    width: 31px;
+    height: 31px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(124,58,237,0.13);
+
+    color: #a78bfa;
+
+    font-size: 13px;
+}
+
+
+/* Statistiques */
+
+.intern-stats {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 7px;
+
+    margin: 13px 0;
+}
+
+.intern-stats > div {
+    padding: 9px;
+
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.intern-stats span {
+    display: block;
+
+    color: #555562;
+
+    font-size: 6px;
+
+    letter-spacing: 0.7px;
+}
+
+.intern-stats strong {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 14px;
+
+    color: #dedce7;
+}
+
+.intern-stats strong.blue {
+    color: #60a5fa;
+}
+
+.intern-stats strong.green {
+    color: #4ade80;
+}
+
+
+/* Tableau */
+
+.intern-table {
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(255,255,255,0.055);
+}
+
+.intern-table-title {
+    display: grid;
+
+    grid-template-columns: 1fr 0.8fr;
+
+    padding: 8px;
+
+    background: rgba(255,255,255,0.035);
+
+    color: #555562;
+
+    font-size: 6px;
+
+    letter-spacing: 0.8px;
+}
+
+.intern-row {
+    display: grid;
+
+    grid-template-columns: 1fr 0.8fr;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px 8px;
+
+    border-top: 1px solid rgba(255,255,255,0.045);
+}
+
+.intern-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.intern-avatar {
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 6px;
+
+    background: rgba(124,58,237,0.13);
+
+    color: #b9a7ff;
+
+    font-size: 6px;
+
+    font-weight: 700;
+}
+
+.intern-user strong {
+    display: block;
+
+    color: #a9a7b1;
+
+    font-size: 7px;
+}
+
+.intern-user span {
+    display: block;
+
+    margin-top: 1px;
+
+    color: #555562;
+
+    font-size: 5px;
+}
+
+
+/* Progression */
+
+.progress-area {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+}
+
+.progress-bar {
+    flex: 1;
+
+    height: 4px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.07);
+}
+
+.progress-bar span {
+    display: block;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #4f8cff
+        );
+}
+
+.progress-area small {
+    width: 22px;
+
+    color: #777782;
+
+    font-size: 6px;
+}
+
+
+/* Footer */
+
+.intern-footer {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-top: 13px;
+}
+
+.intern-footer span {
+    color: #555562;
+
+    font-size: 6px;
+}
+
+.intern-footer button {
+    border: none;
+
+    padding: 6px 9px;
+
+    border-radius: 6px;
+
+    background: rgba(124,58,237,0.16);
+
+    color: #a78bfa;
+
+    font-family: inherit;
+
+    font-size: 6px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   ANIMATION DES INTERFACES
+===================================================== */
+
+.library-interface,
+.attendance-interface,
+.intern-interface {
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.project-card:hover .library-interface,
+.project-card:hover .attendance-interface,
+.project-card:hover .intern-interface {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.5),
+        0 0 60px rgba(124,58,237,0.12);
+}
+
+
+/* =====================================================
+   RESPONSIVE — INTERFACES PROJETS
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .library-interface,
+    .attendance-interface,
+    .intern-interface {
+        width: 82%;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .library-interface,
+    .attendance-interface,
+    .intern-interface {
+        width: 90%;
+    }
+
+    .library-books {
+        gap: 6px;
+    }
+
+    .book-cover {
+        height: 75px;
+    }
+
+    .attendance-interface,
+    .intern-interface,
+    .library-interface {
+        padding: 12px;
+    }
+
 }
