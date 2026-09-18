@@ -27,7 +27,6 @@ a {
 
 img {
     display: block;
-    max-width: 100%;
 }
 
 
@@ -58,7 +57,7 @@ img {
     position: absolute;
     border-radius: 50%;
     filter: blur(120px);
-    opacity: 0.16;
+    opacity: 0.15;
 }
 
 .glow-purple {
@@ -102,15 +101,15 @@ img {
 
 .sidebar {
     position: fixed;
-    left: 0;
     top: 0;
+    left: 0;
 
     width: 270px;
     height: 100vh;
 
     padding: 30px 24px;
 
-    background: rgba(10, 10, 16, 0.92);
+    background: rgba(10, 10, 16, 0.96);
     border-right: 1px solid rgba(255,255,255,0.08);
 
     display: flex;
@@ -126,31 +125,50 @@ img {
     margin-bottom: 45px;
 }
 
-.logo {
+
+/* =====================================================
+   PETITE PHOTO SIDEBAR
+===================================================== */
+
+.profile-mini {
     width: 48px;
     height: 48px;
 
-    border-radius: 14px;
+    min-width: 48px;
+    min-height: 48px;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 50%;
 
-    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    overflow: hidden;
 
-    font-weight: 800;
-    font-size: 17px;
+    border: 2px solid rgba(139,124,246,0.7);
 
-    box-shadow: 0 10px 30px rgba(124,58,237,0.25);
+    background: #15151f;
 }
+
+.profile-mini img {
+    width: 100%;
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   SIDEBAR TEXT
+===================================================== */
 
 .sidebar-profile h2 {
     font-size: 16px;
+    line-height: 1.2;
 }
 
 .sidebar-profile p {
     font-size: 12px;
     color: #888894;
+    margin-top: 3px;
 }
 
 .navigation-title,
@@ -160,6 +178,11 @@ img {
     color: #666673;
     margin-bottom: 15px;
 }
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .navigation {
     display: flex;
@@ -192,6 +215,11 @@ img {
     background: rgba(124,58,237,0.14);
 }
 
+
+/* =====================================================
+   DISPONIBILITÉ
+===================================================== */
+
 .availability {
     margin-top: auto;
 
@@ -218,8 +246,13 @@ img {
 .status-dot {
     width: 7px;
     height: 7px;
+
+    flex-shrink: 0;
+
     border-radius: 50%;
+
     background: #22c55e;
+
     box-shadow: 0 0 12px #22c55e;
 }
 
@@ -248,6 +281,11 @@ img {
 
     font-size: 11px;
 }
+
+
+/* =====================================================
+   SOCIAL
+===================================================== */
 
 .sidebar-social {
     margin-top: 25px;
@@ -299,11 +337,12 @@ img {
     min-height: 100vh;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns: minmax(0, 1.1fr) minmax(350px, 0.9fr);
 
     align-items: center;
 
-    gap: 50px;
+    gap: 60px;
 
     padding: 80px 8%;
 }
@@ -328,6 +367,7 @@ img {
 .hero-line {
     width: 35px;
     height: 1px;
+
     background: #8b7cf6;
 }
 
@@ -339,6 +379,7 @@ img {
 
 .hero h1 {
     font-size: clamp(55px, 7vw, 90px);
+
     line-height: 1;
 
     letter-spacing: -4px;
@@ -348,14 +389,19 @@ img {
 
 .hero h1 span {
     background: linear-gradient(90deg, #9f7aea, #4f8cff);
+
     -webkit-background-clip: text;
+    background-clip: text;
+
     color: transparent;
 }
 
 .hero h2 {
     font-size: 17px;
     font-weight: 500;
+
     color: #aaaab5;
+
     margin-bottom: 25px;
 }
 
@@ -366,7 +412,9 @@ img {
 
 .hero-description {
     color: #858590;
+
     font-size: 14px;
+
     max-width: 590px;
 }
 
@@ -374,15 +422,23 @@ img {
     color: white;
 }
 
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
 .hero-buttons {
     display: flex;
     gap: 12px;
+
     margin-top: 30px;
 }
 
 .button {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+
     gap: 9px;
 
     padding: 13px 19px;
@@ -401,18 +457,27 @@ img {
 
 .button-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(124,58,237,0.25);
+
+    box-shadow:
+        0 12px 30px rgba(124,58,237,0.25);
 }
 
 .button-secondary {
     border: 1px solid rgba(255,255,255,0.12);
+
     color: #aaaab5;
 }
 
 .button-secondary:hover {
     color: white;
+
     border-color: rgba(255,255,255,0.3);
 }
+
+
+/* =====================================================
+   TECHNOLOGIES
+===================================================== */
 
 .hero-technologies {
     margin-top: 45px;
@@ -420,8 +485,11 @@ img {
 
 .hero-technologies p {
     font-size: 9px;
+
     color: #5f5f6b;
+
     letter-spacing: 2px;
+
     margin-bottom: 12px;
 }
 
@@ -459,18 +527,26 @@ img {
     max-width: 500px;
 
     margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.visual-card {
-    position: relative;
 
+/* =====================================================
+   PROFILE CARD
+===================================================== */
+
+.profile-card {
     width: 100%;
+    max-width: 390px;
 
-    background: rgba(15,15,23,0.94);
+    background: rgba(15,15,23,0.95);
 
     border: 1px solid rgba(255,255,255,0.09);
 
-    border-radius: 18px;
+    border-radius: 22px;
 
     overflow: hidden;
 
@@ -479,86 +555,106 @@ img {
         0 0 80px rgba(124,58,237,0.08);
 }
 
-.visual-header {
-    height: 45px;
 
+/* =====================================================
+   PHOTO WRAPPER
+   IMPORTANT : TAILLE FIXE
+===================================================== */
+
+.profile-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #11111a;
+}
+
+
+/* =====================================================
+   PHOTO PRINCIPALE
+===================================================== */
+
+.profile-image-wrapper .profile-photo {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+}
+
+
+/* =====================================================
+   INFOS PHOTO
+===================================================== */
+
+.profile-card-info {
+    padding: 22px;
+}
+
+.profile-status {
     display: flex;
     align-items: center;
+    gap: 7px;
 
-    gap: 15px;
+    color: #777782;
 
-    padding: 0 16px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.profile-status span {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow: 0 0 10px #22c55e;
+}
+
+.profile-card-info h3 {
+    font-size: 21px;
+
+    margin-top: 10px;
+}
+
+.profile-card-info p {
+    color: #777782;
+
+    font-size: 12px;
+}
+
+.profile-location {
+    display: flex;
+    align-items: center;
+    gap: 7px;
 
     color: #666673;
 
     font-size: 10px;
 
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    margin-top: 13px;
 }
 
-.window-buttons {
-    display: flex;
-    gap: 5px;
-}
 
-.window-buttons span {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #555560;
-}
-
-.code-content {
-    padding: 30px;
-
-    font-family: monospace;
-    font-size: 12px;
-
-    color: #bbb;
-    line-height: 2;
-}
-
-.indent {
-    padding-left: 25px;
-}
-
-.code-purple {
-    color: #c084fc;
-}
-
-.code-green {
-    color: #86efac;
-}
-
-.visual-footer {
-    display: flex;
-
-    border-top: 1px solid rgba(255,255,255,0.06);
-}
-
-.visual-footer > div {
-    flex: 1;
-
-    padding: 17px;
-
-    text-align: center;
-
-    border-right: 1px solid rgba(255,255,255,0.06);
-}
-
-.visual-footer > div:last-child {
-    border-right: none;
-}
-
-.visual-footer strong {
-    display: block;
-    font-size: 15px;
-}
-
-.visual-footer span {
-    font-size: 9px;
-    color: #666673;
-}
+/* =====================================================
+   FLOATING ICONS
+===================================================== */
 
 .floating-icon {
     position: absolute;
@@ -572,82 +668,35 @@ img {
 
     border-radius: 13px;
 
-    background: rgba(20,20,30,0.9);
+    background: rgba(20,20,30,0.95);
 
     border: 1px solid rgba(255,255,255,0.1);
 
-    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    box-shadow:
+        0 15px 30px rgba(0,0,0,0.3);
 
-    z-index: 2;
+    z-index: 5;
 }
 
 .icon-one {
-    top: -20px;
-    right: 40px;
+    top: 30px;
+    right: 20px;
+
     color: #f97316;
 }
 
 .icon-two {
-    bottom: 90px;
-    left: -22px;
+    bottom: 100px;
+    left: -20px;
+
     color: #facc15;
 }
 
 .icon-three {
-    bottom: -20px;
-    right: 80px;
+    bottom: 20px;
+    right: 30px;
+
     color: #60a5fa;
-}
-
-
-/* =====================================================
-   PHOTO DE HARISSON
-===================================================== */
-
-/*
-   IMPORTANT :
-   La photo est volontairement limitée.
-   Elle ne peut PAS prendre tout l'écran.
-*/
-
-.hero-photo {
-    width: 150px !important;
-    height: 150px !important;
-
-    max-width: 150px !important;
-    max-height: 150px !important;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    display: block;
-
-    margin: 0 auto 18px auto;
-
-    border: 3px solid rgba(124,58,237,0.7);
-
-    box-shadow:
-        0 0 0 7px rgba(124,58,237,0.08),
-        0 15px 40px rgba(0,0,0,0.45);
-}
-
-.profile-photo {
-    width: 150px !important;
-    height: 150px !important;
-
-    max-width: 150px !important;
-    max-height: 150px !important;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    display: block;
-
-    margin: 0 auto;
-
-    border: 3px solid rgba(124,58,237,0.7);
 }
 
 
@@ -657,11 +706,13 @@ img {
 
 .quick-info {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
 
     margin: 0 8%;
 
     border-top: 1px solid rgba(255,255,255,0.07);
+
     border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
@@ -688,7 +739,9 @@ img {
     display: block;
 
     font-size: 8px;
+
     letter-spacing: 1.5px;
+
     color: #666673;
 }
 
@@ -696,6 +749,7 @@ img {
     display: block;
 
     font-size: 11px;
+
     margin-top: 3px;
 }
 
@@ -715,11 +769,13 @@ img {
 .section-title-small {
     display: flex;
     align-items: center;
+
     gap: 10px;
 
     color: #8b7cf6;
 
     font-size: 10px;
+
     letter-spacing: 2px;
 
     margin-bottom: 15px;
@@ -731,6 +787,7 @@ img {
 
 .section-heading h2 {
     font-size: clamp(30px, 4vw, 48px);
+
     line-height: 1.1;
 
     letter-spacing: -1.5px;
@@ -759,6 +816,7 @@ img {
 
 .about-text .about-intro {
     color: #b0b0ba;
+
     font-size: 17px;
 }
 
@@ -782,10 +840,19 @@ img {
     background: rgba(255,255,255,0.025);
 
     border-radius: 14px;
+
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+
+    border-color: rgba(124,58,237,0.3);
 }
 
 .about-card i {
     color: #8b7cf6;
+
     font-size: 20px;
 
     margin-bottom: 18px;
@@ -838,6 +905,7 @@ img {
 
 .skill-top {
     display: flex;
+
     justify-content: space-between;
 
     color: #555562;
@@ -877,6 +945,7 @@ img {
 .tags {
     display: flex;
     flex-wrap: wrap;
+
     gap: 6px;
 }
 
@@ -897,6 +966,7 @@ img {
 .tools-list {
     display: flex;
     flex-wrap: wrap;
+
     gap: 7px;
 }
 
@@ -1053,6 +1123,7 @@ img {
 
 .book-items {
     display: flex;
+
     gap: 8px;
 
     margin-top: 25px;
@@ -1075,6 +1146,7 @@ img {
 .pointage-header,
 .ecommerce-header {
     display: flex;
+
     justify-content: space-between;
 
     font-size: 9px;
@@ -1113,6 +1185,7 @@ img {
 
 .product-display {
     display: flex;
+
     align-items: center;
 
     gap: 12px;
@@ -1196,6 +1269,7 @@ img {
 
 .project-tags {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 6px;
@@ -1215,7 +1289,9 @@ img {
 
 .project-bottom {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
 
     margin-top: 30px;
@@ -1250,6 +1326,10 @@ img {
     padding-bottom: 50px;
 
     border-left: 1px solid rgba(255,255,255,0.1);
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
 }
 
 .timeline-marker {
@@ -1307,6 +1387,7 @@ img {
 
 .education {
     display: flex;
+
     flex-direction: column;
 
     gap: 14px;
@@ -1316,6 +1397,7 @@ img {
 
 .education-card {
     display: flex;
+
     align-items: center;
 
     gap: 20px;
@@ -1429,6 +1511,7 @@ img {
 
 .contact-information {
     display: flex;
+
     flex-direction: column;
 
     gap: 12px;
@@ -1453,6 +1536,8 @@ img {
 .contact-icon {
     width: 40px;
     height: 40px;
+
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
@@ -1508,7 +1593,9 @@ footer {
 
 .footer-logo {
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 }
 
@@ -1524,7 +1611,7 @@ footer {
 
 
 /* =====================================================
-   RESPONSIVE
+   RESPONSIVE — TABLETTE
 ===================================================== */
 
 @media (max-width: 1100px) {
@@ -1535,22 +1622,35 @@ footer {
 
     .main-content {
         width: calc(100% - 220px);
+
         margin-left: 220px;
     }
 
     .hero {
         grid-template-columns: 1fr;
-        padding-top: 120px;
+
+        padding-top: 100px;
+    }
+
+    .hero-content {
+        max-width: 700px;
     }
 
     .hero-visual {
-        max-width: 550px;
+        max-width: 450px;
     }
-
 }
 
 
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
+
 @media (max-width: 800px) {
+
+    .site-wrapper {
+        display: block;
+    }
 
     .sidebar {
         position: relative;
@@ -1559,20 +1659,19 @@ footer {
         height: auto;
 
         border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
 
-    .site-wrapper {
-        display: block;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .main-content {
         width: 100%;
+
         margin-left: 0;
     }
 
     .navigation {
         display: grid;
+
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1581,7 +1680,25 @@ footer {
     }
 
     .hero {
-        padding: 80px 6%;
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        padding: 90px 6%;
+    }
+
+    .hero-visual {
+        max-width: 390px;
+
+        margin-top: 20px;
+    }
+
+    .profile-card {
+        max-width: 390px;
+    }
+
+    .profile-image-wrapper {
+        height: 320px;
     }
 
     .quick-info {
@@ -1594,6 +1711,10 @@ footer {
         border-right: none;
 
         border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .quick-item:last-child {
+        border-bottom: none;
     }
 
     .section {
@@ -1619,11 +1740,15 @@ footer {
 
     footer {
         flex-direction: column;
+
         text-align: center;
     }
-
 }
 
+
+/* =====================================================
+   RESPONSIVE — PETIT MOBILE
+===================================================== */
 
 @media (max-width: 500px) {
 
@@ -1635,8 +1760,13 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .hero {
+        padding: 70px 6%;
+    }
+
     .hero h1 {
         font-size: 55px;
+
         letter-spacing: -3px;
     }
 
@@ -1645,7 +1775,7 @@ footer {
     }
 
     .button {
-        justify-content: center;
+        width: 100%;
     }
 
     .about-cards {
@@ -1665,16 +1795,28 @@ footer {
     }
 
     /*
-       Sécurité supplémentaire sur mobile :
-       la photo reste petite.
+       PHOTO MOBILE
+       Elle reste dans sa carte.
     */
 
-    .hero-photo,
-    .profile-photo {
-        width: 120px !important;
-        height: 120px !important;
+    .profile-image-wrapper {
+        height: 280px;
+    }
 
-        max-width: 120px !important;
-        max-height: 120px !important;
+    .profile-photo {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .icon-two {
+        left: -10px;
+    }
+
+    .icon-one {
+        right: 5px;
+    }
+
+    .icon-three {
+        right: 10px;
     }
 }
