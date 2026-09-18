@@ -1,800 +1,125 @@
 /* =====================================================
-   NOUVEAUX VISUELS DES PROJETS
+   PROFIL PHOTO - HARISSON
 ===================================================== */
 
-.project-image {
-    position: relative;
-    overflow: hidden;
-}
+.profile-card {
+    width: 320px;
+    max-width: 100%;
+    margin: 0 auto;
 
+    background: rgba(15, 15, 23, 0.94);
 
-/* =====================================================
-   PROJET 1 — LECTURE CONNAISSANCE
-===================================================== */
+    border: 1px solid rgba(255, 255, 255, 0.09);
 
-.lecture-project {
-    background:
-        radial-gradient(circle at 70% 40%, rgba(124,58,237,0.28), transparent 45%),
-        linear-gradient(135deg, #080812, #121026);
-}
-
-.project-visual-book {
-    width: 86%;
-    max-width: 470px;
-
-    background: #10101a;
-
-    border: 1px solid rgba(255,255,255,0.13);
-
-    border-radius: 14px;
+    border-radius: 22px;
 
     overflow: hidden;
 
     box-shadow:
-        0 35px 70px rgba(0,0,0,0.55),
-        0 0 50px rgba(124,58,237,0.15);
-
-    transform: perspective(1000px) rotateY(-5deg);
-
-    transition: 0.5s;
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 0 80px rgba(124, 58, 237, 0.08);
 }
 
-.project-card:hover .project-visual-book {
-    transform: perspective(1000px) rotateY(0deg) translateY(-5px);
+
+/* Conteneur de la photo */
+
+.profile-image-wrapper {
+    width: 100%;
+    height: 360px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #11111a;
 }
 
-.browser-bar {
-    height: 34px;
 
-    display: flex;
-    align-items: center;
+/* Photo */
 
-    gap: 5px;
+.profile-photo {
+    width: 100% !important;
+    height: 100% !important;
 
-    padding: 0 12px;
+    max-width: none !important;
+    max-height: none !important;
 
-    background: #181823;
-
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-}
-
-.browser-bar > span {
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    background: #555563;
-}
-
-.browser-url {
-    margin-left: 12px;
-
-    flex: 1;
-
-    padding: 5px 10px;
-
-    border-radius: 5px;
-
-    background: rgba(255,255,255,0.04);
-
-    color: #696979;
-
-    font-size: 7px;
-}
-
-.book-dashboard {
-    display: flex;
-
-    min-height: 250px;
-}
-
-.book-sidebar {
-    width: 105px;
-
-    padding: 20px 12px;
-
-    background: #0d0d16;
-
-    border-right: 1px solid rgba(255,255,255,0.06);
-}
-
-.book-sidebar strong {
     display: block;
 
-    margin-bottom: 25px;
+    object-fit: cover;
 
-    color: #a78bfa;
+    object-position: center;
 
-    font-size: 20px;
+    border: none;
+
+    border-radius: 0;
+
+    margin: 0;
 }
 
-.book-sidebar span {
-    display: block;
 
-    margin-bottom: 15px;
+/* Informations sous la photo */
 
-    color: #656574;
-
-    font-size: 7px;
-}
-
-.book-sidebar span:first-of-type {
-    color: white;
-}
-
-.book-main {
-    flex: 1;
-
+.profile-card-info {
     padding: 22px;
 }
 
-.book-welcome {
+
+.profile-status {
     display: flex;
-
-    justify-content: space-between;
-
     align-items: center;
+    gap: 8px;
 
-    gap: 15px;
-}
+    color: #8f8f9b;
 
-.book-welcome small {
-    color: #777788;
+    font-size: 9px;
 
-    font-size: 6px;
+    letter-spacing: 1.5px;
 
-    letter-spacing: 1px;
-}
-
-.book-welcome h4 {
-    margin-top: 5px;
-
-    font-size: 13px;
-}
-
-.book-search {
-    padding: 7px 10px;
-
-    border-radius: 6px;
-
-    background: rgba(255,255,255,0.04);
-
-    color: #656574;
-
-    font-size: 6px;
-}
-
-.book-cards {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 10px;
-
-    margin-top: 25px;
-}
-
-.book-card {
-    padding: 8px;
-
-    border-radius: 8px;
-
-    background: rgba(255,255,255,0.035);
-
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.book-cover {
-    height: 80px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 5px;
-
-    color: white;
-
-    font-size: 22px;
-}
-
-.book-cover.purple {
-    background: linear-gradient(135deg,#7c3aed,#4c1d95);
-}
-
-.book-cover.blue {
-    background: linear-gradient(135deg,#2563eb,#172554);
-}
-
-.book-cover.pink {
-    background: linear-gradient(135deg,#db2777,#831843);
-}
-
-.book-card span {
-    display: block;
-
-    margin-top: 7px;
-
-    color: #9999a7;
-
-    font-size: 7px;
+    margin-bottom: 12px;
 }
 
 
-/* =====================================================
-   PROJET 2 — POINTAGE
-===================================================== */
-
-.pointage-project {
-    background:
-        radial-gradient(circle at 70% 50%, rgba(16,185,129,0.25), transparent 45%),
-        linear-gradient(135deg,#071014,#0c1820);
-}
-
-.attendance-visual {
-    width: 88%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 20px;
-}
-
-.phone-frame {
-    width: 135px;
-
-    padding: 7px;
-
-    border-radius: 20px;
-
-    background: #08090d;
-
-    border: 2px solid #292b34;
-
-    box-shadow: 0 30px 50px rgba(0,0,0,0.55);
-
-    transform: rotate(-4deg);
-
-    z-index: 2;
-}
-
-.phone-top {
-    width: 45px;
-    height: 5px;
-
-    margin: 2px auto 8px;
-
-    border-radius: 10px;
-
-    background: #292b34;
-}
-
-.phone-screen {
-    min-height: 245px;
-
-    padding: 12px 10px;
-
-    border-radius: 14px;
-
-    background:
-        linear-gradient(180deg,#10201f,#081111);
-}
-
-.phone-header {
-    display: flex;
-
-    justify-content: space-between;
-
-    color: #c5d5d3;
-
-    font-size: 8px;
-}
-
-.attendance-check {
-    text-align: center;
-
-    margin-top: 25px;
-}
-
-.check-circle {
-    width: 55px;
-    height: 55px;
-
-    margin: auto;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
+.profile-status span {
+    width: 7px;
+    height: 7px;
 
     border-radius: 50%;
 
-    background: rgba(16,185,129,0.13);
+    background: #22c55e;
 
-    border: 1px solid rgba(52,211,153,0.5);
+    box-shadow: 0 0 12px #22c55e;
+}
 
-    color: #34d399;
 
+.profile-card-info h3 {
     font-size: 22px;
 
-    box-shadow: 0 0 25px rgba(16,185,129,0.15);
+    margin-bottom: 4px;
 }
 
-.attendance-check strong {
-    display: block;
 
-    margin-top: 12px;
+.profile-card-info p {
+    color: #888894;
 
-    color: white;
+    font-size: 12px;
 
-    font-size: 8px;
+    margin-bottom: 15px;
 }
 
-.attendance-check span {
-    display: block;
 
-    margin-top: 4px;
-
-    color: #34d399;
-
-    font-size: 11px;
-
-    font-weight: 700;
-}
-
-.attendance-info {
+.profile-location {
     display: flex;
-
-    justify-content: space-between;
-
-    margin-top: 22px;
-
-    padding-top: 12px;
-
-    border-top: 1px solid rgba(255,255,255,0.07);
-}
-
-.attendance-info small,
-.attendance-info strong {
-    display: block;
-}
-
-.attendance-info small {
-    color: #555d63;
-
-    font-size: 5px;
-}
-
-.attendance-info strong {
-    margin-top: 3px;
-
-    color: #aaa;
-
-    font-size: 6px;
-}
-
-.attendance-info .present {
-    color: #34d399;
-}
-
-.attendance-button {
-    margin-top: 14px;
-
-    padding: 7px;
-
-    text-align: center;
-
-    border-radius: 6px;
-
-    background: #059669;
-
-    color: white;
-
-    font-size: 7px;
-}
-
-.attendance-dashboard {
-    width: 250px;
-
-    padding: 18px;
-
-    border-radius: 12px;
-
-    background: rgba(10,15,22,0.92);
-
-    border: 1px solid rgba(255,255,255,0.1);
-
-    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
-}
-
-.dashboard-top {
-    display: flex;
-
-    justify-content: space-between;
-
-    color: #707b80;
-
-    font-size: 7px;
-}
-
-.dashboard-top i {
-    color: #34d399;
-}
-
-.attendance-stats {
-    display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    gap: 6px;
-
-    margin-top: 22px;
-}
-
-.attendance-stats div {
-    padding: 9px 5px;
-
-    border-radius: 6px;
-
-    background: rgba(255,255,255,0.035);
-
-    text-align: center;
-}
-
-.attendance-stats strong,
-.attendance-stats span {
-    display: block;
-}
-
-.attendance-stats strong {
-    font-size: 15px;
-}
-
-.attendance-stats span {
-    margin-top: 2px;
-
-    color: #626b70;
-
-    font-size: 5px;
-}
-
-.attendance-bars {
-    display: flex;
-
-    align-items: flex-end;
+    align-items: center;
 
     gap: 8px;
 
-    height: 80px;
+    color: #666673;
 
-    margin-top: 20px;
-
-    padding-top: 10px;
-
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.attendance-bars span {
-    flex: 1;
-
-    border-radius: 3px 3px 0 0;
-
-    background: linear-gradient(to top,#059669,#34d399);
-
-    opacity: 0.7;
-}
-
-.attendance-bars span:nth-child(1) {
-    height: 45%;
-}
-
-.attendance-bars span:nth-child(2) {
-    height: 70%;
-}
-
-.attendance-bars span:nth-child(3) {
-    height: 55%;
-}
-
-.attendance-bars span:nth-child(4) {
-    height: 90%;
-}
-
-.attendance-bars span:nth-child(5) {
-    height: 75%;
+    font-size: 10px;
 }
 
 
-/* =====================================================
-   PROJET 3 — STAGE MANAGER
-===================================================== */
-
-.stage-project {
-    background:
-        radial-gradient(circle at 65% 45%, rgba(37,99,235,0.28), transparent 45%),
-        linear-gradient(135deg,#080e1c,#101a31);
-}
-
-.stage-visual {
-    width: 90%;
-}
-
-.stage-dashboard {
-    display: flex;
-
-    min-height: 280px;
-
-    overflow: hidden;
-
-    border-radius: 13px;
-
-    background: #0d1424;
-
-    border: 1px solid rgba(255,255,255,0.12);
-
-    box-shadow:
-        0 30px 60px rgba(0,0,0,0.55),
-        0 0 50px rgba(37,99,235,0.12);
-
-    transform: perspective(1000px) rotateY(5deg);
-
-    transition: 0.5s;
-}
-
-.project-card:hover .stage-dashboard {
-    transform: perspective(1000px) rotateY(0deg) translateY(-5px);
-}
-
-.stage-sidebar {
-    width: 115px;
-
-    padding: 18px 10px;
-
-    background: #090f1d;
-
-    border-right: 1px solid rgba(255,255,255,0.06);
-}
-
-.stage-sidebar strong {
-    display: block;
-
-    margin-bottom: 25px;
-
-    color: #60a5fa;
-
-    font-size: 11px;
-}
-
-.stage-sidebar strong i {
-    margin-right: 5px;
-}
-
-.stage-sidebar span {
-    display: block;
-
-    padding: 8px;
-
-    margin-bottom: 5px;
-
-    border-radius: 5px;
-
-    color: #687487;
-
-    font-size: 6px;
-}
-
-.stage-sidebar span i {
-    width: 14px;
-}
-
-.stage-sidebar span.active {
-    color: white;
-
-    background: rgba(37,99,235,0.2);
-}
-
-.stage-main {
-    flex: 1;
-
-    padding: 20px;
-}
-
-.stage-header {
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-}
-
-.stage-header small {
-    color: #596679;
-
-    font-size: 6px;
-
-    letter-spacing: 1px;
-}
-
-.stage-header h4 {
-    margin-top: 4px;
-
-    font-size: 13px;
-}
-
-.stage-avatar {
-    width: 28px;
-    height: 28px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background: linear-gradient(135deg,#2563eb,#7c3aed);
-
-    font-size: 7px;
-
-    font-weight: 700;
-}
-
-.stage-stats {
-    display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-
-    gap: 7px;
-
-    margin-top: 22px;
-}
-
-.stage-stats div {
-    padding: 10px;
-
-    border-radius: 6px;
-
-    background: rgba(255,255,255,0.035);
-
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.stage-stats span,
-.stage-stats strong {
-    display: block;
-}
-
-.stage-stats span {
-    color: #64748b;
-
-    font-size: 6px;
-}
-
-.stage-stats strong {
-    margin-top: 4px;
-
-    font-size: 16px;
-}
-
-.intern-list {
-    margin-top: 18px;
-
-    border-radius: 7px;
-
-    overflow: hidden;
-
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.intern-title,
-.intern {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr 0.7fr;
-
-    gap: 5px;
-
-    padding: 8px;
-
-    font-size: 6px;
-}
-
-.intern-title {
-    color: #536176;
-
-    background: rgba(255,255,255,0.025);
-}
-
-.intern {
-    color: #aeb8c8;
-
-    border-top: 1px solid rgba(255,255,255,0.04);
-}
-
-.intern strong {
-    font-size: 6px;
-}
-
-.intern em {
-    padding: 3px 5px;
-
-    width: max-content;
-
-    border-radius: 10px;
-
-    background: rgba(37,99,235,0.15);
-
-    color: #60a5fa;
-
-    font-style: normal;
-
-    font-size: 5px;
-}
-
-.intern em.done {
-    background: rgba(34,197,94,0.12);
-
-    color: #4ade80;
-}
-
-
-/* =====================================================
-   RESPONSIVE DES VISUELS
-===================================================== */
-
-@media (max-width: 800px) {
-
-    .project-visual-book {
-        width: 85%;
-    }
-
-    .attendance-visual {
-        transform: scale(0.9);
-    }
-
-    .stage-visual {
-        width: 90%;
-    }
-
-}
-
-@media (max-width: 500px) {
-
-    .book-sidebar {
-        display: none;
-    }
-
-    .project-visual-book {
-        width: 90%;
-    }
-
-    .book-main {
-        padding: 15px;
-    }
-
-    .book-cards {
-        gap: 5px;
-    }
-
-    .attendance-dashboard {
-        display: none;
-    }
-
-    .attendance-visual {
-        transform: scale(0.9);
-    }
-
-    .stage-sidebar {
-        display: none;
-    }
-
-    .stage-dashboard {
-        min-height: 250px;
-    }
-
+.profile-location i {
+    color: #8b7cf6;
 }
