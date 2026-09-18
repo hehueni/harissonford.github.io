@@ -2,1188 +2,471 @@
 <html lang="fr">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>Harisson Ford | Développeur Junior</title>
 
-    <meta name="description"
-          content="Portfolio de Harisson Ford, développeur junior spécialisé en informatique, développement d'applications et MIAGE.">
+    <meta
+        name="description"
+        content="Portfolio de Ehueni Ehui Harisson Ford, développeur junior spécialisé en informatique, développement d'applications et MIAGE."
+    >
 
-    <meta name="author"
-          content="Ehueni Ehui Harisson Ford">
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <title>Harisson Ford — Développeur Junior</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
+    <!-- Icônes -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
-    <!-- =====================================================
-         GOOGLE FONTS
-    ====================================================== -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-
-    <!-- =====================================================
-         FONT AWESOME
-    ====================================================== -->
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
-    <!-- =====================================================
-         CSS
-    ====================================================== -->
-
-    <link rel="stylesheet"
-          href="style.css">
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- =========================
+         ARRIÈRE-PLAN
+    ========================== -->
 
-<!-- ========================================================
-     CURSEUR / EFFETS D'ARRIÈRE-PLAN
-========================================================= -->
+    <div class="background">
 
-<div class="background">
+        <div class="background-grid"></div>
 
-    <div class="background-grid"></div>
-
-    <div class="background-glow glow-one"></div>
-
-    <div class="background-glow glow-two"></div>
-
-</div>
-
-
-
-<!-- ========================================================
-     NAVIGATION
-========================================================= -->
-
-<header class="header">
-
-    <div class="header-inner">
-
-
-        <!-- Logo -->
-
-        <a href="#accueil"
-           class="logo">
-
-            <span class="logo-symbol">
-                HF
-            </span>
-
-            <span class="logo-name">
-                HARISSON FORD
-            </span>
-
-        </a>
-
-
-        <!-- Navigation -->
-
-        <nav class="navigation">
-
-            <a href="#accueil"
-               class="nav-link active">
-
-                Accueil
-
-            </a>
-
-
-            <a href="#apropos"
-               class="nav-link">
-
-                À propos
-
-            </a>
-
-
-            <a href="#projets"
-               class="nav-link">
-
-                Projets
-
-            </a>
-
-
-            <a href="#experience"
-               class="nav-link">
-
-                Expérience
-
-            </a>
-
-
-            <a href="#competences"
-               class="nav-link">
-
-                Compétences
-
-            </a>
-
-
-            <a href="#contact"
-               class="nav-contact">
-
-                Contact
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-            </a>
-
-        </nav>
-
-
-        <!-- Menu mobile -->
-
-        <button class="menu-button"
-                aria-label="Ouvrir le menu">
-
-            <i class="fa-solid fa-bars"></i>
-
-        </button>
-
+        <div class="background-glow glow-one"></div>
+        <div class="background-glow glow-two"></div>
 
     </div>
 
-</header>
 
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
+    <header class="header">
 
-<!-- ========================================================
-     CONTENU PRINCIPAL
-========================================================= -->
+        <div class="header-container">
 
-<main>
+            <a href="#accueil" class="logo">
 
+                <span class="logo-box">HF</span>
 
-
-<!-- ========================================================
-     HERO / ACCUEIL
-========================================================= -->
-
-<section id="accueil"
-         class="hero">
-
-
-    <div class="hero-content">
-
-
-        <!-- Petit label -->
-
-        <div class="hero-label">
-
-            <span class="hero-line"></span>
-
-            <span>
-                PORTFOLIO — 2026
-            </span>
-
-        </div>
-
-
-        <!-- Introduction -->
-
-        <p class="hero-introduction">
-
-            Bonjour, je suis
-
-        </p>
-
-
-        <!-- Grand nom -->
-
-        <h1 class="hero-title">
-
-            HARISSON
-            <span>FORD.</span>
-
-        </h1>
-
-
-        <!-- Métier -->
-
-        <div class="hero-role">
-
-            <span>
-                DÉVELOPPEUR JUNIOR
-            </span>
-
-            <span class="role-separator">
-                /
-            </span>
-
-            <span>
-                INFORMATIQUE
-            </span>
-
-            <span class="role-separator">
-                /
-            </span>
-
-            <span>
-                MIAGE
-            </span>
-
-        </div>
-
-
-        <!-- Description -->
-
-        <p class="hero-description">
-
-            Je transforme des idées en
-            <strong>solutions numériques</strong>
-            fonctionnelles, modernes et adaptées
-            aux besoins des utilisateurs.
-
-        </p>
-
-
-        <!-- Boutons -->
-
-        <div class="hero-buttons">
-
-
-            <a href="#projets"
-               class="button button-primary">
-
-                Découvrir mes projets
-
-                <i class="fa-solid fa-arrow-down"></i>
+                <span class="logo-text">
+                    HARISSON FORD
+                </span>
 
             </a>
 
 
-            <a href="#contact"
-               class="button button-outline">
+            <nav class="navigation">
 
+                <a href="#accueil" class="nav-link active">
+                    Accueil
+                </a>
+
+                <a href="#apropos" class="nav-link">
+                    À propos
+                </a>
+
+                <a href="#projets" class="nav-link">
+                    Projets
+                </a>
+
+                <a href="#experience" class="nav-link">
+                    Expérience
+                </a>
+
+                <a href="#formation" class="nav-link">
+                    Formation
+                </a>
+
+                <a href="#contact" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+
+            <a href="mailto:hehueni@gmail.com" class="header-contact">
                 Me contacter
-
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
             </a>
 
-
         </div>
 
+    </header>
 
-        <!-- Technologies -->
 
-        <div class="hero-tech">
+    <main>
 
-            <span>
-                PHP
-            </span>
 
-            <span>
-                Laravel
-            </span>
+        <!-- =========================
+             HERO
+        ========================== -->
 
-            <span>
-                JavaScript
-            </span>
+        <section id="accueil" class="hero">
 
-            <span>
-                React
-            </span>
+            <div class="hero-content">
 
-            <span>
-                MySQL
-            </span>
+                <div class="hero-label">
 
-        </div>
-
-
-    </div>
-
-
-
-    <!-- ====================================================
-         VISUEL HERO
-    ===================================================== -->
-
-    <div class="hero-visual">
-
-
-        <div class="hero-circle"></div>
-
-
-        <div class="hero-code-card">
-
-
-            <div class="code-top">
-
-                <span class="code-dot"></span>
-                <span class="code-dot"></span>
-                <span class="code-dot"></span>
-
-                <span class="code-title">
-                    developer.js
-                </span>
-
-            </div>
-
-
-            <div class="code-body">
-
-                <p>
-                    <span class="code-number">
-                        01
-                    </span>
-
-                    <span class="code-purple">
-                        const
-                    </span>
-
-                    developer
-                    = {
-
-                </p>
-
-
-                <p class="code-indent">
-
-                    name:
-                    <span class="code-green">
-                        "Harisson Ford"
-                    </span>,
-
-                </p>
-
-
-                <p class="code-indent">
-
-                    role:
-                    <span class="code-green">
-                        "Junior Developer"
-                    </span>,
-
-                </p>
-
-
-                <p class="code-indent">
-
-                    field:
-                    <span class="code-green">
-                        "MIAGE"
-                    </span>,
-
-                </p>
-
-
-                <p class="code-indent">
-
-                    passion:
-                    <span class="code-green">
-                        "Technology"
-                    </span>,
-
-                </p>
-
-
-                <p class="code-indent">
-
-                    available:
-                    <span class="code-blue">
-                        true
-                    </span>
-
-                </p>
-
-
-                <p>
-                    };
-                </p>
-
-
-            </div>
-
-
-        </div>
-
-
-        <!-- Élément décoratif -->
-
-        <div class="floating-element floating-one">
-
-            <i class="fa-brands fa-laravel"></i>
-
-        </div>
-
-
-        <div class="floating-element floating-two">
-
-            <i class="fa-brands fa-react"></i>
-
-        </div>
-
-
-        <div class="floating-element floating-three">
-
-            <i class="fa-brands fa-js"></i>
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- ========================================================
-     INFORMATIONS RAPIDES
-========================================================= -->
-
-<section class="quick-section">
-
-
-    <div class="quick-item">
-
-        <span class="quick-number">
-            01
-        </span>
-
-        <div>
-
-            <small>
-                LOCALISATION
-            </small>
-
-            <strong>
-                Abidjan, Côte d'Ivoire
-            </strong>
-
-        </div>
-
-    </div>
-
-
-    <div class="quick-item">
-
-        <span class="quick-number">
-            02
-        </span>
-
-        <div>
-
-            <small>
-                SPÉCIALITÉ
-            </small>
-
-            <strong>
-                Développement d'applications
-            </strong>
-
-        </div>
-
-    </div>
-
-
-    <div class="quick-item">
-
-        <span class="quick-number">
-            03
-        </span>
-
-        <div>
-
-            <small>
-                DISPONIBILITÉ
-            </small>
-
-            <strong>
-                Ouvert aux opportunités
-            </strong>
-
-        </div>
-
-    </div>
-
-
-</section>
-
-
-
-<!-- ========================================================
-     À PROPOS
-========================================================= -->
-
-<section id="apropos"
-         class="section about-section">
-
-
-    <div class="section-header">
-
-
-        <div class="section-index">
-
-            01 / À PROPOS
-
-        </div>
-
-
-        <h2>
-
-            Construire.
-            <br>
-
-            <span>Apprendre.</span>
-            <br>
-
-            Évoluer.
-
-        </h2>
-
-
-    </div>
-
-
-
-    <div class="about-grid">
-
-
-        <!-- Texte -->
-
-        <div class="about-text">
-
-
-            <p class="about-lead">
-
-                Je suis
-                <strong>
-                    Ehueni Ehui Harisson Ford
-                </strong>,
-                développeur junior avec une formation
-                en informatique et en MIAGE.
-
-            </p>
-
-
-            <p>
-
-                Mon parcours m'a permis de développer
-                des compétences en conception
-                d'applications, développement web,
-                maintenance informatique et gestion
-                des systèmes.
-
-            </p>
-
-
-            <p>
-
-                J'aime comprendre les problèmes,
-                concevoir des solutions et transformer
-                une idée en application concrète.
-
-            </p>
-
-
-            <p>
-
-                Je continue actuellement à développer
-                mes compétences à travers des projets
-                personnels et des expériences
-                professionnelles.
-
-            </p>
-
-
-            <a href="#contact"
-               class="text-link">
-
-                Parlons de votre projet
-
-                <i class="fa-solid fa-arrow-right"></i>
-
-            </a>
-
-
-        </div>
-
-
-
-        <!-- Cartes -->
-
-        <div class="about-cards">
-
-
-            <div class="about-card">
-
-                <span class="about-card-number">
-                    01
-                </span>
-
-                <i class="fa-solid fa-code"></i>
-
-                <h3>
-                    Développement
-                </h3>
-
-                <p>
-                    Création d'applications web
-                    et solutions numériques.
-                </p>
-
-            </div>
-
-
-            <div class="about-card">
-
-                <span class="about-card-number">
-                    02
-                </span>
-
-                <i class="fa-solid fa-layer-group"></i>
-
-                <h3>
-                    Conception
-                </h3>
-
-                <p>
-                    Analyse des besoins et conception
-                    de solutions adaptées.
-                </p>
-
-            </div>
-
-
-            <div class="about-card">
-
-                <span class="about-card-number">
-                    03
-                </span>
-
-                <i class="fa-solid fa-network-wired"></i>
-
-                <h3>
-                    Informatique
-                </h3>
-
-                <p>
-                    Maintenance, réseaux et
-                    assistance aux utilisateurs.
-                </p>
-
-            </div>
-
-
-            <div class="about-card">
-
-                <span class="about-card-number">
-                    04
-                </span>
-
-                <i class="fa-solid fa-lightbulb"></i>
-
-                <h3>
-                    Apprentissage
-                </h3>
-
-                <p>
-                    Une volonté constante
-                    d'apprendre et de progresser.
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ========================================================
-     PROJETS
-========================================================= -->
-
-<section id="projets"
-         class="section projects-section">
-
-
-    <div class="section-header section-header-projects">
-
-
-        <div class="section-index">
-
-            02 / PROJETS
-
-        </div>
-
-
-        <h2>
-
-            Quelques projets
-            <br>
-
-            <span>que j'ai conçus.</span>
-
-        </h2>
-
-
-        <p>
-
-            Des projets personnels développés pour
-            mettre en pratique mes compétences et
-            répondre à des besoins concrets.
-
-        </p>
-
-
-    </div>
-
-
-
-    <div class="projects-list">
-
-
-
-        <!-- =================================================
-             PROJET 01 — LECTURE CONNAISSANCE
-        ================================================== -->
-
-        <article class="project">
-
-
-            <div class="project-visual project-library">
-
-
-                <span class="project-number">
-                    01
-                </span>
-
-
-                <div class="project-interface">
-
-
-                    <div class="interface-header">
-
-                        <div class="interface-logo">
-                            LC
-                        </div>
-
-                        <span>
-                            Lecture Connaissance
-                        </span>
-
-                    </div>
-
-
-                    <div class="interface-content">
-
-                        <div class="interface-line large"></div>
-
-                        <div class="interface-line medium"></div>
-
-                        <div class="interface-line small"></div>
-
-
-                        <div class="interface-books">
-
-                            <div></div>
-                            <div></div>
-                            <div></div>
-
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <div class="project-details">
-
-
-                <span class="project-category">
-                    PLATEFORME DIGITALE
-                </span>
-
-
-                <h3>
-                    Lecture
-                    <span>Connaissance</span>
-                </h3>
-
-
-                <p>
-
-                    Plateforme digitale destinée
-                    aux librairies et aux lecteurs.
-                    Le concept permet aux librairies
-                    partenaires de présenter leur
-                    catalogue, leurs promotions et
-                    leurs services directement en ligne.
-
-                </p>
-
-
-                <div class="project-technologies">
+                    <span class="hero-line"></span>
 
                     <span>
-                        Laravel
-                    </span>
-
-                    <span>
-                        React
-                    </span>
-
-                    <span>
-                        MySQL
-                    </span>
-
-                    <span>
-                        JavaScript
+                        DÉVELOPPEUR JUNIOR
                     </span>
 
                 </div>
 
 
-                <div class="project-footer">
+                <p class="hero-intro">
+                    Bonjour, je suis
+                </p>
 
 
-                    <span>
-                        Application web
-                    </span>
+                <h1 class="hero-title">
+
+                    Harisson
+                    <span>Ford.</span>
+
+                </h1>
 
 
-                    <a href="https://github.com/hehueni"
-                       target="_blank"
-                       rel="noopener noreferrer">
+                <div class="hero-role">
 
-                        GitHub
+                    <span>INFORMATIQUE</span>
 
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    <span class="separator">/</span>
+
+                    <span>MIAGE</span>
+
+                    <span class="separator">/</span>
+
+                    <span>DÉVELOPPEMENT</span>
+
+                </div>
+
+
+                <p class="hero-description">
+
+                    Je conçois des <strong>applications web</strong>
+                    et des solutions numériques destinées à répondre
+                    à des besoins concrets.
+
+                    <br><br>
+
+                    Passionné par l'informatique, je développe
+                    progressivement mes compétences en développement,
+                    bases de données, réseaux et technologies web.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a href="#projets" class="button button-primary">
+
+                        Découvrir mes projets
+
+                        <i class="fa-solid fa-arrow-down"></i>
 
                     </a>
 
 
-                </div>
+                    <a href="mailto:hehueni@gmail.com" class="button button-outline">
 
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- =================================================
-             PROJET 02 — POINTAGE
-        ================================================== -->
-
-        <article class="project project-reverse">
-
-
-            <div class="project-visual project-attendance">
-
-
-                <span class="project-number">
-                    02
-                </span>
-
-
-                <div class="attendance-interface">
-
-
-                    <div class="attendance-top">
-
-                        <span>
-                            GESTION DES PRÉSENCES
-                        </span>
-
-                        <i class="fa-solid fa-fingerprint"></i>
-
-                    </div>
-
-
-                    <div class="attendance-circle">
-
-                        <i class="fa-solid fa-user-check"></i>
-
-                    </div>
-
-
-                    <strong>
-                        Présence enregistrée
-                    </strong>
-
-
-                    <span class="attendance-time">
-                        08:02:17
-                    </span>
-
-
-                </div>
-
-
-            </div>
-
-
-
-            <div class="project-details">
-
-
-                <span class="project-category">
-                    GESTION D'ENTREPRISE
-                </span>
-
-
-                <h3>
-                    Application
-                    <span>de pointage</span>
-                </h3>
-
-
-                <p>
-
-                    Application de gestion des présences
-                    permettant aux entreprises de suivre
-                    les arrivées et départs de leurs
-                    collaborateurs et de centraliser
-                    les informations de présence.
-
-                </p>
-
-
-                <div class="project-technologies">
-
-                    <span>
-                        Laravel
-                    </span>
-
-                    <span>
-                        PHP
-                    </span>
-
-                    <span>
-                        MySQL
-                    </span>
-
-                    <span>
-                        JavaScript
-                    </span>
-
-                </div>
-
-
-                <div class="project-footer">
-
-                    <span>
-                        Gestion des employés
-                    </span>
-
-
-                    <a href="https://github.com/hehueni"
-                       target="_blank"
-                       rel="noopener noreferrer">
-
-                        GitHub
-
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        Me contacter
 
                     </a>
 
                 </div>
 
 
+                <div class="hero-technologies">
+
+                    <span>PHP</span>
+                    <span>LARAVEL</span>
+                    <span>JAVASCRIPT</span>
+                    <span>REACT</span>
+                    <span>MYSQL</span>
+                    <span>GIT</span>
+
+                </div>
+
             </div>
 
 
-        </article>
+            <!-- VISUEL CODE -->
+
+            <div class="hero-visual">
+
+                <div class="hero-circle"></div>
 
 
+                <div class="floating-icon icon-laravel">
 
-        <!-- =================================================
-             PROJET 03 — SUIVI DES STAGIAIRES
-        ================================================== -->
+                    <i class="fa-brands fa-laravel"></i>
 
-        <article class="project">
-
-
-            <div class="project-visual project-internship">
+                </div>
 
 
-                <span class="project-number">
-                    03
-                </span>
+                <div class="floating-icon icon-js">
+
+                    <i class="fa-brands fa-js"></i>
+
+                </div>
 
 
-                <div class="internship-interface">
+                <div class="floating-icon icon-github">
+
+                    <i class="fa-brands fa-github"></i>
+
+                </div>
 
 
-                    <div class="internship-header">
+                <div class="code-window">
 
-                        <div>
+                    <div class="code-header">
 
-                            <small>
-                                ESPACE ENTREPRISE
-                            </small>
+                        <div class="code-dots">
 
-                            <strong>
-                                Suivi des stagiaires
-                            </strong>
-
-                        </div>
-
-                        <i class="fa-solid fa-users"></i>
-
-                    </div>
-
-
-                    <div class="internship-stats">
-
-
-                        <div>
-
-                            <strong>
-                                24
-                            </strong>
-
-                            <span>
-                                Stagiaires
-                            </span>
-
-                        </div>
-
-
-                        <div>
-
-                            <strong>
-                                18
-                            </strong>
-
-                            <span>
-                                En cours
-                            </span>
-
-                        </div>
-
-
-                        <div>
-
-                            <strong>
-                                06
-                            </strong>
-
-                            <span>
-                                Terminés
-                            </span>
-
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="internship-progress">
-
-                        <span>
-                            Progression globale
-                        </span>
-
-                        <div class="progress-bar">
-
+                            <span></span>
+                            <span></span>
                             <span></span>
 
                         </div>
 
+                        <span class="code-file">
+                            portfolio.php
+                        </span>
+
                     </div>
 
 
+                    <div class="code-content">
+
+                        <p>
+                            <span class="code-number">01</span>
+                            <span class="purple">&lt;?php</span>
+                        </p>
+
+                        <p>
+                            <span class="code-number">02</span>
+                            <span class="blue">class</span>
+                            <span class="white">Developer</span>
+                        </p>
+
+                        <p>
+                            <span class="code-number">03</span>
+                            {
+                        </p>
+
+                        <p class="indent">
+                            <span class="code-number">04</span>
+                            <span class="blue">public</span>
+                            $name =
+                            <span class="green">
+                                "Harisson Ford"
+                            </span>;
+                        </p>
+
+                        <p class="indent">
+                            <span class="code-number">05</span>
+                            $specialite =
+                            <span class="green">
+                                "Développement"
+                            </span>;
+                        </p>
+
+                        <p class="indent">
+                            <span class="code-number">06</span>
+                            $formation =
+                            <span class="green">
+                                "MIAGE"
+                            </span>;
+                        </p>
+
+                        <p class="indent">
+                            <span class="code-number">07</span>
+                            $passion =
+                            <span class="green">
+                                "Technologie"
+                            </span>;
+                        </p>
+
+                        <p>
+                            <span class="code-number">08</span>
+                            }
+                        </p>
+
+                        <p>
+                            <span class="code-number">09</span>
+                            <span class="purple">?&gt;</span>
+                        </p>
+
+                    </div>
+
                 </div>
 
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             INFOS RAPIDES
+        ========================== -->
+
+        <section class="quick-info">
+
+            <div class="quick-item">
+
+                <span class="quick-number">
+                    01
+                </span>
+
+                <div>
+
+                    <small>
+                        DOMAINE
+                    </small>
+
+                    <strong>
+                        Informatique
+                    </strong>
+
+                </div>
 
             </div>
 
 
+            <div class="quick-item">
 
-            <div class="project-details">
-
-
-                <span class="project-category">
-                    GESTION DES STAGES
+                <span class="quick-number">
+                    02
                 </span>
 
+                <div>
 
-                <h3>
-                    Suivi des
-                    <span>stagiaires</span>
-                </h3>
+                    <small>
+                        SPÉCIALITÉ
+                    </small>
 
-
-                <p>
-
-                    Application conçue pour faciliter
-                    le suivi des stagiaires au sein
-                    d'une entreprise ou d'une structure.
-                    Elle permet de centraliser les
-                    informations, suivre les périodes
-                    de stage et visualiser l'évolution
-                    des stagiaires.
-
-                </p>
-
-
-                <div class="project-technologies">
-
-                    <span>
-                        Laravel
-                    </span>
-
-                    <span>
-                        PHP
-                    </span>
-
-                    <span>
-                        MySQL
-                    </span>
-
-                    <span>
-                        Bootstrap
-                    </span>
+                    <strong>
+                        Développement d'applications
+                    </strong>
 
                 </div>
 
-
-                <div class="project-footer">
-
-                    <span>
-                        Gestion des stagiaires
-                    </span>
+            </div>
 
 
-                    <a href="https://github.com/hehueni"
-                       target="_blank"
-                       rel="noopener noreferrer">
+            <div class="quick-item">
 
-                        GitHub
+                <span class="quick-number">
+                    03
+                </span>
+
+                <div>
+
+                    <small>
+                        LOCALISATION
+                    </small>
+
+                    <strong>
+                        Abidjan, Côte d'Ivoire
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             À PROPOS
+        ========================== -->
+
+        <section id="apropos" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    01 — À PROPOS
+                </span>
+
+                <h2>
+                    Construire.
+                    <span>Apprendre.</span>
+                    Évoluer.
+                </h2>
+
+                <p>
+                    Quelques mots sur mon parcours et ma manière
+                    d'aborder le développement informatique.
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="about-text">
+
+                    <p class="about-lead">
+
+                        Je suis <strong>Ehueni Ehui Harisson Ford</strong>,
+                        développeur junior en informatique et étudiant
+                        dans le domaine de la MIAGE.
+
+                    </p>
+
+
+                    <p>
+
+                        Mon parcours m'a permis d'acquérir des bases
+                        solides en développement d'applications,
+                        bases de données, maintenance informatique
+                        et réseaux.
+
+                    </p>
+
+
+                    <p>
+
+                        Je m'intéresse particulièrement à la création
+                        de solutions numériques utiles, à l'amélioration
+                        des processus et à la conception d'applications
+                        adaptées aux besoins des utilisateurs.
+
+                    </p>
+
+
+                    <p>
+
+                        Aujourd'hui, je continue à développer mes
+                        compétences à travers des projets personnels,
+                        professionnels et académiques.
+
+                    </p>
+
+
+                    <a
+                        href="https://github.com/hehueni"
+                        target="_blank"
+                        class="text-link"
+                    >
+
+                        Voir mon GitHub
 
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
@@ -1192,944 +475,1065 @@
                 </div>
 
 
+                <div class="about-cards">
+
+                    <div class="about-card">
+
+                        <span class="card-number">
+                            01
+                        </span>
+
+                        <i class="fa-solid fa-code"></i>
+
+                        <h3>
+                            Développement
+                        </h3>
+
+                        <p>
+                            Conception d'applications web
+                            et développement de solutions
+                            numériques.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-card">
+
+                        <span class="card-number">
+                            02
+                        </span>
+
+                        <i class="fa-solid fa-database"></i>
+
+                        <h3>
+                            Bases de données
+                        </h3>
+
+                        <p>
+                            Conception et manipulation
+                            de bases de données avec MySQL
+                            et PostgreSQL.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-card">
+
+                        <span class="card-number">
+                            03
+                        </span>
+
+                        <i class="fa-solid fa-network-wired"></i>
+
+                        <h3>
+                            Réseaux
+                        </h3>
+
+                        <p>
+                            Installation, configuration
+                            et diagnostic de réseaux
+                            informatiques.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-card">
+
+                        <span class="card-number">
+                            04
+                        </span>
+
+                        <i class="fa-solid fa-laptop-code"></i>
+
+                        <h3>
+                            Maintenance
+                        </h3>
+
+                        <p>
+                            Maintenance informatique,
+                            assistance utilisateurs
+                            et résolution de problèmes.
+                        </p>
+
+                    </div>
+
+                </div>
+
             </div>
 
-
-        </article>
-
-
-    </div>
+        </section>
 
 
-</section>
+        <!-- =========================
+             PROJETS
+        ========================== -->
 
+        <section id="projets" class="section projects-section">
 
+            <div class="section-heading">
 
-<!-- ========================================================
-     EXPÉRIENCE
-========================================================= -->
-
-<section id="experience"
-         class="section experience-section">
-
-
-    <div class="section-header">
-
-
-        <div class="section-index">
-
-            03 / EXPÉRIENCE
-
-        </div>
-
-
-        <h2>
-
-            Mon parcours
-            <br>
-
-            <span>professionnel.</span>
-
-        </h2>
-
-
-    </div>
-
-
-
-    <div class="experience-list">
-
-
-        <!-- AEJ -->
-
-        <article class="experience-item">
-
-
-            <div class="experience-date">
-
-                <span>
-                    EXPÉRIENCE
+                <span class="section-number">
+                    02 — PROJETS
                 </span>
 
-                <strong>
-                    Informatique
-                </strong>
-
-            </div>
-
-
-            <div class="experience-content">
-
-
-                <span class="experience-period">
-                    8 mois
-                </span>
-
-
-                <h3>
-                    Agence Emploi Jeunes
-                </h3>
-
-
-                <h4>
-                    Technicien / Stagiaire en informatique
-                </h4>
-
+                <h2>
+                    Ce que
+                    <span>je construis.</span>
+                </h2>
 
                 <p>
-
-                    Maintenance du parc informatique,
-                    installation et configuration des
-                    postes et logiciels, assistance aux
-                    utilisateurs, diagnostic et résolution
-                    des pannes, gestion des équipements
-                    et participation aux opérations liées
-                    au réseau informatique.
-
+                    Une sélection de projets personnels,
+                    académiques et professionnels.
                 </p>
 
+            </div>
 
-                <div class="experience-tags">
 
-                    <span>
-                        Maintenance
+            <div class="projects">
+
+
+                <!-- PROJET 1 -->
+
+                <article class="project">
+
+                    <div class="project-visual project-purple">
+
+                        <span class="project-index">
+                            01
+                        </span>
+
+
+                        <div class="project-screen">
+
+                            <div class="screen-header">
+
+                                <div class="screen-logo">
+                                    LC
+                                </div>
+
+                                <span>
+                                    Lecture Connaissance
+                                </span>
+
+                            </div>
+
+
+                            <div class="screen-body">
+
+                                <div class="screen-lines">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+
+                                <div class="book-grid">
+
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-category">
+                            PLATEFORME WEB
+                        </span>
+
+                        <h3>
+                            Lecture
+                            <span>Connaissance.</span>
+                        </h3>
+
+                        <p>
+
+                            Plateforme numérique destinée à mettre
+                            en relation les lecteurs et les librairies.
+
+                            Le concept permet aux librairies partenaires
+                            de gérer leur catalogue, leurs promotions
+                            et leurs commandes depuis un espace dédié.
+
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>Laravel</span>
+                            <span>React</span>
+                            <span>MySQL</span>
+                            <span>REST API</span>
+
+                        </div>
+
+
+                        <div class="project-footer">
+
+                            <span>
+                                Projet personnel
+                            </span>
+
+                            <a
+                                href="https://github.com/hehueni"
+                                target="_blank"
+                            >
+
+                                GitHub
+
+                                <i class="fa-brands fa-github"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJET 2 -->
+
+                <article class="project project-reverse">
+
+                    <div class="project-visual project-blue">
+
+                        <span class="project-index">
+                            02
+                        </span>
+
+
+                        <div class="attendance-screen">
+
+                            <div class="attendance-header">
+
+                                <span>
+                                    SYSTÈME DE POINTAGE
+                                </span>
+
+                                <i class="fa-solid fa-fingerprint"></i>
+
+                            </div>
+
+
+                            <div class="attendance-circle">
+
+                                <i class="fa-solid fa-fingerprint"></i>
+
+                            </div>
+
+
+                            <strong>
+                                Présence enregistrée
+                            </strong>
+
+                            <small>
+                                08:32 — Aujourd'hui
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-category">
+                            GESTION D'ENTREPRISE
+                        </span>
+
+                        <h3>
+                            Application
+                            <span>de pointage.</span>
+                        </h3>
+
+                        <p>
+
+                            Application destinée à faciliter la gestion
+                            des présences des employés.
+
+                            Le système permet d'enregistrer les arrivées
+                            et départs et de centraliser les informations
+                            liées au pointage.
+
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>Laravel</span>
+                            <span>PHP</span>
+                            <span>MySQL</span>
+                            <span>Reverb</span>
+
+                        </div>
+
+
+                        <div class="project-footer">
+
+                            <span>
+                                Application web
+                            </span>
+
+                            <a
+                                href="https://github.com/hehueni"
+                                target="_blank"
+                            >
+
+                                GitHub
+
+                                <i class="fa-brands fa-github"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJET 3 -->
+
+                <article class="project">
+
+                    <div class="project-visual project-pink">
+
+                        <span class="project-index">
+                            03
+                        </span>
+
+
+                        <div class="internship-screen">
+
+                            <div class="internship-header">
+
+                                <div>
+
+                                    <small>
+                                        TABLEAU DE BORD
+                                    </small>
+
+                                    <strong>
+                                        Suivi des stagiaires
+                                    </strong>
+
+                                </div>
+
+                                <i class="fa-solid fa-user-graduate"></i>
+
+                            </div>
+
+
+                            <div class="internship-stats">
+
+                                <div>
+
+                                    <strong>
+                                        24
+                                    </strong>
+
+                                    <span>
+                                        Stagiaires
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        08
+                                    </strong>
+
+                                    <span>
+                                        Services
+                                    </span>
+
+                                </div>
+
+
+                                <div>
+
+                                    <strong>
+                                        92%
+                                    </strong>
+
+                                    <span>
+                                        Suivi
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="progress">
+
+                                <span>
+                                    Progression des stagiaires
+                                </span>
+
+                                <div class="progress-bar">
+
+                                    <span></span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <span class="project-category">
+                            GESTION DES STAGIAIRES
+                        </span>
+
+                        <h3>
+                            Suivi des
+                            <span>stagiaires.</span>
+                        </h3>
+
+                        <p>
+
+                            Application conçue pour faciliter le suivi
+                            administratif et pédagogique des stagiaires.
+
+                            Le concept permet de centraliser les
+                            informations des stagiaires, leur affectation,
+                            leur progression et leur suivi au sein
+                            d'une structure.
+
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                            <span>MySQL</span>
+                            <span>Bootstrap</span>
+
+                        </div>
+
+
+                        <div class="project-footer">
+
+                            <span>
+                                Projet académique
+                            </span>
+
+                            <a
+                                href="https://github.com/hehueni"
+                                target="_blank"
+                            >
+
+                                GitHub
+
+                                <i class="fa-brands fa-github"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             EXPÉRIENCE
+        ========================== -->
+
+        <section id="experience" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    03 — EXPÉRIENCE
+                </span>
+
+                <h2>
+                    Mon parcours
+                    <span>professionnel.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="experience-list">
+
+
+                <article class="experience-item">
+
+                    <div class="experience-date">
+
+                        <span>
+                            EXPÉRIENCE
+                        </span>
+
+                        <strong>
+                            2025 — Aujourd'hui
+                        </strong>
+
+                    </div>
+
+
+                    <div class="experience-content">
+
+                        <span class="experience-type">
+                            INFORMATIQUE
+                        </span>
+
+                        <h3>
+                            Agence Emploi Jeunes
+                        </h3>
+
+                        <h4>
+                            Informatique — Yopougon
+                        </h4>
+
+                        <p>
+
+                            Maintenance du parc informatique,
+                            installation et configuration des postes
+                            et logiciels, assistance aux utilisateurs,
+                            diagnostic et résolution des problèmes
+                            informatiques ainsi que participation
+                            à la gestion du réseau.
+
+                        </p>
+
+
+                        <div class="experience-tags">
+
+                            <span>Maintenance</span>
+                            <span>Réseau</span>
+                            <span>Support</span>
+                            <span>Installation</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <article class="experience-item">
+
+                    <div class="experience-date">
+
+                        <span>
+                            EXPÉRIENCE
+                        </span>
+
+                        <strong>
+                            2026
+                        </strong>
+
+                    </div>
+
+
+                    <div class="experience-content">
+
+                        <span class="experience-type">
+                            OPÉRATEUR DE SAISIE
+                        </span>
+
+                        <h3>
+                            Acropole SARL
+                        </h3>
+
+                        <h4>
+                            Opérateur de saisie — Yopougon Ananeraie
+                        </h4>
+
+                        <p>
+
+                            Saisie et traitement de données,
+                            organisation des informations et
+                            utilisation des outils informatiques
+                            dans un environnement professionnel.
+
+                        </p>
+
+
+                        <div class="experience-tags">
+
+                            <span>Saisie</span>
+                            <span>Informatique</span>
+                            <span>Données</span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FORMATION
+        ========================== -->
+
+        <section id="formation" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    04 — FORMATION
+                </span>
+
+                <h2>
+                    Mon parcours
+                    <span>académique.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="education-list">
+
+
+                <article class="education-item">
+
+                    <span class="education-year">
+                        BAC
                     </span>
 
-                    <span>
-                        Réseaux
+                    <div class="education-content">
+
+                        <span>
+                            ENSEIGNEMENT SECONDAIRE
+                        </span>
+
+                        <h3>
+                            Bac série D
+                        </h3>
+
+                        <p>
+                            Cours Secondaire Méthodiste
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </article>
+
+
+                <article class="education-item">
+
+                    <span class="education-year">
+                        LICENCE
                     </span>
 
-                    <span>
-                        Support utilisateur
+                    <div class="education-content">
+
+                        <span>
+                            INFORMATIQUE
+                        </span>
+
+                        <h3>
+                            Licence Informatique — MIAGE
+                        </h3>
+
+                        <p>
+                            Institut Universitaire d'Abidjan (IUA)
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </article>
+
+
+                <article class="education-item">
+
+                    <span class="education-year">
+                        MASTER 1
                     </span>
+
+                    <div class="education-content">
+
+                        <span>
+                            INFORMATIQUE / MIAGE
+                        </span>
+
+                        <h3>
+                            Master 1 Informatique
+                        </h3>
+
+                        <p>
+                            Spécialisation MIAGE
+                        </p>
+
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             COMPÉTENCES
+        ========================== -->
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <span class="section-number">
+                    05 — COMPÉTENCES
+                </span>
+
+                <h2>
+                    Ce que je
+                    <span>maîtrise.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            DÉVELOPPEMENT
+                        </span>
+
+                        <h3>
+                            Web & Applications
+                        </h3>
+
+                        <p>
+                            Conception et développement
+                            d'applications web.
+                        </p>
+
+                        <div class="skill-tags">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
 
-            </div>
+                <div class="skill-card">
 
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-database"></i>
+                    </div>
 
-        </article>
+                    <div>
 
+                        <span>
+                            DONNÉES
+                        </span>
 
+                        <h3>
+                            Bases de données
+                        </h3>
 
-        <!-- Acropole -->
+                        <p>
+                            Conception et gestion de données.
+                        </p>
 
-        <article class="experience-item">
+                        <div class="skill-tags">
 
+                            <span>MySQL</span>
+                            <span>PostgreSQL</span>
+                            <span>SQL</span>
 
-            <div class="experience-date">
+                        </div>
 
-                <span>
-                    EXPÉRIENCE
-                </span>
-
-                <strong>
-                    Opérations
-                </strong>
-
-            </div>
-
-
-            <div class="experience-content">
-
-
-                <span class="experience-period">
-                    CDD
-                </span>
-
-
-                <h3>
-                    Acropole SARL
-                </h3>
-
-
-                <h4>
-                    Opérateur de saisie
-                </h4>
-
-
-                <p>
-
-                    Saisie et traitement de données,
-                    contrôle des informations,
-                    organisation des documents et
-                    utilisation des outils informatiques
-                    pour les opérations quotidiennes.
-
-                </p>
-
-
-                <div class="experience-tags">
-
-                    <span>
-                        Saisie de données
-                    </span>
-
-                    <span>
-                        Informatique
-                    </span>
-
-                    <span>
-                        Organisation
-                    </span>
+                    </div>
 
                 </div>
 
 
-            </div>
+                <div class="skill-card">
 
+                    <div class="skill-icon">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
 
-        </article>
+                    <div>
 
+                        <span>
+                            INFRASTRUCTURE
+                        </span>
 
-    </div>
+                        <h3>
+                            Réseaux & Maintenance
+                        </h3>
 
+                        <p>
+                            Support informatique et
+                            environnement réseau.
+                        </p>
 
-</section>
+                        <div class="skill-tags">
 
+                            <span>Réseaux</span>
+                            <span>Maintenance</span>
+                            <span>Support</span>
 
+                        </div>
 
-<!-- ========================================================
-     FORMATION
-========================================================= -->
+                    </div>
 
-<section class="section education-section">
+                </div>
 
 
-    <div class="section-header">
+                <div class="skill-card">
 
+                    <div class="skill-icon">
+                        <i class="fa-brands fa-git-alt"></i>
+                    </div>
 
-        <div class="section-index">
+                    <div>
 
-            04 / FORMATION
+                        <span>
+                            OUTILS
+                        </span>
 
-        </div>
+                        <h3>
+                            Environnement
+                        </h3>
 
+                        <p>
+                            Outils utilisés dans mes projets.
+                        </p>
 
-        <h2>
+                        <div class="skill-tags">
 
-            Mon parcours
-            <br>
+                            <span>Git</span>
+                            <span>GitHub</span>
+                            <span>VS Code</span>
+                            <span>Vite</span>
 
-            <span>académique.</span>
+                        </div>
 
-        </h2>
-
-
-    </div>
-
-
-
-    <div class="education-list">
-
-
-        <!-- Licence -->
-
-        <article class="education-item">
-
-
-            <div class="education-year">
-                01
-            </div>
-
-
-            <div class="education-content">
-
-                <span>
-                    DIPLÔME
-                </span>
-
-                <h3>
-                    Licence en Informatique — MIAGE
-                </h3>
-
-                <p>
-                    Institut Universitaire d'Abidjan (IUA)
-                </p>
-
-            </div>
-
-
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </article>
-
-
-
-        <!-- Master 1 -->
-
-        <article class="education-item">
-
-
-            <div class="education-year">
-                02
-            </div>
-
-
-            <div class="education-content">
-
-                <span>
-                    PARCOURS ACADÉMIQUE
-                </span>
-
-                <h3>
-                    Master 1 en Informatique — MIAGE
-                </h3>
-
-                <p>
-                    Formation orientée informatique,
-                    systèmes d'information et gestion.
-                </p>
-
-            </div>
-
-
-            <i class="fa-solid fa-graduation-cap"></i>
-
-        </article>
-
-
-
-        <!-- BAC -->
-
-        <article class="education-item">
-
-
-            <div class="education-year">
-                03
-            </div>
-
-
-            <div class="education-content">
-
-                <span>
-                    DIPLÔME
-                </span>
-
-                <h3>
-                    Baccalauréat série D
-                </h3>
-
-                <p>
-                    Cours Secondaire Méthodiste
-                </p>
-
-            </div>
-
-
-            <i class="fa-solid fa-book-open"></i>
-
-        </article>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- ========================================================
-     COMPÉTENCES
-========================================================= -->
-
-<section id="competences"
-         class="section skills-section">
-
-
-    <div class="section-header">
-
-
-        <div class="section-index">
-
-            05 / COMPÉTENCES
-
-        </div>
-
-
-        <h2>
-
-            Ce que je
-            <br>
-
-            <span>peux faire.</span>
-
-        </h2>
-
-
-    </div>
-
-
-
-    <div class="skills-grid">
-
-
-        <!-- Développement -->
-
-        <article class="skill">
-
-
-            <div class="skill-icon">
-
-                <i class="fa-solid fa-code"></i>
-
-            </div>
-
-
-            <div>
-
-                <span>
-                    01
-                </span>
-
-                <h3>
-                    Développement web
-                </h3>
-
-                <p>
-
-                    Conception et développement
-                    d'applications web modernes.
-
-                </p>
-
-
-                <div class="skill-tags">
-
-                    <span>
-                        PHP
-                    </span>
-
-                    <span>
-                        Laravel
-                    </span>
-
-                    <span>
-                        JavaScript
-                    </span>
-
-                    <span>
-                        React
-                    </span>
-
-                    <span>
-                        HTML
-                    </span>
-
-                    <span>
-                        CSS
-                    </span>
+                    </div>
 
                 </div>
 
             </div>
 
-
-        </article>
-
+        </section>
 
 
-        <!-- Bases de données -->
+        <!-- =========================
+             CONTACT
+        ========================== -->
 
-        <article class="skill">
+        <section id="contact" class="contact-section">
 
+            <div class="contact-main">
 
-            <div class="skill-icon">
-
-                <i class="fa-solid fa-database"></i>
-
-            </div>
-
-
-            <div>
-
-                <span>
-                    02
+                <span class="section-number">
+                    06 — CONTACT
                 </span>
 
-                <h3>
-                    Bases de données
-                </h3>
+                <h2>
+                    Un projet ?
+                    <span>Parlons-en.</span>
+                </h2>
 
                 <p>
 
-                    Création, gestion et utilisation
-                    de bases de données relationnelles.
+                    Vous avez un projet, une opportunité
+                    professionnelle ou simplement une question ?
+
+                    N'hésitez pas à me contacter.
 
                 </p>
 
 
-                <div class="skill-tags">
+                <a
+                    href="mailto:hehueni@gmail.com"
+                    class="contact-button"
+                >
+
+                    Envoyer un email
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+
+            <div class="contact-information">
+
+                <div class="contact-item">
 
                     <span>
-                        MySQL
+                        EMAIL
                     </span>
 
+                    <a href="mailto:hehueni@gmail.com">
+                        hehueni@gmail.com
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
                     <span>
-                        PostgreSQL
+                        TÉLÉPHONE
                     </span>
+
+                    <a href="tel:+2250544626778">
+                        05 44 62 67 78
+                    </a>
+
+                    <a href="tel:+2250160951241">
+                        01 60 95 12 41
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span>
+                        GITHUB
+                    </span>
+
+                    <a
+                        href="https://github.com/hehueni"
+                        target="_blank"
+                    >
+
+                        github.com/hehueni
+
+                    </a>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <span>
+                        LOCALISATION
+                    </span>
+
+                    <p>
+                        Abidjan, Côte d'Ivoire
+                    </p>
 
                 </div>
 
             </div>
 
+        </section>
 
-        </article>
-
-
-
-        <!-- Informatique -->
-
-        <article class="skill">
+    </main>
 
 
-            <div class="skill-icon">
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
-                <i class="fa-solid fa-server"></i>
+    <footer>
 
+        <div class="footer-left">
+
+            <div class="footer-logo">
+                HF
             </div>
 
-
-            <div>
-
-                <span>
-                    03
-                </span>
-
-                <h3>
-                    Informatique
-                </h3>
-
-                <p>
-
-                    Maintenance et assistance
-                    technique aux utilisateurs.
-
-                </p>
-
-
-                <div class="skill-tags">
-
-                    <span>
-                        Maintenance
-                    </span>
-
-                    <span>
-                        Réseaux
-                    </span>
-
-                    <span>
-                        Support
-                    </span>
-
-                </div>
-
-            </div>
-
-
-        </article>
-
-
-
-        <!-- Conception -->
-
-        <article class="skill">
-
-
-            <div class="skill-icon">
-
-                <i class="fa-solid fa-diagram-project"></i>
-
-            </div>
-
-
-            <div>
-
-                <span>
-                    04
-                </span>
-
-                <h3>
-                    Conception d'applications
-                </h3>
-
-                <p>
-
-                    Analyse des besoins et conception
-                    de solutions numériques.
-
-                </p>
-
-
-                <div class="skill-tags">
-
-                    <span>
-                        UML
-                    </span>
-
-                    <span>
-                        RUP
-                    </span>
-
-                    <span>
-                        Analyse
-                    </span>
-
-                </div>
-
-            </div>
-
-
-        </article>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- ========================================================
-     CONTACT
-========================================================= -->
-
-<section id="contact"
-         class="contact-section">
-
-
-    <div class="contact-content">
-
-
-        <div class="section-index">
-
-            06 / CONTACT
-
-        </div>
-
-
-        <h2>
-
-            Vous avez un projet
-            <br>
-
-            <span>en tête ?</span>
-
-        </h2>
-
-
-        <p>
-
-            Je suis ouvert aux opportunités
-            professionnelles, collaborations et
-            projets permettant de mettre mes
-            compétences au service de solutions
-            concrètes.
-
-        </p>
-
-
-        <a href="mailto:hehueni@gmail.com"
-           class="contact-button">
-
-            Discutons ensemble
-
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-        </a>
-
-
-    </div>
-
-
-
-    <!-- Coordonnées -->
-
-    <div class="contact-information">
-
-
-        <div class="contact-item">
-
-
-            <span class="contact-label">
-                EMAIL
+            <span>
+                © 2026 Harisson Ford
             </span>
 
-
-            <a href="mailto:hehueni@gmail.com">
-
-                hehueni@gmail.com
-
-            </a>
-
-
         </div>
 
-
-
-        <div class="contact-item">
-
-
-            <span class="contact-label">
-                TÉLÉPHONE
-            </span>
-
-
-            <a href="tel:+2250544626778">
-
-                05.44.62.67.78
-
-            </a>
-
-
-            <a href="tel:+2250160951241">
-
-                01.60.95.12.41
-
-            </a>
-
-
-        </div>
-
-
-
-        <div class="contact-item">
-
-
-            <span class="contact-label">
-                GITHUB
-            </span>
-
-
-            <a href="https://github.com/hehueni"
-               target="_blank"
-               rel="noopener noreferrer">
-
-                github.com/hehueni
-
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-
-</section>
-
-
-
-<!-- ========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-
-
-    <div class="footer-left">
-
-        <span class="footer-logo">
-            HF
-        </span>
 
         <span>
-            HARISSON FORD
+            Conçu & développé avec passion.
         </span>
 
-    </div>
+    </footer>
 
 
-    <p>
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
-        © 2026 Harisson Ford.
-        Tous droits réservés.
+    <script>
 
-    </p>
+        const navigation =
+            document.querySelector(".navigation");
 
-
-    <p class="footer-code">
-
-        Designed & Developed by Harisson Ford
-
-    </p>
-
-
-</footer>
-
-
-</main>
-
-
-
-<!-- ========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script>
-
-
-/* =========================================================
-   MENU MOBILE
-========================================================= */
-
-const menuButton =
-    document.querySelector(".menu-button");
-
-const navigation =
-    document.querySelector(".navigation");
-
-
-if (menuButton) {
-
-    menuButton.addEventListener(
-        "click",
-        () => {
-
-            navigation.classList.toggle(
-                "navigation-open"
-            );
-
-        }
-    );
-
-}
-
-
-
-/* =========================================================
-   FERMER LE MENU APRÈS UN CLIC
-========================================================= */
-
-const navigationLinks =
-    document.querySelectorAll(".nav-link");
-
-
-navigationLinks.forEach(link => {
-
-    link.addEventListener(
-        "click",
-        () => {
-
-            navigation.classList.remove(
-                "navigation-open"
-            );
-
-        }
-    );
-
-});
-
-
-
-/* =========================================================
-   NAVIGATION ACTIVE AU SCROLL
-========================================================= */
-
-const sections =
-    document.querySelectorAll("section[id]");
-
-
-const navLinks =
-    document.querySelectorAll(".nav-link");
-
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        let current = "";
-
-        sections.forEach(section => {
-
-            const sectionTop =
-                section.offsetTop - 180;
-
-            const sectionHeight =
-                section.clientHeight;
-
-            if (
-                window.scrollY >= sectionTop &&
-                window.scrollY <
-                sectionTop + sectionHeight
-            ) {
-
-                current =
-                    section.getAttribute("id");
-
-            }
-
-        });
+        const navLinks =
+            document.querySelectorAll(".nav-link");
 
 
         navLinks.forEach(link => {
 
-            link.classList.remove(
-                "active"
-            );
+            link.addEventListener("click", () => {
 
+                navLinks.forEach(item => {
 
-            if (
-                link.getAttribute("href") ===
-                "#" + current
-            ) {
+                    item.classList.remove("active");
 
-                link.classList.add(
-                    "active"
-                );
+                });
 
-            }
-
-        });
-
-    }
-);
-
-
-
-/* =========================================================
-   APPARITION DES ÉLÉMENTS
-========================================================= */
-
-const observer =
-    new IntersectionObserver(
-        (entries) => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add(
-                        "visible"
-                    );
-
-                }
+                link.classList.add("active");
 
             });
 
-        },
-        {
-            threshold: 0.12
-        }
-    );
+        });
 
-
-document
-    .querySelectorAll(
-        ".project, .skill, .about-card, .experience-item, .education-item"
-    )
-    .forEach(element => {
-
-        observer.observe(element);
-
-    });
-
-
-</script>
-
+    </script>
 
 </body>
 
