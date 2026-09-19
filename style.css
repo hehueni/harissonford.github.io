@@ -1,5 +1,5 @@
 /* =========================================================
-   RESET
+   RESET & BASE
 ========================================================= */
 
 * {
@@ -30,6 +30,12 @@ img {
     max-width: 100%;
 }
 
+button,
+input,
+textarea {
+    font: inherit;
+}
+
 
 /* =========================================================
    BACKGROUND
@@ -49,12 +55,12 @@ img {
 
     background-image:
         linear-gradient(
-            rgba(255,255,255,0.025) 1px,
+            rgba(255, 255, 255, 0.025) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255,255,255,0.025) 1px,
+            rgba(255, 255, 255, 0.025) 1px,
             transparent 1px
         );
 
@@ -125,7 +131,7 @@ img {
     padding: 30px 24px;
 
     background: rgba(10, 10, 16, 0.97);
-    border-right: 1px solid rgba(255,255,255,0.08);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
 
     display: flex;
     flex-direction: column;
@@ -137,12 +143,13 @@ img {
     display: flex;
     align-items: center;
     gap: 13px;
+
     margin-bottom: 45px;
 }
 
 
 /* =========================================================
-   PETITE PHOTO SIDEBAR
+   PHOTO SIDEBAR
 ========================================================= */
 
 .profile-mini {
@@ -155,7 +162,7 @@ img {
     border-radius: 50%;
     overflow: hidden;
 
-    border: 2px solid rgba(139,124,246,0.7);
+    border: 2px solid rgba(139, 124, 246, 0.7);
 
     background: #15151f;
 }
@@ -231,7 +238,7 @@ img {
 .navigation-link:hover,
 .navigation-link.active {
     color: white;
-    background: rgba(124,58,237,0.14);
+    background: rgba(124, 58, 237, 0.14);
 }
 
 
@@ -246,8 +253,8 @@ img {
 
     border-radius: 15px;
 
-    background: rgba(255,255,255,0.035);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.07);
 }
 
 .availability-status {
@@ -257,6 +264,7 @@ img {
 
     font-size: 9px;
     letter-spacing: 1.5px;
+
     color: #8f8f9b;
 
     margin-bottom: 12px;
@@ -284,6 +292,7 @@ img {
     font-size: 11px;
     color: #777782;
     line-height: 1.6;
+
     margin-bottom: 15px;
 }
 
@@ -294,7 +303,7 @@ img {
 
     padding: 10px 12px;
 
-    background: rgba(124,58,237,0.15);
+    background: rgba(124, 58, 237, 0.15);
 
     border-radius: 8px;
 
@@ -304,12 +313,12 @@ img {
 }
 
 .availability-button:hover {
-    background: rgba(124,58,237,0.25);
+    background: rgba(124, 58, 237, 0.25);
 }
 
 
 /* =========================================================
-   SOCIAL
+   RÉSEAUX
 ========================================================= */
 
 .sidebar-social {
@@ -331,7 +340,7 @@ img {
 
     border-radius: 9px;
 
-    background: rgba(255,255,255,0.04);
+    background: rgba(255, 255, 255, 0.04);
 
     color: #858591;
 
@@ -340,7 +349,9 @@ img {
 
 .social-links a:hover {
     color: white;
-    background: rgba(124,58,237,0.25);
+
+    background: rgba(124, 58, 237, 0.25);
+
     transform: translateY(-2px);
 }
 
@@ -437,7 +448,9 @@ img {
 
 .hero-description {
     color: #858590;
+
     font-size: 14px;
+
     max-width: 590px;
 }
 
@@ -447,12 +460,13 @@ img {
 
 
 /* =========================================================
-   BUTTONS
+   HERO BUTTONS
 ========================================================= */
 
 .hero-buttons {
     display: flex;
     gap: 12px;
+
     margin-top: 30px;
 }
 
@@ -486,18 +500,20 @@ img {
 
     box-shadow:
         0 12px 30px
-        rgba(124,58,237,0.25);
+        rgba(124, 58, 237, 0.25);
 }
 
 .button-secondary {
-    border: 1px solid rgba(255,255,255,0.12);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
     color: #aaaab5;
 }
 
 .button-secondary:hover {
     color: white;
-    border-color: rgba(255,255,255,0.3);
+
+    border-color:
+        rgba(255, 255, 255, 0.3);
 }
 
 
@@ -511,14 +527,18 @@ img {
 
 .hero-technologies p {
     font-size: 9px;
+
     color: #5f5f6b;
+
     letter-spacing: 2px;
+
     margin-bottom: 12px;
 }
 
 .technology-list {
     display: flex;
     flex-wrap: wrap;
+
     gap: 8px;
 }
 
@@ -529,13 +549,13 @@ img {
 
     border-radius: 6px;
 
-    background: rgba(255,255,255,0.045);
+    background: rgba(255, 255, 255, 0.045);
 
     color: #9999a5;
 
     font-size: 10px;
 
-    border: 1px solid rgba(255,255,255,0.06);
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 
@@ -552,6 +572,7 @@ img {
     margin: 0 auto;
 
     display: flex;
+
     justify-content: center;
     align-items: center;
 
@@ -567,40 +588,36 @@ img {
     width: 100%;
     max-width: 370px;
 
-    background: rgba(15,15,23,0.95);
+    background: rgba(15, 15, 23, 0.95);
 
-    border: 1px solid rgba(255,255,255,0.09);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.09);
 
     border-radius: 22px;
 
     overflow: hidden;
 
     box-shadow:
-        0 30px 80px rgba(0,0,0,0.45),
-        0 0 80px rgba(124,58,237,0.08);
-}
-
-
-/* =========================================================
-   PHOTO WRAPPER
-========================================================= */
-
-.profile-image-wrapper {
-    position: relative;
-
-    width: 100%;
-
-    height: 330px;
-
-    overflow: hidden;
-
-    background: #11111a;
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        0 0 80px rgba(124, 58, 237, 0.08);
 }
 
 
 /* =========================================================
    PHOTO PRINCIPALE
 ========================================================= */
+
+.profile-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #11111a;
+}
 
 .profile-image-wrapper .profile-photo {
     position: absolute;
@@ -621,7 +638,7 @@ img {
 
 
 /* =========================================================
-   INFOS PHOTO
+   INFOS PROFILE
 ========================================================= */
 
 .profile-card-info {
@@ -652,6 +669,7 @@ img {
 
 .profile-card-info h3 {
     font-size: 21px;
+
     margin-top: 10px;
 }
 
@@ -663,6 +681,7 @@ img {
 .profile-location {
     display: flex;
     align-items: center;
+
     gap: 7px;
 
     color: #666673;
@@ -689,12 +708,15 @@ img {
 
     border-radius: 13px;
 
-    background: rgba(20,20,30,0.95);
+    background: rgba(20, 20, 30, 0.95);
 
-    border: 1px solid rgba(255,255,255,0.1);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
 
     box-shadow:
-        0 15px 30px rgba(0,0,0,0.3);
+        0 15px 30px
+        rgba(0, 0, 0, 0.3);
 
     z-index: 5;
 }
@@ -702,18 +724,21 @@ img {
 .icon-one {
     top: 30px;
     right: 15px;
+
     color: #f97316;
 }
 
 .icon-two {
     bottom: 100px;
     left: 5px;
+
     color: #facc15;
 }
 
 .icon-three {
     bottom: 20px;
     right: 25px;
+
     color: #60a5fa;
 }
 
@@ -725,12 +750,18 @@ img {
 .quick-info {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3, 1fr);
 
     margin: 0 8%;
 
-    border-top: 1px solid rgba(255,255,255,0.07);
-    border-bottom: 1px solid rgba(255,255,255,0.07);
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 }
 
 .quick-item {
@@ -741,7 +772,9 @@ img {
 
     padding: 22px 10px;
 
-    border-right: 1px solid rgba(255,255,255,0.07);
+    border-right:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 
     min-width: 0;
 }
@@ -806,7 +839,8 @@ img {
 }
 
 .section-heading h2 {
-    font-size: clamp(30px, 4vw, 48px);
+    font-size:
+        clamp(30px, 4vw, 48px);
 
     line-height: 1.1;
 
@@ -817,7 +851,7 @@ img {
 
 
 /* =========================================================
-   ABOUT
+   À PROPOS
 ========================================================= */
 
 .about-grid {
@@ -840,6 +874,7 @@ img {
 
 .about-text .about-intro {
     color: #b0b0ba;
+
     font-size: 17px;
 }
 
@@ -850,7 +885,8 @@ img {
 .about-cards {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 15px;
 }
@@ -858,9 +894,12 @@ img {
 .about-card {
     padding: 22px;
 
-    border: 1px solid rgba(255,255,255,0.07);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 
-    background: rgba(255,255,255,0.025);
+    background:
+        rgba(255, 255, 255, 0.025);
 
     border-radius: 14px;
 
@@ -869,7 +908,9 @@ img {
 
 .about-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(124,58,237,0.3);
+
+    border-color:
+        rgba(124, 58, 237, 0.3);
 }
 
 .about-card i {
@@ -890,18 +931,20 @@ img {
 
 .about-card p {
     color: #777782;
+
     font-size: 11px;
 }
 
 
 /* =========================================================
-   SKILLS
+   COMPÉTENCES
 ========================================================= */
 
 .skills-grid {
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 18px;
 }
@@ -909,11 +952,14 @@ img {
 .skill-card {
     padding: 28px;
 
-    border: 1px solid rgba(255,255,255,0.07);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 
     border-radius: 15px;
 
-    background: rgba(255,255,255,0.025);
+    background:
+        rgba(255, 255, 255, 0.025);
 
     transition: 0.3s;
 }
@@ -921,11 +967,13 @@ img {
 .skill-card:hover {
     transform: translateY(-4px);
 
-    border-color: rgba(124,58,237,0.3);
+    border-color:
+        rgba(124, 58, 237, 0.3);
 }
 
 .skill-top {
     display: flex;
+
     justify-content: space-between;
 
     color: #555562;
@@ -943,7 +991,8 @@ img {
 
     border-radius: 11px;
 
-    background: rgba(124,58,237,0.12);
+    background:
+        rgba(124, 58, 237, 0.12);
 
     color: #a78bfa;
 }
@@ -964,7 +1013,9 @@ img {
 
 .tags {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 6px;
 }
 
@@ -984,6 +1035,7 @@ img {
 
 .tools-list {
     display: flex;
+
     flex-wrap: wrap;
 
     gap: 7px;
@@ -991,36 +1043,42 @@ img {
 
 
 /* =========================================================
-   PROJECTS
+   PROJETS
 ========================================================= */
 
 .projects {
     display: flex;
+
     flex-direction: column;
+
     gap: 25px;
 }
 
 .project-card {
     display: grid;
 
-    grid-template-columns: 42% 58%;
+    grid-template-columns:
+        42% 58%;
 
     min-height: 370px;
 
-    border: 1px solid rgba(255,255,255,0.07);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 
     border-radius: 18px;
 
     overflow: hidden;
 
-    background: rgba(255,255,255,0.025);
+    background:
+        rgba(255, 255, 255, 0.025);
 
     min-width: 0;
 }
 
 
 /* =========================================================
-   PROJECT IMAGE / VISUAL AREA
+   ZONE VISUELLE PROJET
 ========================================================= */
 
 .project-image {
@@ -1046,18 +1104,23 @@ img {
 
     font-size: 10px;
 
-    color: rgba(255,255,255,0.5);
+    color: rgba(255, 255, 255, 0.5);
 
     letter-spacing: 2px;
 
     z-index: 4;
 }
 
+
+/* =========================================================
+   BACKGROUNDS PROJETS
+========================================================= */
+
 .lecture-project {
     background:
         radial-gradient(
             circle at center,
-            rgba(124,58,237,0.18),
+            rgba(124, 58, 237, 0.18),
             transparent 60%
         ),
         linear-gradient(
@@ -1071,7 +1134,7 @@ img {
     background:
         radial-gradient(
             circle at center,
-            rgba(34,197,94,0.08),
+            rgba(34, 197, 94, 0.08),
             transparent 60%
         ),
         linear-gradient(
@@ -1085,7 +1148,7 @@ img {
     background:
         radial-gradient(
             circle at center,
-            rgba(79,70,229,0.14),
+            rgba(79, 70, 229, 0.14),
             transparent 60%
         ),
         linear-gradient(
@@ -1097,23 +1160,28 @@ img {
 
 
 /* =========================================================
-   PROJECT WINDOWS
+   INTERFACES PROJETS
 ========================================================= */
 
 .project-window,
 .pointage-interface,
 .stage-interface {
     width: 72%;
+
     max-width: 310px;
 
-    background: rgba(15,15,23,0.95);
+    background:
+        rgba(15, 15, 23, 0.95);
 
-    border: 1px solid rgba(255,255,255,0.1);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.1);
 
     border-radius: 12px;
 
     box-shadow:
-        0 25px 50px rgba(0,0,0,0.4);
+        0 25px 50px
+        rgba(0, 0, 0, 0.4);
 
     overflow: hidden;
 
@@ -1122,7 +1190,7 @@ img {
 
 
 /* =========================================================
-   LECTURE CONNAISSANCE INTERFACE
+   INTERFACE LECTURE CONNAISSANCE
 ========================================================= */
 
 .project-window {
@@ -1133,13 +1201,16 @@ img {
     height: 28px;
 
     display: flex;
+
     align-items: center;
 
     gap: 4px;
 
     padding-left: 10px;
 
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.05);
 }
 
 .project-window-top span {
@@ -1219,7 +1290,7 @@ img {
 
 
 /* =========================================================
-   POINTAGE INTERFACE
+   INTERFACE POINTAGE
 ========================================================= */
 
 .pointage-interface {
@@ -1250,9 +1321,12 @@ img {
 
     border-radius: 50%;
 
-    background: rgba(34,197,94,0.1);
+    background:
+        rgba(34, 197, 94, 0.1);
 
-    border: 1px solid rgba(34,197,94,0.3);
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.3);
 
     color: #4ade80;
 
@@ -1269,7 +1343,7 @@ img {
 
 
 /* =========================================================
-   STAGE MANAGER INTERFACE
+   INTERFACE STAGE MANAGER
 ========================================================= */
 
 .stage-interface {
@@ -1288,7 +1362,9 @@ img {
 
     padding-bottom: 15px;
 
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.06);
 }
 
 .stage-header i {
@@ -1317,7 +1393,8 @@ img {
 
     border-radius: 10px;
 
-    background: rgba(124,58,237,0.15);
+    background:
+        rgba(124, 58, 237, 0.15);
 
     color: #a78bfa;
 }
@@ -1346,7 +1423,8 @@ img {
 
     border-radius: 7px;
 
-    background: rgba(124,58,237,0.2);
+    background:
+        rgba(124, 58, 237, 0.2);
 
     color: #b9a7ff;
 
@@ -1355,7 +1433,7 @@ img {
 
 
 /* =========================================================
-   PROJECT CONTENT
+   CONTENU PROJET
 ========================================================= */
 
 .project-content {
@@ -1364,7 +1442,9 @@ img {
     min-width: 0;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: center;
 }
 
@@ -1409,7 +1489,8 @@ img {
 
     border-radius: 6px;
 
-    background: rgba(255,255,255,0.045);
+    background:
+        rgba(255, 255, 255, 0.045);
 
     color: #858590;
 
@@ -1429,7 +1510,9 @@ img {
 
     padding-top: 20px;
 
-    border-top: 1px solid rgba(255,255,255,0.07);
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 
     color: #5f5f6a;
 
@@ -1438,12 +1521,13 @@ img {
 
 .project-bottom a {
     color: #a78bfa;
+
     white-space: nowrap;
 }
 
 
 /* =========================================================
-   EXPERIENCE
+   EXPÉRIENCE
 ========================================================= */
 
 .timeline {
@@ -1457,7 +1541,9 @@ img {
 
     padding-bottom: 50px;
 
-    border-left: 1px solid rgba(255,255,255,0.1);
+    border-left:
+        1px solid
+        rgba(255, 255, 255, 0.1);
 }
 
 .timeline-item:last-child {
@@ -1478,7 +1564,8 @@ img {
     background: #8b7cf6;
 
     box-shadow:
-        0 0 15px rgba(139,124,246,0.6);
+        0 0 15px
+        rgba(139, 124, 246, 0.6);
 }
 
 .timeline-label {
@@ -1539,9 +1626,21 @@ img {
 
     border-radius: 14px;
 
-    border: 1px solid rgba(255,255,255,0.07);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 
-    background: rgba(255,255,255,0.025);
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    transition: 0.3s;
+}
+
+.education-card:hover {
+    transform: translateX(4px);
+
+    border-color:
+        rgba(124, 58, 237, 0.25);
 }
 
 .education-badge {
@@ -1551,12 +1650,14 @@ img {
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border-radius: 12px;
 
-    background: rgba(124,58,237,0.13);
+    background:
+        rgba(124, 58, 237, 0.13);
 
     color: #b9a7ff;
 
@@ -1567,6 +1668,7 @@ img {
 
 .education-info {
     flex: 1;
+
     min-width: 0;
 }
 
@@ -1602,9 +1704,12 @@ img {
 .contact-section {
     padding: 110px 8%;
 
-    background: rgba(255,255,255,0.02);
+    background:
+        rgba(255, 255, 255, 0.02);
 
-    border-top: 1px solid rgba(255,255,255,0.07);
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 }
 
 .contact-container {
@@ -1626,7 +1731,8 @@ img {
 }
 
 .contact-text h2 {
-    font-size: clamp(35px, 5vw, 60px);
+    font-size:
+        clamp(35px, 5vw, 60px);
 
     line-height: 1;
 
@@ -1664,11 +1770,23 @@ img {
 
     border-radius: 11px;
 
-    border: 1px solid rgba(255,255,255,0.06);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.06);
 
-    background: rgba(255,255,255,0.025);
+    background:
+        rgba(255, 255, 255, 0.025);
 
     min-width: 0;
+
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    border-color:
+        rgba(124, 58, 237, 0.25);
+
+    transform: translateX(3px);
 }
 
 .contact-icon {
@@ -1678,12 +1796,14 @@ img {
     flex-shrink: 0;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border-radius: 9px;
 
-    background: rgba(124,58,237,0.12);
+    background:
+        rgba(124, 58, 237, 0.12);
 
     color: #a78bfa;
 }
@@ -1722,13 +1842,16 @@ footer {
     display: flex;
 
     justify-content: space-between;
+
     align-items: center;
 
     gap: 20px;
 
     padding: 25px 8%;
 
-    border-top: 1px solid rgba(255,255,255,0.07);
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
 
     color: #555562;
 
@@ -1745,6 +1868,7 @@ footer {
 
 .footer-logo strong {
     color: white;
+
     font-size: 15px;
 }
 
@@ -1754,7 +1878,7 @@ footer {
 
 
 /* =========================================================
-   TABLETTE
+   TABLETTE LARGE
 ========================================================= */
 
 @media (max-width: 1100px) {
@@ -1765,6 +1889,7 @@ footer {
 
     .main-content {
         width: calc(100% - 220px);
+
         margin-left: 220px;
     }
 
@@ -1781,6 +1906,7 @@ footer {
 
     .hero-visual {
         max-width: 420px;
+
         margin-top: 20px;
     }
 
@@ -1799,23 +1925,26 @@ footer {
 
 
 /* =========================================================
-   TABLETTE / PETIT ÉCRAN
+   TABLETTE
 ========================================================= */
 
 @media (max-width: 900px) {
 
     .about-grid {
         grid-template-columns: 1fr;
+
         gap: 45px;
     }
 
     .contact-container {
         grid-template-columns: 1fr;
+
         gap: 45px;
     }
 
     .skills-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
     }
 }
 
@@ -1838,13 +1967,16 @@ footer {
 
         border-right: none;
 
-        border-bottom: 1px solid rgba(255,255,255,0.08);
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.08);
 
         padding: 22px 20px;
     }
 
     .main-content {
         width: 100%;
+
         margin-left: 0;
     }
 
@@ -1855,7 +1987,8 @@ footer {
     .navigation {
         display: grid;
 
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
 
         gap: 5px;
     }
@@ -1876,6 +2009,7 @@ footer {
 
     .hero-visual {
         max-width: 370px;
+
         margin-top: 0;
     }
 
@@ -1896,7 +2030,9 @@ footer {
     .quick-item {
         border-right: none;
 
-        border-bottom: 1px solid rgba(255,255,255,0.07);
+        border-bottom:
+            1px solid
+            rgba(255, 255, 255, 0.07);
     }
 
     .quick-item:last-child {
@@ -1930,6 +2066,7 @@ footer {
 
     footer {
         flex-direction: column;
+
         text-align: center;
     }
 }
@@ -1951,11 +2088,13 @@ footer {
 
     .hero {
         padding: 65px 6%;
+
         gap: 40px;
     }
 
     .hero h1 {
         font-size: 55px;
+
         letter-spacing: -3px;
     }
 
@@ -1973,11 +2112,13 @@ footer {
 
     .hero-visual {
         width: 100%;
+
         max-width: 330px;
     }
 
     .profile-card {
         width: 100%;
+
         max-width: 330px;
     }
 
@@ -2003,6 +2144,7 @@ footer {
 
     .project-bottom {
         align-items: flex-start;
+
         flex-direction: column;
     }
 
@@ -2014,6 +2156,7 @@ footer {
     .pointage-interface,
     .stage-interface {
         width: 78%;
+
         max-width: 280px;
     }
 
@@ -2060,6 +2203,7 @@ footer {
     .floating-icon {
         width: 38px;
         height: 38px;
+
         border-radius: 10px;
     }
 
