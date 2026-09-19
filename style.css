@@ -1,6 +1,6 @@
-/* =====================================================
+/* =========================================================
    RESET
-===================================================== */
+========================================================= */
 
 * {
     margin: 0;
@@ -31,9 +31,9 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    BACKGROUND
-===================================================== */
+========================================================= */
 
 .background {
     position: fixed;
@@ -49,12 +49,12 @@ img {
 
     background-image:
         linear-gradient(
-            rgba(255, 255, 255, 0.025) 1px,
+            rgba(255,255,255,0.025) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.025) 1px,
+            rgba(255,255,255,0.025) 1px,
             transparent 1px
         );
 
@@ -94,19 +94,25 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    STRUCTURE
-===================================================== */
+========================================================= */
 
 .site-wrapper {
     display: flex;
     min-height: 100vh;
 }
 
+.main-content {
+    width: calc(100% - 270px);
+    margin-left: 270px;
+    min-width: 0;
+}
 
-/* =====================================================
+
+/* =========================================================
    SIDEBAR
-===================================================== */
+========================================================= */
 
 .sidebar {
     position: fixed;
@@ -119,13 +125,12 @@ img {
     padding: 30px 24px;
 
     background: rgba(10, 10, 16, 0.97);
-    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid rgba(255,255,255,0.08);
 
     display: flex;
     flex-direction: column;
 
     z-index: 100;
-    overflow-y: auto;
 }
 
 .sidebar-profile {
@@ -136,9 +141,9 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    PETITE PHOTO SIDEBAR
-===================================================== */
+========================================================= */
 
 .profile-mini {
     width: 48px;
@@ -148,10 +153,9 @@ img {
     min-height: 48px;
 
     border-radius: 50%;
-
     overflow: hidden;
 
-    border: 2px solid rgba(139, 124, 246, 0.7);
+    border: 2px solid rgba(139,124,246,0.7);
 
     background: #15151f;
 }
@@ -160,13 +164,16 @@ img {
     width: 100%;
     height: 100%;
 
+    max-width: none;
+
     object-fit: cover;
+    object-position: center;
 }
 
 
-/* =====================================================
+/* =========================================================
    SIDEBAR TEXT
-===================================================== */
+========================================================= */
 
 .sidebar-profile h2 {
     font-size: 16px;
@@ -188,9 +195,9 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    NAVIGATION
-===================================================== */
+========================================================= */
 
 .navigation {
     display: flex;
@@ -210,7 +217,10 @@ img {
 
     font-size: 13px;
 
-    transition: all 0.3s ease;
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
 }
 
 .navigation-link i {
@@ -220,14 +230,14 @@ img {
 
 .navigation-link:hover,
 .navigation-link.active {
-    color: #ffffff;
-    background: rgba(124, 58, 237, 0.14);
+    color: white;
+    background: rgba(124,58,237,0.14);
 }
 
 
-/* =====================================================
+/* =========================================================
    DISPONIBILITÉ
-===================================================== */
+========================================================= */
 
 .availability {
     margin-top: auto;
@@ -236,8 +246,8 @@ img {
 
     border-radius: 15px;
 
-    background: rgba(255, 255, 255, 0.035);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.07);
 }
 
 .availability-status {
@@ -284,7 +294,7 @@ img {
 
     padding: 10px 12px;
 
-    background: rgba(124, 58, 237, 0.15);
+    background: rgba(124,58,237,0.15);
 
     border-radius: 8px;
 
@@ -294,13 +304,13 @@ img {
 }
 
 .availability-button:hover {
-    background: rgba(124, 58, 237, 0.25);
+    background: rgba(124,58,237,0.25);
 }
 
 
-/* =====================================================
+/* =========================================================
    SOCIAL
-===================================================== */
+========================================================= */
 
 .sidebar-social {
     margin-top: 25px;
@@ -321,7 +331,7 @@ img {
 
     border-radius: 9px;
 
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255,255,255,0.04);
 
     color: #858591;
 
@@ -329,26 +339,15 @@ img {
 }
 
 .social-links a:hover {
-    color: #ffffff;
-    background: rgba(124, 58, 237, 0.25);
+    color: white;
+    background: rgba(124,58,237,0.25);
     transform: translateY(-2px);
 }
 
 
-/* =====================================================
-   MAIN
-===================================================== */
-
-.main-content {
-    width: calc(100% - 270px);
-    margin-left: 270px;
-    min-width: 0;
-}
-
-
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero {
     min-height: 100vh;
@@ -356,17 +355,18 @@ img {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.1fr)
-        minmax(320px, 0.9fr);
+        minmax(0, 1.05fr)
+        minmax(340px, 0.95fr);
 
     align-items: center;
 
-    gap: 55px;
+    gap: 60px;
 
     padding: 80px 8%;
 }
 
 .hero-content {
+    width: 100%;
     max-width: 650px;
 }
 
@@ -388,6 +388,8 @@ img {
     height: 1px;
 
     background: #8b7cf6;
+
+    flex-shrink: 0;
 }
 
 .hero-introduction {
@@ -440,18 +442,17 @@ img {
 }
 
 .hero-description strong {
-    color: #ffffff;
+    color: white;
 }
 
 
-/* =====================================================
+/* =========================================================
    BUTTONS
-===================================================== */
+========================================================= */
 
 .hero-buttons {
     display: flex;
     gap: 12px;
-
     margin-top: 30px;
 }
 
@@ -469,7 +470,7 @@ img {
     font-size: 12px;
     font-weight: 600;
 
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .button-primary {
@@ -484,37 +485,34 @@ img {
     transform: translateY(-2px);
 
     box-shadow:
-        0 12px 30px rgba(124, 58, 237, 0.25);
+        0 12px 30px
+        rgba(124,58,237,0.25);
 }
 
 .button-secondary {
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255,255,255,0.12);
 
     color: #aaaab5;
 }
 
 .button-secondary:hover {
-    color: #ffffff;
-
-    border-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border-color: rgba(255,255,255,0.3);
 }
 
 
-/* =====================================================
+/* =========================================================
    TECHNOLOGIES
-===================================================== */
+========================================================= */
 
 .hero-technologies {
     margin-top: 45px;
 }
 
-.hero-technologies > p {
+.hero-technologies p {
     font-size: 9px;
-
     color: #5f5f6b;
-
     letter-spacing: 2px;
-
     margin-bottom: 12px;
 }
 
@@ -531,72 +529,69 @@ img {
 
     border-radius: 6px;
 
-    background: rgba(255, 255, 255, 0.045);
+    background: rgba(255,255,255,0.045);
 
     color: #9999a5;
 
     font-size: 10px;
 
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255,255,255,0.06);
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO VISUAL
-===================================================== */
+========================================================= */
 
 .hero-visual {
     position: relative;
 
     width: 100%;
-    max-width: 430px;
+    max-width: 480px;
 
-    margin: auto;
+    margin: 0 auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 20px 30px;
+    min-width: 0;
 }
 
 
-/* =====================================================
+/* =========================================================
    PROFILE CARD
-===================================================== */
+========================================================= */
 
 .profile-card {
     width: 100%;
-    max-width: 350px;
+    max-width: 370px;
 
-    background: rgba(15, 15, 23, 0.96);
+    background: rgba(15,15,23,0.95);
 
-    border: 1px solid rgba(255, 255, 255, 0.09);
+    border: 1px solid rgba(255,255,255,0.09);
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     overflow: hidden;
 
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.45),
-        0 0 80px rgba(124, 58, 237, 0.08);
+        0 30px 80px rgba(0,0,0,0.45),
+        0 0 80px rgba(124,58,237,0.08);
 }
 
 
-/* =====================================================
+/* =========================================================
    PHOTO WRAPPER
-===================================================== */
+   IMPORTANT : PHOTO TOUJOURS LIMITÉE
+========================================================= */
 
 .profile-image-wrapper {
     position: relative;
 
     width: 100%;
 
-    /*
-       PHOTO REDUITE POUR EVITER
-       QU'ELLE PRENNE TOUT L'ECRAN
-    */
-    height: 300px;
+    height: 330px;
 
     overflow: hidden;
 
@@ -604,9 +599,9 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    PHOTO PRINCIPALE
-===================================================== */
+========================================================= */
 
 .profile-image-wrapper .profile-photo {
     position: absolute;
@@ -620,19 +615,18 @@ img {
     max-height: none !important;
 
     object-fit: cover;
-
-    object-position: center 20%;
+    object-position: center;
 
     display: block;
 }
 
 
-/* =====================================================
+/* =========================================================
    INFOS PHOTO
-===================================================== */
+========================================================= */
 
 .profile-card-info {
-    padding: 20px;
+    padding: 22px;
 }
 
 .profile-status {
@@ -658,14 +652,12 @@ img {
 }
 
 .profile-card-info h3 {
-    font-size: 20px;
-
-    margin-top: 9px;
+    font-size: 21px;
+    margin-top: 10px;
 }
 
 .profile-card-info p {
     color: #777782;
-
     font-size: 12px;
 }
 
@@ -678,61 +670,58 @@ img {
 
     font-size: 10px;
 
-    margin-top: 12px;
+    margin-top: 13px;
 }
 
 
-/* =====================================================
+/* =========================================================
    FLOATING ICONS
-===================================================== */
+========================================================= */
 
 .floating-icon {
     position: absolute;
 
-    width: 42px;
-    height: 42px;
+    width: 45px;
+    height: 45px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 12px;
+    border-radius: 13px;
 
-    background: rgba(20, 20, 30, 0.96);
+    background: rgba(20,20,30,0.95);
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.1);
 
     box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.3);
+        0 15px 30px rgba(0,0,0,0.3);
 
     z-index: 5;
 }
 
 .icon-one {
     top: 30px;
-    right: 5px;
-
+    right: 15px;
     color: #f97316;
 }
 
 .icon-two {
     bottom: 100px;
     left: 5px;
-
     color: #facc15;
 }
 
 .icon-three {
     bottom: 20px;
-    right: 20px;
-
+    right: 25px;
     color: #60a5fa;
 }
 
 
-/* =====================================================
+/* =========================================================
    QUICK INFO
-===================================================== */
+========================================================= */
 
 .quick-info {
     display: grid;
@@ -741,9 +730,8 @@ img {
 
     margin: 0 8%;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
 .quick-item {
@@ -754,15 +742,18 @@ img {
 
     padding: 22px 10px;
 
-    border-right: 1px solid rgba(255, 255, 255, 0.07);
+    border-right: 1px solid rgba(255,255,255,0.07);
+
+    min-width: 0;
 }
 
 .quick-item:last-child {
     border-right: none;
 }
 
-.quick-item > i {
+.quick-item i {
     color: #8b7cf6;
+    flex-shrink: 0;
 }
 
 .quick-item span {
@@ -784,12 +775,12 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    SECTIONS
-===================================================== */
+========================================================= */
 
 .section {
-    padding: 110px 8%;
+    padding: 120px 8%;
 }
 
 .section-heading {
@@ -822,18 +813,20 @@ img {
 
     letter-spacing: -1.5px;
 
-    max-width: 800px;
+    max-width: 850px;
 }
 
 
-/* =====================================================
+/* =========================================================
    ABOUT
-===================================================== */
+========================================================= */
 
 .about-grid {
     display: grid;
 
-    grid-template-columns: 1.1fr 1fr;
+    grid-template-columns:
+        minmax(0, 1.1fr)
+        minmax(0, 1fr);
 
     gap: 70px;
 }
@@ -848,12 +841,11 @@ img {
 
 .about-text .about-intro {
     color: #b0b0ba;
-
     font-size: 17px;
 }
 
 .about-text strong {
-    color: #ffffff;
+    color: white;
 }
 
 .about-cards {
@@ -867,19 +859,18 @@ img {
 .about-card {
     padding: 22px;
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255,255,255,0.07);
 
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(255,255,255,0.025);
 
     border-radius: 14px;
 
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .about-card:hover {
     transform: translateY(-4px);
-
-    border-color: rgba(124, 58, 237, 0.3);
+    border-color: rgba(124,58,237,0.3);
 }
 
 .about-card i {
@@ -900,14 +891,13 @@ img {
 
 .about-card p {
     color: #777782;
-
     font-size: 11px;
 }
 
 
-/* =====================================================
+/* =========================================================
    SKILLS
-===================================================== */
+========================================================= */
 
 .skills-grid {
     display: grid;
@@ -920,27 +910,24 @@ img {
 .skill-card {
     padding: 28px;
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255,255,255,0.07);
 
     border-radius: 15px;
 
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(255,255,255,0.025);
 
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .skill-card:hover {
     transform: translateY(-4px);
 
-    border-color: rgba(124, 58, 237, 0.3);
+    border-color: rgba(124,58,237,0.3);
 }
 
 .skill-top {
     display: flex;
-
     justify-content: space-between;
-
-    align-items: flex-start;
 
     color: #555562;
 
@@ -957,7 +944,7 @@ img {
 
     border-radius: 11px;
 
-    background: rgba(124, 58, 237, 0.12);
+    background: rgba(124,58,237,0.12);
 
     color: #a78bfa;
 }
@@ -979,7 +966,6 @@ img {
 .tags {
     display: flex;
     flex-wrap: wrap;
-
     gap: 6px;
 }
 
@@ -1005,14 +991,13 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    PROJECTS
-===================================================== */
+========================================================= */
 
 .projects {
     display: flex;
     flex-direction: column;
-
     gap: 25px;
 }
 
@@ -1023,19 +1008,21 @@ img {
 
     min-height: 370px;
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255,255,255,0.07);
 
     border-radius: 18px;
 
     overflow: hidden;
 
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(255,255,255,0.025);
+
+    min-width: 0;
 }
 
 
-/* =====================================================
-   PROJECT VISUAL AREA
-===================================================== */
+/* =========================================================
+   PROJECT IMAGE / VISUAL AREA
+========================================================= */
 
 .project-image {
     position: relative;
@@ -1049,7 +1036,7 @@ img {
 
     overflow: hidden;
 
-    padding: 30px;
+    min-width: 0;
 }
 
 .project-number {
@@ -1060,22 +1047,19 @@ img {
 
     font-size: 10px;
 
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255,255,255,0.5);
 
     letter-spacing: 2px;
+
+    z-index: 4;
 }
-
-
-/* =====================================================
-   PROJECT BACKGROUNDS
-===================================================== */
 
 .lecture-project {
     background:
         radial-gradient(
-            circle at 20% 20%,
-            rgba(124, 58, 237, 0.18),
-            transparent 40%
+            circle at center,
+            rgba(124,58,237,0.18),
+            transparent 60%
         ),
         linear-gradient(
             135deg,
@@ -1087,9 +1071,9 @@ img {
 .pointage-project {
     background:
         radial-gradient(
-            circle at 80% 30%,
-            rgba(34, 197, 94, 0.08),
-            transparent 40%
+            circle at center,
+            rgba(34,197,94,0.08),
+            transparent 60%
         ),
         linear-gradient(
             135deg,
@@ -1101,43 +1085,50 @@ img {
 .stage-project {
     background:
         radial-gradient(
-            circle at 30% 30%,
-            rgba(59, 130, 246, 0.1),
-            transparent 40%
+            circle at center,
+            rgba(79,70,229,0.14),
+            transparent 60%
         ),
         linear-gradient(
             135deg,
-            #111827,
-            #171126
+            #141126,
+            #10131f
         );
 }
 
 
-/* =====================================================
-   GENERIC PROJECT WINDOW
-===================================================== */
+/* =========================================================
+   PROJECT WINDOWS
+========================================================= */
 
 .project-window,
 .pointage-interface,
 .stage-interface {
-    width: min(78%, 300px);
+    width: 72%;
+    max-width: 310px;
 
-    background: rgba(15, 15, 23, 0.96);
+    background: rgba(15,15,23,0.95);
 
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.1);
 
     border-radius: 12px;
 
     box-shadow:
-        0 25px 50px rgba(0, 0, 0, 0.4);
+        0 25px 50px rgba(0,0,0,0.4);
 
     overflow: hidden;
+
+    position: relative;
 }
 
 
-/* =====================================================
-   WINDOW TOP
-===================================================== */
+/* =========================================================
+   LECTURE CONNAISSANCE INTERFACE
+========================================================= */
+
+.project-window {
+    min-height: 220px;
+}
 
 .project-window-top {
     height: 28px;
@@ -1149,7 +1140,7 @@ img {
 
     padding-left: 10px;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .project-window-top span {
@@ -1161,13 +1152,8 @@ img {
     background: #555;
 }
 
-
-/* =====================================================
-   LECTURE CONNAISSANCE INTERFACE
-===================================================== */
-
 .book-interface {
-    padding: 30px 23px;
+    padding: 30px 25px;
 }
 
 .book-logo {
@@ -1183,6 +1169,8 @@ img {
     background: #7c3aed;
 
     font-weight: 800;
+
+    font-size: 14px;
 }
 
 .book-lines {
@@ -1231,9 +1219,9 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    POINTAGE INTERFACE
-===================================================== */
+========================================================= */
 
 .pointage-interface {
     padding: 20px;
@@ -1263,9 +1251,9 @@ img {
 
     border-radius: 50%;
 
-    background: rgba(34, 197, 94, 0.1);
+    background: rgba(34,197,94,0.1);
 
-    border: 1px solid rgba(34, 197, 94, 0.3);
+    border: 1px solid rgba(34,197,94,0.3);
 
     color: #4ade80;
 
@@ -1281,9 +1269,9 @@ img {
 }
 
 
-/* =====================================================
-   STAGIAIRES INTERFACE
-===================================================== */
+/* =========================================================
+   STAGE MANAGER INTERFACE
+========================================================= */
 
 .stage-interface {
     padding: 20px;
@@ -1293,22 +1281,19 @@ img {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
-
-    padding-bottom: 15px;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
     color: #777782;
 
     font-size: 9px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
 
-.stage-header strong {
-    color: #aaaab5;
-
-    font-size: 9px;
+.stage-header i {
+    color: #a78bfa;
 }
 
 .stage-display {
@@ -1318,12 +1303,14 @@ img {
 
     gap: 12px;
 
-    margin: 30px 0 25px;
+    margin: 25px 0;
 }
 
 .stage-icon {
     width: 45px;
     height: 45px;
+
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
@@ -1331,11 +1318,9 @@ img {
 
     border-radius: 10px;
 
-    background: rgba(59, 130, 246, 0.13);
+    background: rgba(124,58,237,0.15);
 
-    color: #60a5fa;
-
-    flex-shrink: 0;
+    color: #a78bfa;
 }
 
 .stage-display strong,
@@ -1344,17 +1329,15 @@ img {
 }
 
 .stage-display strong {
-    color: #d1d1da;
-
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .stage-display span {
+    margin-top: 4px;
+
     color: #666673;
 
-    font-size: 9px;
-
-    margin-top: 3px;
+    font-size: 8px;
 }
 
 .stage-button {
@@ -1364,20 +1347,23 @@ img {
 
     border-radius: 7px;
 
-    background: rgba(59, 130, 246, 0.12);
+    background: rgba(124,58,237,0.2);
 
-    color: #8dbdff;
+    color: #b9a7ff;
 
     font-size: 9px;
 }
 
 
-/* =====================================================
+/* =========================================================
    PROJECT CONTENT
-===================================================== */
+========================================================= */
 
 .project-content {
-    padding: 42px;
+    padding: 45px;
+
+    min-width: 0;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1394,7 +1380,7 @@ img {
 }
 
 .project-content h3 {
-    font-size: 27px;
+    font-size: 28px;
 
     line-height: 1.2;
 
@@ -1424,13 +1410,11 @@ img {
 
     border-radius: 6px;
 
-    background: rgba(255, 255, 255, 0.045);
+    background: rgba(255,255,255,0.045);
 
     color: #858590;
 
     font-size: 9px;
-
-    border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .project-bottom {
@@ -1446,7 +1430,7 @@ img {
 
     padding-top: 20px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid rgba(255,255,255,0.07);
 
     color: #5f5f6a;
 
@@ -1455,18 +1439,13 @@ img {
 
 .project-bottom a {
     color: #a78bfa;
-
-    transition: 0.3s;
-}
-
-.project-bottom a:hover {
-    color: #ffffff;
+    white-space: nowrap;
 }
 
 
-/* =====================================================
+/* =========================================================
    EXPERIENCE
-===================================================== */
+========================================================= */
 
 .timeline {
     max-width: 850px;
@@ -1479,7 +1458,7 @@ img {
 
     padding-bottom: 50px;
 
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255,255,255,0.1);
 }
 
 .timeline-item:last-child {
@@ -1500,7 +1479,7 @@ img {
     background: #8b7cf6;
 
     box-shadow:
-        0 0 15px rgba(139, 124, 246, 0.6);
+        0 0 15px rgba(139,124,246,0.6);
 }
 
 .timeline-label {
@@ -1536,9 +1515,9 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    FORMATION
-===================================================== */
+========================================================= */
 
 .education {
     display: flex;
@@ -1561,16 +1540,9 @@ img {
 
     border-radius: 14px;
 
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255,255,255,0.07);
 
-    background: rgba(255, 255, 255, 0.025);
-
-    transition: 0.3s;
-}
-
-.education-card:hover {
-    border-color: rgba(124, 58, 237, 0.25);
-    transform: translateX(3px);
+    background: rgba(255,255,255,0.025);
 }
 
 .education-badge {
@@ -1585,7 +1557,7 @@ img {
 
     border-radius: 12px;
 
-    background: rgba(124, 58, 237, 0.13);
+    background: rgba(124,58,237,0.13);
 
     color: #b9a7ff;
 
@@ -1624,22 +1596,24 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    CONTACT
-===================================================== */
+========================================================= */
 
 .contact-section {
     padding: 110px 8%;
 
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255,255,255,0.02);
 
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid rgba(255,255,255,0.07);
 }
 
 .contact-container {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
 
     gap: 70px;
 }
@@ -1691,9 +1665,9 @@ img {
 
     border-radius: 11px;
 
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255,255,255,0.06);
 
-    background: rgba(255, 255, 255, 0.025);
+    background: rgba(255,255,255,0.025);
 
     min-width: 0;
 }
@@ -1710,7 +1684,7 @@ img {
 
     border-radius: 9px;
 
-    background: rgba(124, 58, 237, 0.12);
+    background: rgba(124,58,237,0.12);
 
     color: #a78bfa;
 }
@@ -1741,9 +1715,9 @@ img {
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer {
     display: flex;
@@ -1755,7 +1729,7 @@ footer {
 
     padding: 25px 8%;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    border-top: 1px solid rgba(255,255,255,0.07);
 
     color: #555562;
 
@@ -1771,8 +1745,7 @@ footer {
 }
 
 .footer-logo strong {
-    color: #ffffff;
-
+    color: white;
     font-size: 15px;
 }
 
@@ -1781,9 +1754,9 @@ footer {
 }
 
 
-/* =====================================================
-   RESPONSIVE — TABLETTE
-===================================================== */
+/* =========================================================
+   TABLETTE
+========================================================= */
 
 @media (max-width: 1100px) {
 
@@ -1808,16 +1781,8 @@ footer {
     }
 
     .hero-visual {
-        max-width: 400px;
+        max-width: 420px;
         margin-top: 20px;
-    }
-
-    .profile-card {
-        max-width: 340px;
-    }
-
-    .profile-image-wrapper {
-        height: 290px;
     }
 
     .project-card {
@@ -1825,7 +1790,7 @@ footer {
     }
 
     .project-image {
-        min-height: 330px;
+        min-height: 320px;
     }
 
     .project-content {
@@ -1834,9 +1799,31 @@ footer {
 }
 
 
-/* =====================================================
-   RESPONSIVE — MOBILE
-===================================================== */
+/* =========================================================
+   TABLETTE / PETIT ÉCRAN
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media (max-width: 800px) {
 
@@ -1852,19 +1839,18 @@ footer {
 
         border-right: none;
 
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
 
         padding: 22px 20px;
     }
 
-    .sidebar-profile {
-        margin-bottom: 25px;
-    }
-
     .main-content {
         width: 100%;
-
         margin-left: 0;
+    }
+
+    .sidebar-profile {
+        margin-bottom: 30px;
     }
 
     .navigation {
@@ -1884,46 +1870,22 @@ footer {
 
         grid-template-columns: 1fr;
 
-        padding: 75px 6% 70px;
+        padding: 80px 6% 70px;
 
-        gap: 40px;
-    }
-
-    .hero-content {
-        max-width: 100%;
+        gap: 45px;
     }
 
     .hero-visual {
-        max-width: 360px;
-
-        margin: 0 auto;
-
-        padding: 15px 25px;
+        max-width: 370px;
+        margin-top: 0;
     }
 
     .profile-card {
-        max-width: 330px;
+        max-width: 350px;
     }
 
     .profile-image-wrapper {
-        height: 285px;
-    }
-
-    .floating-icon {
-        width: 38px;
-        height: 38px;
-    }
-
-    .icon-one {
-        right: 0;
-    }
-
-    .icon-two {
-        left: 0;
-    }
-
-    .icon-three {
-        right: 10px;
+        height: 300px;
     }
 
     .quick-info {
@@ -1935,7 +1897,7 @@ footer {
     .quick-item {
         border-right: none;
 
-        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        border-bottom: 1px solid rgba(255,255,255,0.07);
     }
 
     .quick-item:last-child {
@@ -1949,8 +1911,6 @@ footer {
     .about-grid,
     .contact-container {
         grid-template-columns: 1fr;
-
-        gap: 45px;
     }
 
     .skills-grid {
@@ -1965,31 +1925,20 @@ footer {
         min-height: 300px;
     }
 
-    .project-window,
-    .pointage-interface,
-    .stage-interface {
-        width: min(80%, 300px);
-    }
-
     .project-content {
         padding: 30px;
     }
 
-    .contact-section {
-        padding: 80px 6%;
-    }
-
     footer {
         flex-direction: column;
-
         text-align: center;
     }
 }
 
 
-/* =====================================================
-   RESPONSIVE — PETIT MOBILE
-===================================================== */
+/* =========================================================
+   PETIT MOBILE
+========================================================= */
 
 @media (max-width: 500px) {
 
@@ -2003,24 +1952,16 @@ footer {
 
     .hero {
         padding: 65px 6%;
-    }
-
-    .hero-label {
-        font-size: 8px;
+        gap: 40px;
     }
 
     .hero h1 {
-        font-size: 52px;
-
+        font-size: 55px;
         letter-spacing: -3px;
     }
 
     .hero h2 {
-        font-size: 15px;
-    }
-
-    .hero-description {
-        font-size: 13px;
+        line-height: 1.7;
     }
 
     .hero-buttons {
@@ -2032,59 +1973,26 @@ footer {
     }
 
     .hero-visual {
+        width: 100%;
         max-width: 330px;
-        padding: 10px 20px;
-    }
-
-    .profile-card {
-        max-width: 300px;
     }
 
     /*
-       PHOTO MOBILE :
-       taille maîtrisée
+       PHOTO PRINCIPALE
+       Taille contrôlée sur petit écran
     */
 
-    .profile-image-wrapper {
-        height: 250px;
+    .profile-card {
+        width: 100%;
+        max-width: 330px;
     }
 
-    .profile-image-wrapper .profile-photo {
-        width: 100% !important;
-        height: 100% !important;
-
-        object-fit: cover;
-        object-position: center 20%;
+    .profile-image-wrapper {
+        height: 270px;
     }
 
     .profile-card-info {
-        padding: 17px;
-    }
-
-    .profile-card-info h3 {
-        font-size: 18px;
-    }
-
-    .floating-icon {
-        width: 36px;
-        height: 36px;
-
-        border-radius: 10px;
-    }
-
-    .icon-one {
-        top: 20px;
-        right: 0;
-    }
-
-    .icon-two {
-        bottom: 80px;
-        left: 0;
-    }
-
-    .icon-three {
-        bottom: 10px;
-        right: 8px;
+        padding: 18px;
     }
 
     .about-cards {
@@ -2096,75 +2004,82 @@ footer {
     }
 
     .project-content h3 {
-        font-size: 23px;
-    }
-
-    .project-content p {
-        font-size: 12px;
+        font-size: 24px;
     }
 
     .project-bottom {
-        flex-direction: column;
-
         align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .project-image {
+        min-height: 270px;
+    }
+
+    /*
+       Interfaces des applications
+    */
+
+    .project-window,
+    .pointage-interface,
+    .stage-interface {
+        width: 78%;
+        max-width: 280px;
     }
 
     .education-card {
         align-items: flex-start;
-
-        padding: 16px;
     }
 
-    .education-badge {
-        width: 48px;
-        height: 48px;
-    }
-
-    .education-info h3 {
-        font-size: 14px;
+    .education-card > i {
+        display: none;
     }
 
     .contact-text h2 {
-        font-size: 38px;
+        font-size: 40px;
     }
 
-    .contact-item {
-        padding: 13px;
+    .icon-two {
+        left: -5px;
     }
 
-    .contact-item a,
-    .contact-item strong {
-        font-size: 10px;
+    .icon-one {
+        right: 0;
+    }
+
+    .icon-three {
+        right: 5px;
     }
 }
 
 
-/* =====================================================
-   TRÈS PETITS ÉCRANS
-===================================================== */
+/* =========================================================
+   TRÈS PETIT ÉCRAN
+========================================================= */
 
 @media (max-width: 360px) {
 
     .hero h1 {
-        font-size: 45px;
-    }
-
-    .profile-card {
-        max-width: 270px;
+        font-size: 48px;
     }
 
     .profile-image-wrapper {
-        height: 225px;
+        height: 250px;
     }
 
-    .project-image {
-        min-height: 260px;
-        padding: 20px;
+    .floating-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
     }
 
     .project-window,
     .pointage-interface,
     .stage-interface {
-        width: 90%;
+        width: 82%;
+    }
+
+    .section-heading h2 {
+        font-size: 30px;
     }
 }
