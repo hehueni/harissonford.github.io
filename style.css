@@ -583,7 +583,6 @@ img {
 
 /* =========================================================
    PHOTO WRAPPER
-   IMPORTANT : PHOTO TOUJOURS LIMITÉE
 ========================================================= */
 
 .profile-image-wrapper {
@@ -1977,11 +1976,6 @@ footer {
         max-width: 330px;
     }
 
-    /*
-       PHOTO PRINCIPALE
-       Taille contrôlée sur petit écran
-    */
-
     .profile-card {
         width: 100%;
         max-width: 330px;
@@ -2015,10 +2009,6 @@ footer {
     .project-image {
         min-height: 270px;
     }
-
-    /*
-       Interfaces des applications
-    */
 
     .project-window,
     .pointage-interface,
