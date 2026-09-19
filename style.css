@@ -118,13 +118,14 @@ img {
 
     padding: 30px 24px;
 
-    background: rgba(10, 10, 16, 0.96);
+    background: rgba(10, 10, 16, 0.97);
     border-right: 1px solid rgba(255, 255, 255, 0.08);
 
     display: flex;
     flex-direction: column;
 
     z-index: 100;
+    overflow-y: auto;
 }
 
 .sidebar-profile {
@@ -147,6 +148,7 @@ img {
     min-height: 48px;
 
     border-radius: 50%;
+
     overflow: hidden;
 
     border: 2px solid rgba(139, 124, 246, 0.7);
@@ -157,8 +159,6 @@ img {
 .profile-mini img {
     width: 100%;
     height: 100%;
-
-    max-width: none;
 
     object-fit: cover;
 }
@@ -210,10 +210,7 @@ img {
 
     font-size: 13px;
 
-    transition:
-        color 0.3s ease,
-        background 0.3s ease,
-        transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .navigation-link i {
@@ -223,12 +220,8 @@ img {
 
 .navigation-link:hover,
 .navigation-link.active {
-    color: white;
+    color: #ffffff;
     background: rgba(124, 58, 237, 0.14);
-}
-
-.navigation-link:hover {
-    transform: translateX(3px);
 }
 
 
@@ -297,7 +290,7 @@ img {
 
     font-size: 11px;
 
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .availability-button:hover {
@@ -332,11 +325,11 @@ img {
 
     color: #858591;
 
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .social-links a:hover {
-    color: white;
+    color: #ffffff;
     background: rgba(124, 58, 237, 0.25);
     transform: translateY(-2px);
 }
@@ -349,6 +342,7 @@ img {
 .main-content {
     width: calc(100% - 270px);
     margin-left: 270px;
+    min-width: 0;
 }
 
 
@@ -363,11 +357,11 @@ img {
 
     grid-template-columns:
         minmax(0, 1.1fr)
-        minmax(350px, 0.9fr);
+        minmax(320px, 0.9fr);
 
     align-items: center;
 
-    gap: 60px;
+    gap: 55px;
 
     padding: 80px 8%;
 }
@@ -441,14 +435,12 @@ img {
 
 .hero-description {
     color: #858590;
-
     font-size: 14px;
-
     max-width: 590px;
 }
 
 .hero-description strong {
-    color: white;
+    color: #ffffff;
 }
 
 
@@ -477,7 +469,7 @@ img {
     font-size: 12px;
     font-weight: 600;
 
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .button-primary {
@@ -502,7 +494,7 @@ img {
 }
 
 .button-secondary:hover {
-    color: white;
+    color: #ffffff;
 
     border-color: rgba(255, 255, 255, 0.3);
 }
@@ -516,7 +508,7 @@ img {
     margin-top: 45px;
 }
 
-.hero-technologies p {
+.hero-technologies > p {
     font-size: 9px;
 
     color: #5f5f6b;
@@ -557,13 +549,15 @@ img {
     position: relative;
 
     width: 100%;
-    max-width: 500px;
+    max-width: 430px;
 
     margin: auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: 20px 30px;
 }
 
 
@@ -573,13 +567,13 @@ img {
 
 .profile-card {
     width: 100%;
-    max-width: 390px;
+    max-width: 350px;
 
-    background: rgba(15, 15, 23, 0.95);
+    background: rgba(15, 15, 23, 0.96);
 
     border: 1px solid rgba(255, 255, 255, 0.09);
 
-    border-radius: 22px;
+    border-radius: 20px;
 
     overflow: hidden;
 
@@ -597,7 +591,12 @@ img {
     position: relative;
 
     width: 100%;
-    height: 330px;
+
+    /*
+       PHOTO REDUITE POUR EVITER
+       QU'ELLE PRENNE TOUT L'ECRAN
+    */
+    height: 300px;
 
     overflow: hidden;
 
@@ -612,8 +611,7 @@ img {
 .profile-image-wrapper .profile-photo {
     position: absolute;
 
-    top: 0;
-    left: 0;
+    inset: 0;
 
     width: 100% !important;
     height: 100% !important;
@@ -623,7 +621,7 @@ img {
 
     object-fit: cover;
 
-    object-position: center;
+    object-position: center 20%;
 
     display: block;
 }
@@ -634,7 +632,7 @@ img {
 ===================================================== */
 
 .profile-card-info {
-    padding: 22px;
+    padding: 20px;
 }
 
 .profile-status {
@@ -648,7 +646,7 @@ img {
     letter-spacing: 1.5px;
 }
 
-.profile-status span {
+.profile-status > span {
     width: 6px;
     height: 6px;
 
@@ -660,9 +658,9 @@ img {
 }
 
 .profile-card-info h3 {
-    font-size: 21px;
+    font-size: 20px;
 
-    margin-top: 10px;
+    margin-top: 9px;
 }
 
 .profile-card-info p {
@@ -680,7 +678,7 @@ img {
 
     font-size: 10px;
 
-    margin-top: 13px;
+    margin-top: 12px;
 }
 
 
@@ -691,16 +689,16 @@ img {
 .floating-icon {
     position: absolute;
 
-    width: 45px;
-    height: 45px;
+    width: 42px;
+    height: 42px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 13px;
+    border-radius: 12px;
 
-    background: rgba(20, 20, 30, 0.95);
+    background: rgba(20, 20, 30, 0.96);
 
     border: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -712,21 +710,21 @@ img {
 
 .icon-one {
     top: 30px;
-    right: 20px;
+    right: 5px;
 
     color: #f97316;
 }
 
 .icon-two {
     bottom: 100px;
-    left: -20px;
+    left: 5px;
 
     color: #facc15;
 }
 
 .icon-three {
     bottom: 20px;
-    right: 30px;
+    right: 20px;
 
     color: #60a5fa;
 }
@@ -763,7 +761,7 @@ img {
     border-right: none;
 }
 
-.quick-item i {
+.quick-item > i {
     color: #8b7cf6;
 }
 
@@ -791,7 +789,7 @@ img {
 ===================================================== */
 
 .section {
-    padding: 120px 8%;
+    padding: 110px 8%;
 }
 
 .section-heading {
@@ -823,6 +821,8 @@ img {
     line-height: 1.1;
 
     letter-spacing: -1.5px;
+
+    max-width: 800px;
 }
 
 
@@ -853,7 +853,7 @@ img {
 }
 
 .about-text strong {
-    color: white;
+    color: #ffffff;
 }
 
 .about-cards {
@@ -873,7 +873,7 @@ img {
 
     border-radius: 14px;
 
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .about-card:hover {
@@ -926,7 +926,7 @@ img {
 
     background: rgba(255, 255, 255, 0.025);
 
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .skill-card:hover {
@@ -1030,13 +1030,12 @@ img {
     overflow: hidden;
 
     background: rgba(255, 255, 255, 0.025);
-
-    transition: 0.3s ease;
 }
 
-.project-card:hover {
-    border-color: rgba(124, 58, 237, 0.25);
-}
+
+/* =====================================================
+   PROJECT VISUAL AREA
+===================================================== */
 
 .project-image {
     position: relative;
@@ -1049,6 +1048,8 @@ img {
     justify-content: center;
 
     overflow: hidden;
+
+    padding: 30px;
 }
 
 .project-number {
@@ -1062,20 +1063,18 @@ img {
     color: rgba(255, 255, 255, 0.5);
 
     letter-spacing: 2px;
-
-    z-index: 3;
 }
 
 
 /* =====================================================
-   PROJET — LECTURE CONNAISSANCE
+   PROJECT BACKGROUNDS
 ===================================================== */
 
 .lecture-project {
     background:
         radial-gradient(
             circle at 20% 20%,
-            rgba(124, 58, 237, 0.2),
+            rgba(124, 58, 237, 0.18),
             transparent 40%
         ),
         linear-gradient(
@@ -1085,16 +1084,11 @@ img {
         );
 }
 
-
-/* =====================================================
-   PROJET — POINTAGE
-===================================================== */
-
 .pointage-project {
     background:
         radial-gradient(
-            circle at 80% 20%,
-            rgba(37, 99, 235, 0.15),
+            circle at 80% 30%,
+            rgba(34, 197, 94, 0.08),
             transparent 40%
         ),
         linear-gradient(
@@ -1104,50 +1098,29 @@ img {
         );
 }
 
-
-/* =====================================================
-   PROJET — STAGE MANAGER
-===================================================== */
-
 .stage-project {
     background:
         radial-gradient(
-            circle at 20% 80%,
-            rgba(219, 39, 119, 0.14),
+            circle at 30% 30%,
+            rgba(59, 130, 246, 0.1),
             transparent 40%
         ),
         linear-gradient(
             135deg,
-            #171126,
-            #11101d
+            #111827,
+            #171126
         );
 }
 
 
 /* =====================================================
-   PROJET — E-COMMERCE
-   Conservé pour compatibilité
-===================================================== */
-
-.ecommerce-project {
-    background:
-        linear-gradient(
-            135deg,
-            #171126,
-            #16101d
-        );
-}
-
-
-/* =====================================================
-   MINI FENÊTRES APPLICATIONS
+   GENERIC PROJECT WINDOW
 ===================================================== */
 
 .project-window,
 .pointage-interface,
-.stage-interface,
-.ecommerce-interface {
-    width: 70%;
+.stage-interface {
+    width: min(78%, 300px);
 
     background: rgba(15, 15, 23, 0.96);
 
@@ -1163,7 +1136,7 @@ img {
 
 
 /* =====================================================
-   BARRE FENÊTRE
+   WINDOW TOP
 ===================================================== */
 
 .project-window-top {
@@ -1190,11 +1163,11 @@ img {
 
 
 /* =====================================================
-   INTERFACE LIVRES
+   LECTURE CONNAISSANCE INTERFACE
 ===================================================== */
 
 .book-interface {
-    padding: 35px 25px;
+    padding: 30px 23px;
 }
 
 .book-logo {
@@ -1210,9 +1183,6 @@ img {
     background: #7c3aed;
 
     font-weight: 800;
-
-    box-shadow:
-        0 10px 25px rgba(124, 58, 237, 0.25);
 }
 
 .book-lines {
@@ -1262,7 +1232,7 @@ img {
 
 
 /* =====================================================
-   INTERFACE POINTAGE
+   POINTAGE INTERFACE
 ===================================================== */
 
 .pointage-interface {
@@ -1273,6 +1243,7 @@ img {
     display: flex;
 
     justify-content: space-between;
+
     align-items: center;
 
     font-size: 9px;
@@ -1299,9 +1270,6 @@ img {
     color: #4ade80;
 
     font-size: 25px;
-
-    box-shadow:
-        0 0 30px rgba(34, 197, 94, 0.08);
 }
 
 .pointage-interface > strong {
@@ -1314,7 +1282,7 @@ img {
 
 
 /* =====================================================
-   INTERFACE STAGE MANAGER
+   STAGIAIRES INTERFACE
 ===================================================== */
 
 .stage-interface {
@@ -1324,20 +1292,23 @@ img {
 .stage-header {
     display: flex;
 
-    justify-content: space-between;
     align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
     color: #777782;
 
     font-size: 9px;
-
-    padding-bottom: 15px;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.stage-header i {
-    color: #a78bfa;
+.stage-header strong {
+    color: #aaaab5;
+
+    font-size: 9px;
 }
 
 .stage-display {
@@ -1347,7 +1318,7 @@ img {
 
     gap: 12px;
 
-    margin: 28px 0 24px;
+    margin: 30px 0 25px;
 }
 
 .stage-icon {
@@ -1360,9 +1331,11 @@ img {
 
     border-radius: 10px;
 
-    background: rgba(124, 58, 237, 0.15);
+    background: rgba(59, 130, 246, 0.13);
 
-    color: #a78bfa;
+    color: #60a5fa;
+
+    flex-shrink: 0;
 }
 
 .stage-display strong,
@@ -1371,15 +1344,17 @@ img {
 }
 
 .stage-display strong {
-    font-size: 10px;
+    color: #d1d1da;
 
-    margin-bottom: 4px;
+    font-size: 11px;
 }
 
 .stage-display span {
     color: #666673;
 
-    font-size: 8px;
+    font-size: 9px;
+
+    margin-top: 3px;
 }
 
 .stage-button {
@@ -1389,93 +1364,23 @@ img {
 
     border-radius: 7px;
 
-    background: rgba(124, 58, 237, 0.2);
+    background: rgba(59, 130, 246, 0.12);
 
-    color: #b9a7ff;
-
-    font-size: 9px;
-}
-
-
-/* =====================================================
-   INTERFACE E-COMMERCE
-===================================================== */
-
-.ecommerce-interface {
-    padding: 20px;
-}
-
-.ecommerce-header {
-    display: flex;
-
-    justify-content: space-between;
-
-    font-size: 9px;
-
-    color: #777782;
-}
-
-.product-display {
-    display: flex;
-
-    align-items: center;
-
-    gap: 12px;
-
-    margin: 35px 0 25px;
-}
-
-.product-icon {
-    width: 45px;
-    height: 45px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 10px;
-
-    background: rgba(124, 58, 237, 0.15);
-
-    color: #a78bfa;
-}
-
-.product-display strong,
-.product-display span {
-    display: block;
-}
-
-.product-display strong {
-    font-size: 11px;
-}
-
-.product-display span {
-    color: #666673;
-
-    font-size: 9px;
-}
-
-.shop-button {
-    padding: 10px;
-
-    text-align: center;
-
-    border-radius: 7px;
-
-    background: rgba(124, 58, 237, 0.2);
-
-    color: #b9a7ff;
+    color: #8dbdff;
 
     font-size: 9px;
 }
 
 
 /* =====================================================
-   CONTENU PROJET
+   PROJECT CONTENT
 ===================================================== */
 
 .project-content {
-    padding: 45px;
+    padding: 42px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .project-category {
@@ -1489,7 +1394,7 @@ img {
 }
 
 .project-content h3 {
-    font-size: 28px;
+    font-size: 27px;
 
     line-height: 1.2;
 
@@ -1535,6 +1440,8 @@ img {
 
     align-items: center;
 
+    gap: 15px;
+
     margin-top: 30px;
 
     padding-top: 20px;
@@ -1549,11 +1456,11 @@ img {
 .project-bottom a {
     color: #a78bfa;
 
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .project-bottom a:hover {
-    color: #c4b5fd;
+    color: #ffffff;
 }
 
 
@@ -1658,11 +1565,12 @@ img {
 
     background: rgba(255, 255, 255, 0.025);
 
-    transition: 0.3s ease;
+    transition: 0.3s;
 }
 
 .education-card:hover {
     border-color: rgba(124, 58, 237, 0.25);
+    transform: translateX(3px);
 }
 
 .education-badge {
@@ -1688,6 +1596,7 @@ img {
 
 .education-info {
     flex: 1;
+    min-width: 0;
 }
 
 .education-info > span {
@@ -1786,11 +1695,7 @@ img {
 
     background: rgba(255, 255, 255, 0.025);
 
-    transition: 0.3s ease;
-}
-
-.contact-item:hover {
-    border-color: rgba(124, 58, 237, 0.25);
+    min-width: 0;
 }
 
 .contact-icon {
@@ -1808,6 +1713,10 @@ img {
     background: rgba(124, 58, 237, 0.12);
 
     color: #a78bfa;
+}
+
+.contact-item > div:last-child {
+    min-width: 0;
 }
 
 .contact-item span {
@@ -1828,7 +1737,7 @@ img {
 
     margin-top: 3px;
 
-    word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 
@@ -1862,7 +1771,7 @@ footer {
 }
 
 .footer-logo strong {
-    color: white;
+    color: #ffffff;
 
     font-size: 15px;
 }
@@ -1884,14 +1793,14 @@ footer {
 
     .main-content {
         width: calc(100% - 220px);
-
         margin-left: 220px;
     }
 
     .hero {
         grid-template-columns: 1fr;
 
-        padding-top: 100px;
+        padding-top: 90px;
+        padding-bottom: 90px;
     }
 
     .hero-content {
@@ -1899,11 +1808,24 @@ footer {
     }
 
     .hero-visual {
-        max-width: 450px;
+        max-width: 400px;
+        margin-top: 20px;
+    }
+
+    .profile-card {
+        max-width: 340px;
+    }
+
+    .profile-image-wrapper {
+        height: 290px;
     }
 
     .project-card {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .project-image {
+        min-height: 330px;
     }
 
     .project-content {
@@ -1931,6 +1853,12 @@ footer {
         border-right: none;
 
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        padding: 22px 20px;
+    }
+
+    .sidebar-profile {
+        margin-bottom: 25px;
     }
 
     .main-content {
@@ -1943,6 +1871,8 @@ footer {
         display: grid;
 
         grid-template-columns: repeat(2, 1fr);
+
+        gap: 5px;
     }
 
     .availability {
@@ -1954,21 +1884,46 @@ footer {
 
         grid-template-columns: 1fr;
 
-        padding: 90px 6%;
+        padding: 75px 6% 70px;
+
+        gap: 40px;
+    }
+
+    .hero-content {
+        max-width: 100%;
     }
 
     .hero-visual {
-        max-width: 390px;
+        max-width: 360px;
 
-        margin-top: 20px;
+        margin: 0 auto;
+
+        padding: 15px 25px;
     }
 
     .profile-card {
-        max-width: 390px;
+        max-width: 330px;
     }
 
     .profile-image-wrapper {
-        height: 320px;
+        height: 285px;
+    }
+
+    .floating-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .icon-one {
+        right: 0;
+    }
+
+    .icon-two {
+        left: 0;
+    }
+
+    .icon-three {
+        right: 10px;
     }
 
     .quick-info {
@@ -1994,6 +1949,8 @@ footer {
     .about-grid,
     .contact-container {
         grid-template-columns: 1fr;
+
+        gap: 45px;
     }
 
     .skills-grid {
@@ -2010,9 +1967,16 @@ footer {
 
     .project-window,
     .pointage-interface,
-    .stage-interface,
-    .ecommerce-interface {
-        width: 65%;
+    .stage-interface {
+        width: min(80%, 300px);
+    }
+
+    .project-content {
+        padding: 30px;
+    }
+
+    .contact-section {
+        padding: 80px 6%;
     }
 
     footer {
@@ -2038,13 +2002,25 @@ footer {
     }
 
     .hero {
-        padding: 70px 6%;
+        padding: 65px 6%;
+    }
+
+    .hero-label {
+        font-size: 8px;
     }
 
     .hero h1 {
-        font-size: 55px;
+        font-size: 52px;
 
         letter-spacing: -3px;
+    }
+
+    .hero h2 {
+        font-size: 15px;
+    }
+
+    .hero-description {
+        font-size: 13px;
     }
 
     .hero-buttons {
@@ -2055,68 +2031,140 @@ footer {
         width: 100%;
     }
 
+    .hero-visual {
+        max-width: 330px;
+        padding: 10px 20px;
+    }
+
+    .profile-card {
+        max-width: 300px;
+    }
+
+    /*
+       PHOTO MOBILE :
+       taille maîtrisée
+    */
+
+    .profile-image-wrapper {
+        height: 250px;
+    }
+
+    .profile-image-wrapper .profile-photo {
+        width: 100% !important;
+        height: 100% !important;
+
+        object-fit: cover;
+        object-position: center 20%;
+    }
+
+    .profile-card-info {
+        padding: 17px;
+    }
+
+    .profile-card-info h3 {
+        font-size: 18px;
+    }
+
+    .floating-icon {
+        width: 36px;
+        height: 36px;
+
+        border-radius: 10px;
+    }
+
+    .icon-one {
+        top: 20px;
+        right: 0;
+    }
+
+    .icon-two {
+        bottom: 80px;
+        left: 0;
+    }
+
+    .icon-three {
+        bottom: 10px;
+        right: 8px;
+    }
+
     .about-cards {
         grid-template-columns: 1fr;
     }
 
     .project-content {
-        padding: 28px;
+        padding: 26px;
     }
 
     .project-content h3 {
-        font-size: 24px;
+        font-size: 23px;
+    }
+
+    .project-content p {
+        font-size: 12px;
+    }
+
+    .project-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
     }
 
     .education-card {
         align-items: flex-start;
+
+        padding: 16px;
+    }
+
+    .education-badge {
+        width: 48px;
+        height: 48px;
+    }
+
+    .education-info h3 {
+        font-size: 14px;
     }
 
     .contact-text h2 {
-        font-size: 40px;
+        font-size: 38px;
     }
 
-    /*
-       PHOTO MOBILE
-       Elle reste dans sa carte.
-    */
+    .contact-item {
+        padding: 13px;
+    }
+
+    .contact-item a,
+    .contact-item strong {
+        font-size: 10px;
+    }
+}
+
+
+/* =====================================================
+   TRÈS PETITS ÉCRANS
+===================================================== */
+
+@media (max-width: 360px) {
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .profile-card {
+        max-width: 270px;
+    }
 
     .profile-image-wrapper {
-        height: 280px;
-    }
-
-    .profile-photo {
-        width: 100% !important;
-        height: 100% !important;
-    }
-
-    .icon-two {
-        left: -10px;
-    }
-
-    .icon-one {
-        right: 5px;
-    }
-
-    .icon-three {
-        right: 10px;
+        height: 225px;
     }
 
     .project-image {
-        min-height: 280px;
+        min-height: 260px;
+        padding: 20px;
     }
 
     .project-window,
     .pointage-interface,
-    .stage-interface,
-    .ecommerce-interface {
-        width: 78%;
-    }
-
-    .book-interface {
-        padding: 28px 20px;
-    }
-
-    .stage-display {
-        margin: 22px 0;
+    .stage-interface {
+        width: 90%;
     }
 }
