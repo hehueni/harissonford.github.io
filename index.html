@@ -87,6 +87,29 @@
             </div>
 
 
+            <!-- =================================================
+                 BOUTON MODE CLAIR / SOMBRE
+            ================================================== -->
+
+            <div class="theme-toggle-container">
+
+                <button
+                    id="theme-toggle"
+                    class="theme-toggle"
+                    type="button"
+                    aria-label="Changer de thème">
+
+                    <i class="fa-solid fa-sun"></i>
+
+                    <span>
+                        Mode clair
+                    </span>
+
+                </button>
+
+            </div>
+
+
             <!-- NAVIGATION -->
 
             <p class="navigation-title">
@@ -1052,9 +1075,7 @@
                 <div class="projects">
 
 
-                    <!-- =================================================
-                         PROJET 01 — LECTURE CONNAISSANCE
-                    ================================================== -->
+                    <!-- PROJET 01 -->
 
                     <article class="project-card">
 
@@ -1165,9 +1186,7 @@
                     </article>
 
 
-                    <!-- =================================================
-                         PROJET 02 — POINTAGE
-                    ================================================== -->
+                    <!-- PROJET 02 -->
 
                     <article class="project-card">
 
@@ -1261,9 +1280,7 @@
                     </article>
 
 
-                    <!-- =================================================
-                         PROJET 03 — STAGIAIRES
-                    ================================================== -->
+                    <!-- PROJET 03 -->
 
                     <article class="project-card">
 
@@ -1952,6 +1969,103 @@
 
     </div>
 
+
+    <!-- =====================================================
+         MODE CLAIR / SOMBRE — JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const themeToggle = document.getElementById("theme-toggle");
+
+        const themeIcon = themeToggle.querySelector("i");
+
+        const themeText = themeToggle.querySelector("span");
+
+
+        /*
+         * Mise à jour du bouton
+         */
+
+        function updateThemeButton() {
+
+            if (document.body.classList.contains("light-mode")) {
+
+                themeIcon.className = "fa-solid fa-moon";
+
+                themeText.textContent = "Mode sombre";
+
+                themeToggle.setAttribute(
+                    "aria-label",
+                    "Activer le mode sombre"
+                );
+
+            } else {
+
+                themeIcon.className = "fa-solid fa-sun";
+
+                themeText.textContent = "Mode clair";
+
+                themeToggle.setAttribute(
+                    "aria-label",
+                    "Activer le mode clair"
+                );
+
+            }
+
+        }
+
+
+        /*
+         * Changement de thème
+         */
+
+        themeToggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("light-mode");
+
+
+            /*
+             * Sauvegarde du choix
+             */
+
+            if (document.body.classList.contains("light-mode")) {
+
+                localStorage.setItem("theme", "light");
+
+            } else {
+
+                localStorage.setItem("theme", "dark");
+
+            }
+
+
+            updateThemeButton();
+
+        });
+
+
+        /*
+         * Récupération du thème sauvegardé
+         */
+
+        const savedTheme = localStorage.getItem("theme");
+
+
+        if (savedTheme === "light") {
+
+            document.body.classList.add("light-mode");
+
+        }
+
+
+        /*
+         * Initialisation du bouton
+         */
+
+        updateThemeButton();
+
+    </script>
 
 </body>
 
