@@ -1,7 +1,0 @@
-Captures integrees dans les 3 cartes projets :
-  Lecture Connaissance   : lecture-connaissance-*.jpg (5)
-  Application de pointage: pointage-*.jpg (8)
-  Suivi des stagiaires   : stagiaires-*.jpg (7)
-
-Pour ajouter une capture : place l'image dans ce dossier, puis ajoute une balise <img class="slide"...>
-dans la carte du projet (dans index.html). Les points du diaporama se creent automatiquement.
