@@ -28,9 +28,6 @@
     --text-secondary: #a8b3ca;
     --text-muted: #69758d;
 
-    --text-white: #ffffff;
-    --text-heading: #ffffff;
-
     --border: rgba(148, 163, 184, 0.12);
     --border-light: rgba(96, 165, 250, 0.2);
 
@@ -46,16 +43,6 @@
         0 20px 60px rgba(0, 0, 0, 0.35);
 
     --transition: 0.3s ease;
-
-    --grid-color: rgba(255, 255, 255, 0.025);
-
-    --sidebar-bg-1: rgba(8, 14, 31, 0.97);
-    --sidebar-bg-2: rgba(5, 9, 20, 0.97);
-
-    --card-bg-1: rgba(15, 24, 48, 0.8);
-    --card-bg-2: rgba(8, 13, 29, 0.75);
-
-    --input-bg: rgba(255, 255, 255, 0.02);
 }
 
 
@@ -63,40 +50,26 @@
    LIGHT THEME VARIABLES
    ========================================================= */
 
-html[data-theme="light"] {
+body.light-mode {
     --bg-main: #f5f7fb;
     --bg-secondary: #ffffff;
-
-    --bg-card: rgba(255, 255, 255, 0.9);
+    --bg-card: rgba(255, 255, 255, 0.88);
     --bg-card-solid: #ffffff;
 
     --text-main: #172033;
-    --text-secondary: #526078;
-    --text-muted: #718096;
+    --text-secondary: #596579;
+    --text-muted: #7a8497;
 
-    --text-white: #172033;
-    --text-heading: #111827;
-
-    --border: rgba(15, 23, 42, 0.10);
-    --border-light: rgba(59, 130, 246, 0.22);
+    --border: rgba(15, 23, 42, 0.09);
+    --border-light: rgba(59, 130, 246, 0.20);
 
     --shadow:
         0 20px 60px rgba(15, 23, 42, 0.10);
-
-    --grid-color: rgba(15, 23, 42, 0.035);
-
-    --sidebar-bg-1: rgba(255, 255, 255, 0.98);
-    --sidebar-bg-2: rgba(245, 247, 251, 0.98);
-
-    --card-bg-1: rgba(255, 255, 255, 0.95);
-    --card-bg-2: rgba(248, 250, 252, 0.95);
-
-    --input-bg: rgba(15, 23, 42, 0.035);
 }
 
 
 /* =========================================================
-   2. RESET
+   RESET
    ========================================================= */
 
 * {
@@ -154,100 +127,23 @@ img {
 
 
 strong {
-    color: var(--text-heading);
+    color: #ffffff;
+}
+
+
+body.light-mode strong {
+    color: #172033;
 }
 
 
 /* =========================================================
-   3. THEME BUTTON
-   ========================================================= */
-
-.theme-toggle {
-    width: 100%;
-    height: 42px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-
-    margin-top: 20px;
-
-    border: 1px solid var(--border-light);
-    border-radius: 10px;
-
-    background: var(--input-bg);
-    color: var(--text-secondary);
-
-    cursor: pointer;
-
-    font-size: 11px;
-    font-weight: 600;
-
-    transition: var(--transition);
-}
-
-
-.theme-toggle:hover {
-    color: var(--text-heading);
-
-    border-color: rgba(96, 165, 250, 0.4);
-
-    background: rgba(59, 130, 246, 0.08);
-
-    transform: translateY(-2px);
-}
-
-
-.theme-toggle i {
-    font-size: 14px;
-
-    color: var(--blue-light);
-
-    transition:
-        transform 0.3s ease,
-        color 0.3s ease;
-}
-
-
-.theme-toggle:hover i {
-    transform: rotate(20deg);
-}
-
-
-.theme-toggle .theme-dark-text,
-.theme-toggle .theme-light-text {
-    transition: opacity 0.2s ease;
-}
-
-
-/* DARK */
-html[data-theme="dark"] .theme-light-text {
-    display: none;
-}
-
-
-/* LIGHT */
-html[data-theme="light"] .theme-dark-text {
-    display: none;
-}
-
-
-html[data-theme="light"] .theme-toggle i {
-    color: #f59e0b;
-}
-
-
-/* =========================================================
-   4. BACKGROUND
+   2. BACKGROUND
    ========================================================= */
 
 .background {
     position: fixed;
     inset: 0;
-
     z-index: -10;
-
     overflow: hidden;
 
     background:
@@ -256,9 +152,9 @@ html[data-theme="light"] .theme-toggle i {
             rgba(30, 64, 175, 0.13),
             transparent 35%
         ),
-        var(--bg-main);
+        #050914;
 
-    transition: background 0.4s ease;
+    transition: background 0.35s ease;
 }
 
 
@@ -268,12 +164,12 @@ html[data-theme="light"] .theme-toggle i {
 
     background-image:
         linear-gradient(
-            var(--grid-color) 1px,
+            rgba(255, 255, 255, 0.025) 1px,
             transparent 1px
         ),
         linear-gradient(
             90deg,
-            var(--grid-color) 1px,
+            rgba(255, 255, 255, 0.025) 1px,
             transparent 1px
         );
 
@@ -291,11 +187,8 @@ html[data-theme="light"] .theme-toggle i {
 
 .glow {
     position: absolute;
-
     border-radius: 50%;
-
     filter: blur(100px);
-
     pointer-events: none;
 }
 
@@ -334,7 +227,53 @@ html[data-theme="light"] .theme-toggle i {
 
 
 /* =========================================================
-   5. MAIN LAYOUT
+   LIGHT BACKGROUND
+   ========================================================= */
+
+body.light-mode .background {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(59, 130, 246, 0.10),
+            transparent 35%
+        ),
+        #f5f7fb;
+}
+
+
+body.light-mode .background-grid {
+    background-image:
+        linear-gradient(
+            rgba(15, 23, 42, 0.045) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(15, 23, 42, 0.045) 1px,
+            transparent 1px
+        );
+
+    opacity: 0.5;
+}
+
+
+body.light-mode .glow-purple {
+    background: rgba(124, 58, 237, 0.07);
+}
+
+
+body.light-mode .glow-blue {
+    background: rgba(37, 99, 235, 0.07);
+}
+
+
+body.light-mode .glow-pink {
+    background: rgba(219, 39, 119, 0.04);
+}
+
+
+/* =========================================================
+   3. MAIN LAYOUT
    ========================================================= */
 
 .site-wrapper {
@@ -359,8 +298,8 @@ html[data-theme="light"] .theme-toggle i {
     background:
         linear-gradient(
             180deg,
-            var(--sidebar-bg-1),
-            var(--sidebar-bg-2)
+            rgba(8, 14, 31, 0.97),
+            rgba(5, 9, 20, 0.97)
         );
 
     border-right: 1px solid var(--border);
@@ -372,6 +311,18 @@ html[data-theme="light"] .theme-toggle i {
     transition:
         background 0.35s ease,
         border-color 0.35s ease;
+}
+
+
+body.light-mode .sidebar {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.98),
+            rgba(248, 250, 252, 0.98)
+        );
+
+    border-right-color: rgba(15, 23, 42, 0.09);
 }
 
 
@@ -387,7 +338,7 @@ html[data-theme="light"] .theme-toggle i {
 
 
 /* =========================================================
-   6. SIDEBAR PROFILE
+   4. SIDEBAR PROFILE
    ========================================================= */
 
 .sidebar-profile {
@@ -434,13 +385,17 @@ html[data-theme="light"] .theme-toggle i {
     font-size: 16px;
     font-weight: 700;
 
-    color: var(--text-heading);
+    color: white;
+}
+
+
+body.light-mode .sidebar-profile h2 {
+    color: #172033;
 }
 
 
 .sidebar-profile p {
     font-size: 11px;
-
     color: var(--text-muted);
 
     margin-top: 2px;
@@ -448,7 +403,7 @@ html[data-theme="light"] .theme-toggle i {
 
 
 /* =========================================================
-   7. NAVIGATION
+   5. NAVIGATION
    ========================================================= */
 
 .navigation-title {
@@ -460,7 +415,12 @@ html[data-theme="light"] .theme-toggle i {
 
     letter-spacing: 2px;
 
-    color: var(--text-muted);
+    color: #59657d;
+}
+
+
+body.light-mode .navigation-title {
+    color: #8993a5;
 }
 
 
@@ -476,19 +436,23 @@ html[data-theme="light"] .theme-toggle i {
 
     display: flex;
     align-items: center;
-
     gap: 13px;
 
     padding: 12px 14px;
 
     border-radius: 10px;
 
-    color: var(--text-muted);
+    color: #7e8aa4;
 
     font-size: 13px;
     font-weight: 500;
 
     transition: var(--transition);
+}
+
+
+body.light-mode .navigation-link {
+    color: #667085;
 }
 
 
@@ -504,11 +468,16 @@ html[data-theme="light"] .theme-toggle i {
 
 
 .navigation-link:hover {
-    color: var(--text-heading);
+    color: white;
 
     background: rgba(59, 130, 246, 0.08);
 
     transform: translateX(3px);
+}
+
+
+body.light-mode .navigation-link:hover {
+    color: #172033;
 }
 
 
@@ -518,7 +487,7 @@ html[data-theme="light"] .theme-toggle i {
 
 
 .navigation-link.active {
-    color: var(--text-heading);
+    color: white;
 
     background:
         linear-gradient(
@@ -528,6 +497,18 @@ html[data-theme="light"] .theme-toggle i {
         );
 
     border: 1px solid rgba(96, 165, 250, 0.08);
+}
+
+
+body.light-mode .navigation-link.active {
+    color: #172033;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(59, 130, 246, 0.10),
+            rgba(139, 92, 246, 0.06)
+        );
 }
 
 
@@ -558,7 +539,70 @@ html[data-theme="light"] .theme-toggle i {
 
 
 /* =========================================================
-   8. AVAILABILITY
+   6. THEME TOGGLE
+   ========================================================= */
+
+.theme-toggle {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: auto;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    color: #aab6ca;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.theme-toggle:hover {
+    color: var(--blue-light);
+
+    border-color: rgba(96, 165, 250, 0.3);
+
+    background: rgba(59, 130, 246, 0.08);
+
+    transform: translateY(-2px);
+}
+
+
+body.light-mode .theme-toggle {
+    color: #4b5568;
+
+    background: rgba(15, 23, 42, 0.035);
+
+    border-color: rgba(15, 23, 42, 0.10);
+}
+
+
+body.light-mode .theme-toggle:hover {
+    color: var(--blue);
+
+    background: rgba(59, 130, 246, 0.08);
+
+    border-color: rgba(59, 130, 246, 0.20);
+}
+
+
+/* =========================================================
+   7. AVAILABILITY
    ========================================================= */
 
 .availability {
@@ -579,6 +623,16 @@ html[data-theme="light"] .theme-toggle i {
 }
 
 
+body.light-mode .availability {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(59, 130, 246, 0.07),
+            rgba(139, 92, 246, 0.05)
+        );
+}
+
+
 .availability-status {
     display: flex;
     align-items: center;
@@ -589,7 +643,7 @@ html[data-theme="light"] .theme-toggle i {
 
     letter-spacing: 1.5px;
 
-    color: #22c55e;
+    color: #86efac;
 
     margin-bottom: 10px;
 }
@@ -613,9 +667,14 @@ html[data-theme="light"] .theme-toggle i {
 .availability h3 {
     font-size: 13px;
 
-    color: var(--text-heading);
+    color: white;
 
     margin-bottom: 6px;
+}
+
+
+body.light-mode .availability h3 {
+    color: #172033;
 }
 
 
@@ -632,10 +691,8 @@ html[data-theme="light"] .theme-toggle i {
 
 .availability-button {
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 8px;
 
     width: 100%;
@@ -669,7 +726,7 @@ html[data-theme="light"] .theme-toggle i {
 
 
 /* =========================================================
-   9. SIDEBAR SOCIAL
+   8. SIDEBAR SOCIAL
    ========================================================= */
 
 .sidebar-social {
@@ -679,20 +736,22 @@ html[data-theme="light"] .theme-toggle i {
 
 .sidebar-social > p {
     font-size: 9px;
-
     letter-spacing: 1.5px;
-
     font-weight: 700;
 
-    color: var(--text-muted);
+    color: #59657d;
 
     margin-bottom: 10px;
 }
 
 
+body.light-mode .sidebar-social > p {
+    color: #8993a5;
+}
+
+
 .social-links {
     display: flex;
-
     gap: 8px;
 }
 
@@ -702,7 +761,6 @@ html[data-theme="light"] .theme-toggle i {
     height: 35px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -710,16 +768,23 @@ html[data-theme="light"] .theme-toggle i {
 
     border: 1px solid var(--border);
 
-    color: var(--text-muted);
+    color: #77839c;
 
-    background: var(--input-bg);
+    background: rgba(255, 255, 255, 0.02);
 
     transition: var(--transition);
 }
 
 
+body.light-mode .social-links a {
+    color: #667085;
+
+    background: rgba(15, 23, 42, 0.025);
+}
+
+
 .social-links a:hover {
-    color: var(--text-heading);
+    color: white;
 
     border-color: rgba(96, 165, 250, 0.3);
 
@@ -729,8 +794,13 @@ html[data-theme="light"] .theme-toggle i {
 }
 
 
+body.light-mode .social-links a:hover {
+    color: var(--blue);
+}
+
+
 /* =========================================================
-   10. MAIN CONTENT
+   9. MAIN CONTENT
    ========================================================= */
 
 .main-content {
@@ -741,7 +811,7 @@ html[data-theme="light"] .theme-toggle i {
 
 
 /* =========================================================
-   11. HERO
+   10. HERO
    ========================================================= */
 
 .hero {
@@ -770,15 +840,12 @@ html[data-theme="light"] .theme-toggle i {
 
 .hero-label {
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 
     color: var(--blue-light);
 
     font-size: 10px;
-
     font-weight: 700;
 
     letter-spacing: 2px;
@@ -820,7 +887,12 @@ html[data-theme="light"] .theme-toggle i {
 
     margin-bottom: 18px;
 
-    color: var(--text-heading);
+    color: white;
+}
+
+
+body.light-mode .hero h1 {
+    color: #172033;
 }
 
 
@@ -847,15 +919,19 @@ html[data-theme="light"] .theme-toggle i {
 
     font-weight: 500;
 
-    color: var(--text-secondary);
+    color: #9ba8c0;
 
     margin-bottom: 25px;
 }
 
 
+body.light-mode .hero h2 {
+    color: #596579;
+}
+
+
 .hero h2 span {
     color: var(--purple);
-
     padding: 0 7px;
 }
 
@@ -863,7 +939,7 @@ html[data-theme="light"] .theme-toggle i {
 .hero-description {
     max-width: 650px;
 
-    color: var(--text-secondary);
+    color: #8895ad;
 
     font-size: 14px;
 
@@ -873,18 +949,27 @@ html[data-theme="light"] .theme-toggle i {
 }
 
 
+body.light-mode .hero-description {
+    color: #667085;
+}
+
+
 .hero-description strong {
-    color: var(--text-heading);
+    color: #dce5f7;
+}
+
+
+body.light-mode .hero-description strong {
+    color: #273449;
 }
 
 
 /* =========================================================
-   12. BUTTONS
+   11. BUTTONS
    ========================================================= */
 
 .hero-buttons {
     display: flex;
-
     gap: 12px;
 
     flex-wrap: wrap;
@@ -937,16 +1022,23 @@ html[data-theme="light"] .theme-toggle i {
 
 
 .button-secondary {
-    color: var(--text-secondary);
+    color: #c0cbe0;
 
     border: 1px solid var(--border-light);
 
-    background: var(--input-bg);
+    background: rgba(255, 255, 255, 0.025);
+}
+
+
+body.light-mode .button-secondary {
+    color: #445066;
+
+    background: rgba(255, 255, 255, 0.8);
 }
 
 
 .button-secondary:hover {
-    color: var(--text-heading);
+    color: white;
 
     border-color: rgba(139, 92, 246, 0.4);
 
@@ -956,20 +1048,30 @@ html[data-theme="light"] .theme-toggle i {
 }
 
 
+body.light-mode .button-secondary:hover {
+    color: #172033;
+}
+
+
 /* =========================================================
-   13. TECHNOLOGIES
+   12. TECHNOLOGIES
    ========================================================= */
 
 .hero-technologies > p {
     font-size: 9px;
 
-    color: var(--text-muted);
+    color: #5f6c84;
 
     letter-spacing: 1.5px;
 
     font-weight: 700;
 
     margin-bottom: 10px;
+}
+
+
+body.light-mode .hero-technologies > p {
+    color: #8993a5;
 }
 
 
@@ -989,9 +1091,9 @@ html[data-theme="light"] .theme-toggle i {
 
     border: 1px solid var(--border);
 
-    background: var(--input-bg);
+    background: rgba(255, 255, 255, 0.02);
 
-    color: var(--text-muted);
+    color: #8e9bb3;
 
     font-size: 9px;
 
@@ -999,8 +1101,15 @@ html[data-theme="light"] .theme-toggle i {
 }
 
 
+body.light-mode .technology-list span {
+    color: #667085;
+
+    background: rgba(15, 23, 42, 0.025);
+}
+
+
 .technology-list span:hover {
-    color: var(--text-heading);
+    color: white;
 
     border-color: rgba(96, 165, 250, 0.25);
 
@@ -1008,8 +1117,13 @@ html[data-theme="light"] .theme-toggle i {
 }
 
 
+body.light-mode .technology-list span:hover {
+    color: #172033;
+}
+
+
 /* =========================================================
-   14. HERO VISUAL
+   13. HERO VISUAL
    ========================================================= */
 
 .hero-visual {
@@ -1018,7 +1132,6 @@ html[data-theme="light"] .theme-toggle i {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     min-height: 500px;
@@ -1041,25 +1154,32 @@ html[data-theme="light"] .theme-toggle i {
             rgba(255,255,255,0.015)
         );
 
-    border: 1px solid var(--border);
+    border: 1px solid rgba(148, 163, 184, 0.13);
 
     box-shadow:
         0 35px 80px rgba(0, 0, 0, 0.5);
 
     backdrop-filter: blur(20px);
+
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 
-html[data-theme="light"] .profile-card {
+body.light-mode .profile-card {
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,0.95),
-            rgba(248,250,252,0.9)
+            rgba(255,255,255,0.96),
+            rgba(245,247,251,0.96)
         );
 
+    border-color: rgba(15, 23, 42, 0.10);
+
     box-shadow:
-        0 35px 80px rgba(15, 23, 42, 0.12);
+        0 35px 80px rgba(15, 23, 42, 0.15);
 }
 
 
@@ -1073,6 +1193,11 @@ html[data-theme="light"] .profile-card {
     position: relative;
 
     background: #0b1224;
+}
+
+
+body.light-mode .profile-image-wrapper {
+    background: #e9edf5;
 }
 
 
@@ -1091,6 +1216,16 @@ html[data-theme="light"] .profile-card {
         );
 
     pointer-events: none;
+}
+
+
+body.light-mode .profile-image-wrapper::after {
+    background:
+        linear-gradient(
+            to top,
+            rgba(15, 23, 42, 0.35),
+            transparent 45%
+        );
 }
 
 
@@ -1129,7 +1264,7 @@ html[data-theme="light"] .profile-card {
 
     letter-spacing: 1.3px;
 
-    color: #22c55e;
+    color: #86efac;
 
     font-weight: 700;
 }
@@ -1152,8 +1287,11 @@ html[data-theme="light"] .profile-card {
     font-size: 19px;
 
     margin-top: 7px;
+}
 
-    color: var(--text-heading);
+
+body.light-mode .profile-card-info h3 {
+    color: #172033;
 }
 
 
@@ -1173,14 +1311,14 @@ html[data-theme="light"] .profile-card {
 
     margin-top: 7px;
 
-    color: var(--text-muted);
+    color: #68758d;
 
     font-size: 10px;
 }
 
 
 /* =========================================================
-   15. FLOATING ICONS
+   14. FLOATING ICONS
    ========================================================= */
 
 .floating-icon {
@@ -1190,13 +1328,13 @@ html[data-theme="light"] .profile-card {
     height: 55px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
     border-radius: 15px;
 
-    background: rgba(10, 18, 38, 0.9);
+    background:
+        rgba(10, 18, 38, 0.9);
 
     border: 1px solid rgba(96, 165, 250, 0.16);
 
@@ -1213,8 +1351,10 @@ html[data-theme="light"] .profile-card {
 }
 
 
-html[data-theme="light"] .floating-icon {
-    background: rgba(255,255,255,0.95);
+body.light-mode .floating-icon {
+    background: rgba(255,255,255,0.92);
+
+    border-color: rgba(59,130,246,0.15);
 
     box-shadow:
         0 15px 35px rgba(15,23,42,0.12);
@@ -1252,7 +1392,7 @@ html[data-theme="light"] .floating-icon {
 
 
 /* =========================================================
-   16. QUICK INFO
+   15. QUICK INFO
    ========================================================= */
 
 .quick-info {
@@ -1298,11 +1438,16 @@ html[data-theme="light"] .floating-icon {
 
     font-size: 8px;
 
-    color: var(--text-muted);
+    color: #58647b;
 
     font-weight: 700;
 
     letter-spacing: 1.3px;
+}
+
+
+body.light-mode .quick-item span {
+    color: #8993a5;
 }
 
 
@@ -1313,14 +1458,19 @@ html[data-theme="light"] .floating-icon {
 
     font-weight: 500;
 
-    color: var(--text-secondary);
+    color: #b0bdd2;
 
     margin-top: 2px;
 }
 
 
+body.light-mode .quick-item strong {
+    color: #596579;
+}
+
+
 /* =========================================================
-   17. GENERAL SECTIONS
+   16. GENERAL SECTIONS
    ========================================================= */
 
 .section {
@@ -1368,12 +1518,17 @@ html[data-theme="light"] .floating-icon {
 
     letter-spacing: -1.5px;
 
-    color: var(--text-heading);
+    color: white;
+}
+
+
+body.light-mode .section-heading h2 {
+    color: #172033;
 }
 
 
 /* =========================================================
-   18. ABOUT
+   17. ABOUT
    ========================================================= */
 
 .about-grid {
@@ -1390,11 +1545,16 @@ html[data-theme="light"] .floating-icon {
 
 
 .about-text {
-    color: var(--text-secondary);
+    color: #8c99b0;
 
     font-size: 14px;
 
     line-height: 1.9;
+}
+
+
+body.light-mode .about-text {
+    color: #667085;
 }
 
 
@@ -1404,14 +1564,24 @@ html[data-theme="light"] .floating-icon {
 
 
 .about-text .about-intro {
-    color: var(--text-secondary);
+    color: #bac5d8;
 
     font-size: 16px;
 }
 
 
+body.light-mode .about-text .about-intro {
+    color: #4b5568;
+}
+
+
 .about-text strong {
-    color: var(--text-heading);
+    color: #e9effa;
+}
+
+
+body.light-mode .about-text strong {
+    color: #273449;
 }
 
 
@@ -1436,11 +1606,21 @@ html[data-theme="light"] .floating-icon {
     background:
         linear-gradient(
             145deg,
-            var(--card-bg-1),
-            var(--card-bg-2)
+            rgba(15, 24, 48, 0.8),
+            rgba(8, 13, 29, 0.75)
         );
 
     transition: var(--transition);
+}
+
+
+body.light-mode .about-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.95),
+            rgba(248,250,252,0.95)
+        );
 }
 
 
@@ -1450,7 +1630,13 @@ html[data-theme="light"] .floating-icon {
     border-color: rgba(96, 165, 250, 0.2);
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.12);
+        0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+body.light-mode .about-card:hover {
+    box-shadow:
+        0 15px 35px rgba(15,23,42,0.08);
 }
 
 
@@ -1486,8 +1672,6 @@ html[data-theme="light"] .floating-icon {
     font-size: 13px;
 
     margin-bottom: 7px;
-
-    color: var(--text-heading);
 }
 
 
@@ -1501,7 +1685,7 @@ html[data-theme="light"] .floating-icon {
 
 
 /* =========================================================
-   19. SKILLS
+   18. SKILLS
    ========================================================= */
 
 .skills-grid {
@@ -1525,13 +1709,23 @@ html[data-theme="light"] .floating-icon {
     background:
         linear-gradient(
             145deg,
-            var(--card-bg-1),
-            var(--card-bg-2)
+            rgba(13, 22, 44, 0.82),
+            rgba(7, 12, 27, 0.75)
         );
 
     overflow: hidden;
 
     transition: var(--transition);
+}
+
+
+body.light-mode .skill-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.95),
+            rgba(248,250,252,0.95)
+        );
 }
 
 
@@ -1562,7 +1756,13 @@ html[data-theme="light"] .floating-icon {
     border-color: rgba(96, 165, 250, 0.2);
 
     box-shadow:
-        0 20px 45px rgba(0, 0, 0, 0.12);
+        0 20px 45px rgba(0, 0, 0, 0.2);
+}
+
+
+body.light-mode .skill-card:hover {
+    box-shadow:
+        0 20px 45px rgba(15,23,42,0.08);
 }
 
 
@@ -1597,7 +1797,7 @@ html[data-theme="light"] .floating-icon {
 
 
 .skill-top > span {
-    color: var(--text-muted);
+    color: #3e4b62;
 
     font-size: 11px;
 
@@ -1609,8 +1809,11 @@ html[data-theme="light"] .floating-icon {
     font-size: 16px;
 
     margin-bottom: 8px;
+}
 
-    color: var(--text-heading);
+
+body.light-mode .skill-card h3 {
+    color: #273449;
 }
 
 
@@ -1639,9 +1842,9 @@ html[data-theme="light"] .floating-icon {
 .project-tags span {
     padding: 5px 8px;
 
-    color: var(--text-muted);
+    color: #8290aa;
 
-    background: var(--input-bg);
+    background: rgba(255, 255, 255, 0.025);
 
     border: 1px solid var(--border);
 
@@ -1651,8 +1854,16 @@ html[data-theme="light"] .floating-icon {
 }
 
 
+body.light-mode .tags span,
+body.light-mode .project-tags span {
+    color: #667085;
+
+    background: rgba(15,23,42,0.025);
+}
+
+
 /* =========================================================
-   20. TOOLS
+   19. TOOLS
    ========================================================= */
 
 .tools {
@@ -1661,7 +1872,7 @@ html[data-theme="light"] .floating-icon {
 
 
 .tools > p {
-    color: var(--text-muted);
+    color: #59657c;
 
     font-size: 9px;
 
@@ -1670,6 +1881,11 @@ html[data-theme="light"] .floating-icon {
     letter-spacing: 1.5px;
 
     margin-bottom: 13px;
+}
+
+
+body.light-mode .tools > p {
+    color: #8993a5;
 }
 
 
@@ -1687,18 +1903,25 @@ html[data-theme="light"] .floating-icon {
 
     border-radius: 8px;
 
-    color: var(--text-muted);
+    color: #8996ae;
 
     font-size: 9px;
 
     border: 1px solid var(--border);
 
-    background: var(--input-bg);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+
+body.light-mode .tools-list span {
+    color: #667085;
+
+    background: rgba(15,23,42,0.025);
 }
 
 
 /* =========================================================
-   21. PROJECTS
+   20. PROJECTS
    ========================================================= */
 
 .projects {
@@ -1726,11 +1949,21 @@ html[data-theme="light"] .floating-icon {
     background:
         linear-gradient(
             145deg,
-            var(--card-bg-1),
-            var(--card-bg-2)
+            rgba(12, 20, 41, 0.85),
+            rgba(6, 11, 25, 0.8)
         );
 
     transition: var(--transition);
+}
+
+
+body.light-mode .project-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.96),
+            rgba(248,250,252,0.96)
+        );
 }
 
 
@@ -1740,7 +1973,13 @@ html[data-theme="light"] .floating-icon {
     transform: translateY(-5px);
 
     box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.12);
+        0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+
+body.light-mode .project-card:hover {
+    box-shadow:
+        0 25px 60px rgba(15,23,42,0.09);
 }
 
 
@@ -1752,7 +1991,6 @@ html[data-theme="light"] .floating-icon {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     overflow: hidden;
@@ -1824,7 +2062,7 @@ html[data-theme="light"] .floating-icon {
 
 
 /* =========================================================
-   22. PROJECT WINDOWS
+   21. PROJECT FAKE WINDOWS
    ========================================================= */
 
 .project-window {
@@ -1883,7 +2121,7 @@ html[data-theme="light"] .floating-icon {
 
 
 /* =========================================================
-   23. LECTURE PROJECT
+   22. LECTURE PROJECT
    ========================================================= */
 
 .book-interface {
@@ -1907,7 +2145,6 @@ html[data-theme="light"] .floating-icon {
     color: white;
 
     font-size: 13px;
-
     font-weight: 800;
 
     background:
@@ -1984,7 +2221,7 @@ html[data-theme="light"] .floating-icon {
 
 
 /* =========================================================
-   24. POINTAGE PROJECT
+   23. POINTAGE PROJECT
    ========================================================= */
 
 .pointage-interface {
@@ -2063,7 +2300,7 @@ html[data-theme="light"] .floating-icon {
 
 
 /* =========================================================
-   25. STAGE PROJECT
+   24. STAGE PROJECT
    ========================================================= */
 
 .stage-interface {
@@ -2162,7 +2399,7 @@ html[data-theme="light"] .floating-icon {
 
 
 /* =========================================================
-   26. PROJECT CONTENT
+   25. PROJECT CONTENT
    ========================================================= */
 
 .project-content {
@@ -2202,13 +2439,16 @@ html[data-theme="light"] .floating-icon {
     margin-bottom: 13px;
 
     letter-spacing: -0.5px;
+}
 
-    color: var(--text-heading);
+
+body.light-mode .project-content h3 {
+    color: #172033;
 }
 
 
 .project-content > p {
-    color: var(--text-muted);
+    color: #7e8ba3;
 
     font-size: 11px;
 
@@ -2220,11 +2460,15 @@ html[data-theme="light"] .floating-icon {
 }
 
 
+body.light-mode .project-content > p {
+    color: #667085;
+}
+
+
 .project-bottom {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 15px;
@@ -2235,7 +2479,7 @@ html[data-theme="light"] .floating-icon {
 
     border-top: 1px solid var(--border);
 
-    color: var(--text-muted);
+    color: #59657c;
 
     font-size: 9px;
 }
@@ -2248,9 +2492,14 @@ html[data-theme="light"] .floating-icon {
 
     gap: 7px;
 
-    color: var(--text-secondary);
+    color: #9eb4d5;
 
     transition: var(--transition);
+}
+
+
+body.light-mode .project-bottom a {
+    color: #53627a;
 }
 
 
@@ -2262,7 +2511,7 @@ html[data-theme="light"] .floating-icon {
 
 
 /* =========================================================
-   27. EXPERIENCE TIMELINE
+   26. EXPERIENCE TIMELINE
    ========================================================= */
 
 .timeline {
@@ -2339,14 +2588,15 @@ html[data-theme="light"] .floating-icon {
 
     border-radius: 16px;
 
-    background: rgba(11, 19, 39, 0.7);
+    background:
+        rgba(11, 19, 39, 0.7);
 
     transition: var(--transition);
 }
 
 
-html[data-theme="light"] .timeline-content {
-    background: rgba(255,255,255,0.85);
+body.light-mode .timeline-content {
+    background: rgba(255,255,255,0.90);
 }
 
 
@@ -2372,8 +2622,11 @@ html[data-theme="light"] .timeline-content {
     margin-top: 7px;
 
     font-size: 18px;
+}
 
-    color: var(--text-heading);
+
+body.light-mode .timeline-content h3 {
+    color: #273449;
 }
 
 
@@ -2389,7 +2642,7 @@ html[data-theme="light"] .timeline-content {
 
 
 .timeline-content p {
-    color: var(--text-muted);
+    color: #7d8aa1;
 
     font-size: 11px;
 
@@ -2399,8 +2652,13 @@ html[data-theme="light"] .timeline-content {
 }
 
 
+body.light-mode .timeline-content p {
+    color: #667085;
+}
+
+
 /* =========================================================
-   28. EDUCATION
+   27. EDUCATION
    ========================================================= */
 
 .education {
@@ -2427,14 +2685,15 @@ html[data-theme="light"] .timeline-content {
 
     border: 1px solid var(--border);
 
-    background: rgba(11, 19, 39, 0.65);
+    background:
+        rgba(11, 19, 39, 0.65);
 
     transition: var(--transition);
 }
 
 
-html[data-theme="light"] .education-card {
-    background: rgba(255,255,255,0.85);
+body.light-mode .education-card {
+    background: rgba(255,255,255,0.90);
 }
 
 
@@ -2495,8 +2754,11 @@ html[data-theme="light"] .education-card {
     font-size: 15px;
 
     margin-top: 3px;
+}
 
-    color: var(--text-heading);
+
+body.light-mode .education-info h3 {
+    color: #273449;
 }
 
 
@@ -2510,7 +2772,7 @@ html[data-theme="light"] .education-card {
 
 
 .education-card > i {
-    color: var(--text-muted);
+    color: #47546c;
 
     font-size: 20px;
 
@@ -2519,7 +2781,7 @@ html[data-theme="light"] .education-card {
 
 
 /* =========================================================
-   29. CONTACT
+   28. CONTACT
    ========================================================= */
 
 .contact-section {
@@ -2550,16 +2812,16 @@ html[data-theme="light"] .education-card {
 }
 
 
-html[data-theme="light"] .contact-section {
+body.light-mode .contact-section {
     background:
         radial-gradient(
             circle at 0% 100%,
-            rgba(59, 130, 246, 0.10),
+            rgba(59, 130, 246, 0.09),
             transparent 40%
         ),
         radial-gradient(
             circle at 100% 0%,
-            rgba(139, 92, 246, 0.10),
+            rgba(139, 92, 246, 0.09),
             transparent 40%
         ),
         rgba(255,255,255,0.95);
@@ -2625,13 +2887,16 @@ html[data-theme="light"] .contact-section {
     max-width: 600px;
 
     margin-bottom: 18px;
+}
 
-    color: var(--text-heading);
+
+body.light-mode .contact-text h2 {
+    color: #172033;
 }
 
 
 .contact-text > p {
-    color: var(--text-muted);
+    color: #8491a8;
 
     font-size: 12px;
 
@@ -2640,6 +2905,11 @@ html[data-theme="light"] .contact-section {
     max-width: 550px;
 
     margin-bottom: 25px;
+}
+
+
+body.light-mode .contact-text > p {
+    color: #667085;
 }
 
 
@@ -2665,9 +2935,14 @@ html[data-theme="light"] .contact-section {
 
     border: 1px solid var(--border);
 
-    background: var(--input-bg);
+    background: rgba(255,255,255,0.018);
 
     transition: var(--transition);
+}
+
+
+body.light-mode .contact-item {
+    background: rgba(15,23,42,0.025);
 }
 
 
@@ -2700,7 +2975,7 @@ html[data-theme="light"] .contact-section {
 .contact-item span {
     display: block;
 
-    color: var(--text-muted);
+    color: #536078;
 
     font-size: 7px;
 
@@ -2714,7 +2989,7 @@ html[data-theme="light"] .contact-section {
 .contact-item strong {
     display: block;
 
-    color: var(--text-secondary);
+    color: #aab7cd;
 
     font-size: 10px;
 
@@ -2726,13 +3001,19 @@ html[data-theme="light"] .contact-section {
 }
 
 
+body.light-mode .contact-item a,
+body.light-mode .contact-item strong {
+    color: #53627a;
+}
+
+
 .contact-item a:hover {
     color: var(--blue-light);
 }
 
 
 /* =========================================================
-   30. FOOTER
+   29. FOOTER
    ========================================================= */
 
 footer {
@@ -2743,14 +3024,13 @@ footer {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 20px;
 
     border-top: 1px solid var(--border);
 
-    color: var(--text-muted);
+    color: #4f5b72;
 
     font-size: 8px;
 }
@@ -2790,7 +3070,7 @@ footer {
 
 
 .footer-logo span {
-    color: var(--text-muted);
+    color: #77849c;
 
     font-size: 10px;
 
@@ -2798,64 +3078,13 @@ footer {
 }
 
 
-/* =========================================================
-   31. LIGHT THEME — ADDITIONAL FIXES
-   ========================================================= */
-
-html[data-theme="light"] {
-    color-scheme: light;
-}
-
-
-html[data-theme="light"] .background {
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(59, 130, 246, 0.08),
-            transparent 35%
-        ),
-        #f5f7fb;
-}
-
-
-html[data-theme="light"] .glow-purple {
-    background: rgba(124, 58, 237, 0.08);
-}
-
-
-html[data-theme="light"] .glow-blue {
-    background: rgba(37, 99, 235, 0.07);
-}
-
-
-html[data-theme="light"] .glow-pink {
-    background: rgba(219, 39, 119, 0.04);
-}
-
-
-html[data-theme="light"] .project-card {
-    box-shadow:
-        0 20px 50px rgba(15, 23, 42, 0.07);
-}
-
-
-html[data-theme="light"] .project-content > p {
-    color: #64748b;
-}
-
-
-html[data-theme="light"] .profile-image-wrapper::after {
-    background:
-        linear-gradient(
-            to top,
-            rgba(15, 23, 42, 0.45),
-            transparent 45%
-        );
+body.light-mode .footer-logo span {
+    color: #667085;
 }
 
 
 /* =========================================================
-   32. ANIMATIONS
+   30. ANIMATIONS
    ========================================================= */
 
 @keyframes pulse {
@@ -2889,7 +3118,7 @@ html[data-theme="light"] .profile-image-wrapper::after {
 
 
 /* =========================================================
-   33. SCROLLBAR
+   31. SCROLLBAR
    ========================================================= */
 
 ::-webkit-scrollbar {
@@ -2898,7 +3127,12 @@ html[data-theme="light"] .profile-image-wrapper::after {
 
 
 ::-webkit-scrollbar-track {
-    background: var(--bg-main);
+    background: #050914;
+}
+
+
+body.light-mode ::-webkit-scrollbar-track {
+    background: #f5f7fb;
 }
 
 
@@ -2925,7 +3159,7 @@ html[data-theme="light"] .profile-image-wrapper::after {
 
 
 /* =========================================================
-   34. RESPONSIVE — TABLET
+   32. RESPONSIVE — TABLET
    ========================================================= */
 
 @media (max-width: 1100px) {
@@ -2972,7 +3206,7 @@ html[data-theme="light"] .profile-image-wrapper::after {
 
 
 /* =========================================================
-   35. RESPONSIVE — TABLET SMALL
+   33. RESPONSIVE — TABLET SMALL
    ========================================================= */
 
 @media (max-width: 850px) {
@@ -3011,23 +3245,6 @@ html[data-theme="light"] .profile-image-wrapper::after {
 
 
     .navigation {
-        display: none;
-    }
-
-
-    .theme-toggle {
-        width: 42px;
-
-        position: absolute;
-
-        top: 18px;
-        right: 20px;
-
-        margin-top: 0;
-    }
-
-
-    .theme-toggle span {
         display: none;
     }
 
@@ -3131,19 +3348,13 @@ html[data-theme="light"] .profile-image-wrapper::after {
 
 
 /* =========================================================
-   36. RESPONSIVE — MOBILE
+   34. RESPONSIVE — MOBILE
    ========================================================= */
 
 @media (max-width: 600px) {
 
     .sidebar {
         padding: 15px;
-    }
-
-
-    .theme-toggle {
-        top: 15px;
-        right: 15px;
     }
 
 
@@ -3155,6 +3366,12 @@ html[data-theme="light"] .profile-image-wrapper::after {
 
     .sidebar-profile h2 {
         font-size: 14px;
+    }
+
+
+    .theme-toggle {
+        width: 35px;
+        height: 35px;
     }
 
 
@@ -3382,7 +3599,7 @@ html[data-theme="light"] .profile-image-wrapper::after {
 
 
 /* =========================================================
-   37. VERY SMALL PHONES
+   35. VERY SMALL PHONES
    ========================================================= */
 
 @media (max-width: 380px) {
@@ -3419,7 +3636,7 @@ html[data-theme="light"] .profile-image-wrapper::after {
 
 
 /* =========================================================
-   38. REDUCED MOTION
+   36. REDUCED MOTION
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
