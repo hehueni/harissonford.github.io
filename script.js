@@ -1,5 +1,5 @@
 /* =========================================================
-   PORTFOLIO — Harisson Ford • script.js (v3)
+   PORTFOLIO — Harisson Ford • script.js (v4)
    ========================================================= */
 (() => {
     "use strict";
@@ -165,7 +165,10 @@
         });
     }
 
-    /* ---------- Formulaire de contact (ouvre l'application mail) ---------- */
+    /* ---------- Formulaire de contact ----------
+       Prépare un e-mail dans l'application mail du visiteur.
+       Il n'envoie rien par lui-même : pour un envoi direct, il faut un
+       service externe (Formspree, etc.). */
     const form = $("#contact-form");
     const status = $("#form-status");
 
@@ -205,9 +208,40 @@
 
             window.location.href = "mailto:hehueni@gmail.com?subject=" + subject + "&body=" + body;
 
-            status.textContent = "Votre application mail va s'ouvrir pour envoyer le message.";
+            status.textContent = "Votre application mail va s'ouvrir : vérifiez le message puis envoyez-le.";
             status.classList.add("ok");
             form.reset();
         });
     }
-})();
+
+    /* ---------- V4 : progression, apparition, compteurs, retour en haut ---------- */
+    root.classList.add("js");
+    const bar = $("#scroll-progress");
+    const topBtn = $("#to-top");
+    const onScrollV4 = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        if (bar) bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + "%";
+        if (topBtn) topBtn.classList.toggle("show", window.scrollY > 700);
+    };
+    window.addEventListener("scroll", onScrollV4, { passive: true });
+    onScrollV4();
+    if (topBtn) topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    const revealSel = ".section-heading,.about-text-card,.about-card,.stats>div,.tech-card,.skill-card,.tools,.project-card,.timeline-item,.education-card,.contact-item,.contact-form,.contact-visual,.about-visual";
+    const targets = $$(revealSel);
+    const countUp = (el) => {
+        const n = parseInt(el.textContent, 10);
+        if (!n || reduceMotion) return;
+        let i = 0;
+        const t = setInterval(() => { el.textContent = ++i; if (i >= n) clearInterval(t); }, 260);
+    };
+    if ("IntersectionObserver" in window && !reduceMotion) {
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+                if (!e.isIntersecting) return;
+                e.target.classList.add("in");
+                const num = $(".stats strong", e.target) || (e.target.matches(".stats>div") ? $("strong", e.target) : null);
+                if (num) countUp(num);
+                io.unobserve(e.target);
+            });
+        }, { threshold:
