@@ -1,213 +1,421 @@
 /* =========================================================
-   PORTFOLIO — Harisson Ford • script.js (v3)
+   PORTFOLIO — Harisson Ford • script.js (v4.1)
    ========================================================= */
 (() => {
     "use strict";
 
-    const $ = (sel, ctx = document) => ctx.querySelector(sel);
-    const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+    const doc = document;
+    const root = doc.documentElement;
 
-    /* ---------- Thème clair / sombre ---------- */
-    const root = document.documentElement;
-    const themeBtn = $("#theme-toggle");
-    const themeMeta = $('meta[name="theme-color"]');
-
-    const applyTheme = (theme, save) => {
-        root.setAttribute("data-theme", theme);
-        if (themeMeta) themeMeta.setAttribute("content", theme === "light" ? "#f4f6fc" : "#0b1020");
-        if (themeBtn) {
-            themeBtn.setAttribute(
-                "aria-label",
-                theme === "light" ? "Passer en mode sombre" : "Passer en mode clair"
-            );
-        }
-        if (save) {
-            try { localStorage.setItem("theme", theme); } catch (e) { /* stockage indisponible */ }
-        }
-    };
-
-    applyTheme(root.getAttribute("data-theme") === "light" ? "light" : "dark", false);
-
-    if (themeBtn) {
-        themeBtn.addEventListener("click", () => {
-            root.classList.add("theme-anim");
-            applyTheme(root.getAttribute("data-theme") === "light" ? "dark" : "light", true);
-            setTimeout(() => root.classList.remove("theme-anim"), 450);
-        });
-    }
-
-    /* ---------- Barre de navigation : état au scroll ---------- */
-    const header = $("#header");
-    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-
-    /* ---------- Menu mobile ---------- */
-    const toggle = $("#nav-toggle");
-    const menu = $("#nav-links");
-
-    const setMenu = (open) => {
-        menu.classList.toggle("open", open);
-        toggle.setAttribute("aria-expanded", String(open));
-        toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
-        toggle.innerHTML = open
-            ? '<i class="fa-solid fa-xmark"></i>'
-            : '<i class="fa-solid fa-bars"></i>';
-    };
-
-    toggle.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
-    $$("#nav-links a").forEach((a) => a.addEventListener("click", () => setMenu(false)));
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") setMenu(false);
-    });
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".navbar")) setMenu(false);
-    });
-
-    /* ---------- Lien actif selon la section visible ---------- */
-    const links = $$(".nav-link");
-    const sections = $$("main section[id]");
-
-    if ("IntersectionObserver" in window) {
-        const spy = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
-                    links.forEach((l) =>
-                        l.classList.toggle("active", l.getAttribute("href") === "#" + entry.target.id)
-                    );
-                });
-            },
-            { rootMargin: "-40% 0px -55% 0px" }
-        );
-        sections.forEach((s) => spy.observe(s));
-    }
-
-    /* ---------- Slider de captures ---------- */
+    const $ = (sel, ctx = doc) => (ctx ? ctx.querySelector(sel) : null);
+    const $$ = (sel, ctx = doc) => (ctx ? Array.from(ctx.querySelectorAll(sel)) : []);
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    $$("[data-slider]").forEach((slider) => {
-        const slides = $$(".slide", slider);
-        if (slides.length < 2) return;
+    /* =========================================================
+       1. THÈME CLAIR / SOMBRE
+       ========================================================= */
+    function initTheme() {
+        const themeToggle = $("#theme-toggle");
+        const storageKey = "theme";
 
-        // Crée les points automatiquement s'ils ne sont pas dans le HTML
-        const dotsWrap = $(".slider-dots", slider);
-        let dots = $$(".dot", slider);
-        if (dotsWrap && dots.length !== slides.length) {
-            dotsWrap.innerHTML = "";
-            slides.forEach((s, n) => {
-                const b = document.createElement("button");
-                b.type = "button";
-                b.className = "dot" + (n === 0 ? " active" : "");
-                b.setAttribute("aria-label", "Capture " + (n + 1) + " : " + (s.dataset.caption || ""));
-                dotsWrap.appendChild(b);
-            });
-            dots = $$(".dot", slider);
-        }
+        function applyTheme(theme) {
+            root.setAttribute("data-theme", theme);
 
-        let index = 0;
-        let timer = null;
-
-        const caption = $(".slide-caption", slider);
-
-        const show = (i) => {
-            index = (i + slides.length) % slides.length;
-            slides.forEach((s, n) => s.classList.toggle("active", n === index));
-            dots.forEach((d, n) => d.classList.toggle("active", n === index));
-            if (caption) caption.textContent = slides[index].dataset.caption || "";
-        };
-
-        const start = () => {
-            if (reduceMotion) return;
-            stop();
-            timer = setInterval(() => show(index + 1), 4500);
-        };
-        const stop = () => clearInterval(timer);
-
-        dots.forEach((d, n) =>
-            d.addEventListener("click", () => {
-                show(n);
-                start();
-            })
-        );
-
-        slider.addEventListener("mouseenter", stop);
-        slider.addEventListener("mouseleave", start);
-        slider.addEventListener("focusin", stop);
-        slider.addEventListener("focusout", start);
-        start();
-    });
-
-    /* ---------- Agrandissement des captures ---------- */
-    const lightbox = $("#lightbox");
-    const lightboxImg = lightbox ? $("img", lightbox) : null;
-
-    const closeLightbox = () => {
-        lightbox.hidden = true;
-        lightboxImg.src = "";
-        document.body.style.overflow = "";
-    };
-
-    if (lightbox) {
-        $$("[data-zoom]").forEach((img) =>
-            img.addEventListener("click", () => {
-                lightboxImg.src = img.currentSrc || img.src;
-                lightboxImg.alt = img.alt;
-                lightbox.hidden = false;
-                document.body.style.overflow = "hidden";
-            })
-        );
-        lightbox.addEventListener("click", (e) => {
-            if (e.target !== lightboxImg) closeLightbox();
-        });
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape" && !lightbox.hidden) closeLightbox();
-        });
-    }
-
-    /* ---------- Formulaire de contact (ouvre l'application mail) ---------- */
-    const form = $("#contact-form");
-    const status = $("#form-status");
-
-    if (form) {
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            const fields = [
-                { el: $("#cf-first"), ok: (v) => v.length >= 2 },
-                { el: $("#cf-last"), ok: (v) => v.length >= 2 },
-                { el: $("#cf-email"), ok: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) },
-                { el: $("#cf-message"), ok: (v) => v.length >= 5 },
-            ];
-
-            let valid = true;
-            fields.forEach(({ el, ok }) => {
-                const good = ok(el.value.trim());
-                el.parentElement.classList.toggle("error", !good);
-                if (!good) valid = false;
-            });
-
-            status.classList.remove("ok");
-            if (!valid) {
-                status.textContent = "Veuillez remplir correctement tous les champs obligatoires.";
-                return;
+            try {
+                localStorage.setItem(storageKey, theme);
+            } catch (error) {
+                console.warn("Le thème ne peut pas être enregistré.", error);
             }
 
-            const name = $("#cf-first").value.trim() + " " + $("#cf-last").value.trim();
-            const email = $("#cf-email").value.trim();
-            const phone = $("#cf-phone").value.trim();
-            const message = $("#cf-message").value.trim();
+            if (themeToggle) {
+                const isDark = theme === "dark";
+                themeToggle.setAttribute(
+                    "aria-label",
+                    isDark ? "Passer en mode clair" : "Passer en mode sombre"
+                );
+                themeToggle.setAttribute("title", "Changer de thème");
+            }
+        }
 
-            const subject = encodeURIComponent("Contact depuis le portfolio — " + name);
-            const body = encodeURIComponent(
-                message + "\n\n— " + name + " (" + email + (phone ? ", " + phone : "") + ")"
-            );
+        let savedTheme = "dark";
 
-            window.location.href = "mailto:hehueni@gmail.com?subject=" + subject + "&body=" + body;
+        try {
+            savedTheme = localStorage.getItem(storageKey) === "light"
+                ? "light"
+                : "dark";
+        } catch (error) {
+            // Le thème sombre est utilisé par défaut.
+        }
 
-            status.textContent = "Votre application mail va s'ouvrir pour envoyer le message.";
-            status.classList.add("ok");
-            form.reset();
+        applyTheme(savedTheme);
+
+        if (themeToggle) {
+            themeToggle.addEventListener("click", () => {
+                const currentTheme = root.getAttribute("data-theme");
+                applyTheme(currentTheme === "dark" ? "light" : "dark");
+            });
+        }
+    }
+
+    /* =========================================================
+       2. MENU DE NAVIGATION MOBILE
+       ========================================================= */
+    function initMobileMenu() {
+        const toggle = $("#nav-toggle");
+        const nav = $("#nav-links");
+
+        if (!toggle || !nav) return;
+
+        function closeMenu() {
+            nav.classList.remove("open", "active");
+            toggle.classList.remove("active");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.setAttribute("aria-label", "Ouvrir le menu");
+            root.classList.remove("menu-open");
+        }
+
+        function openMenu() {
+            nav.classList.add("open");
+            toggle.classList.add("active");
+            toggle.setAttribute("aria-expanded", "true");
+            toggle.setAttribute("aria-label", "Fermer le menu");
+            root.classList.add("menu-open");
+        }
+
+        toggle.addEventListener("click", () => {
+            const isOpen = toggle.getAttribute("aria-expanded") === "true";
+            isOpen ? closeMenu() : openMenu();
+        });
+
+        $$(".nav-link, .nav-cta", nav).forEach(link => {
+            link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape") closeMenu();
+        });
+
+        document.addEventListener("click", event => {
+            if (
+                nav.classList.contains("open") &&
+                !nav.contains(event.target) &&
+                !toggle.contains(event.target)
+            ) {
+                closeMenu();
+            }
+        });
+
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 900) closeMenu();
         });
     }
-})();
+
+    /* =========================================================
+       3. BARRE DE PROGRESSION
+       ========================================================= */
+    function initScrollProgress() {
+        const progress = $("#scroll-progress");
+        if (!progress) return;
+
+        function updateProgress() {
+            const scrollTop = window.scrollY || root.scrollTop;
+            const scrollableHeight = root.scrollHeight - window.innerHeight;
+            const percentage = scrollableHeight > 0
+                ? (scrollTop / scrollableHeight) * 100
+                : 0;
+
+            progress.style.width = `${Math.min(100, Math.max(0, percentage))}%`;
+        }
+
+        window.addEventListener("scroll", updateProgress, { passive: true });
+        window.addEventListener("resize", updateProgress);
+        updateProgress();
+    }
+
+    /* =========================================================
+       4. EN-TÊTE ET BOUTON RETOUR EN HAUT
+       ========================================================= */
+    function initScrollEffects() {
+        const header = $("#header");
+        const toTop = $("#to-top");
+
+        function updateScroll() {
+            const scrollY = window.scrollY || 0;
+
+            if (header) {
+                header.classList.toggle("scrolled", scrollY > 30);
+            }
+
+            if (toTop) {
+                toTop.classList.toggle("show", scrollY > 400);
+                toTop.setAttribute("aria-hidden", scrollY > 400 ? "false" : "true");
+            }
+        }
+
+        window.addEventListener("scroll", updateScroll, { passive: true });
+
+        if (toTop) {
+            toTop.addEventListener("click", () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: reduceMotion ? "auto" : "smooth"
+                });
+            });
+        }
+
+        updateScroll();
+    }
+
+    /* =========================================================
+       5. LIEN ACTIF DANS LA NAVIGATION
+       ========================================================= */
+    function initActiveNavigation() {
+        const links = $$(".nav-link[href^='#']");
+
+        if (!links.length || !("IntersectionObserver" in window)) return;
+
+        const sections = links
+            .map(link => $(link.getAttribute("href")))
+            .filter(Boolean);
+
+        if (!sections.length) return;
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                links.forEach(link => {
+                    const isActive =
+                        link.getAttribute("href") === `#${entry.target.id}`;
+
+                    link.classList.toggle("active", isActive);
+
+                    if (isActive) {
+                        link.setAttribute("aria-current", "location");
+                    } else {
+                        link.removeAttribute("aria-current");
+                    }
+                });
+            });
+        }, {
+            rootMargin: "-30% 0px -60% 0px",
+            threshold: 0
+        });
+
+        sections.forEach(section => observer.observe(section));
+    }
+
+    /* =========================================================
+       6. CARROUSELS DES PROJETS
+       Compatible avec le HTML fourni
+       ========================================================= */
+    function initSliders() {
+        $$("[data-slider]").forEach(slider => {
+            const slides = $$(".slide", slider);
+            const dotsContainer = $(".slider-dots", slider);
+            const caption = $(".slide-caption", slider);
+
+            if (!slides.length) return;
+
+            let currentIndex = slides.findIndex(slide =>
+                slide.classList.contains("active")
+            );
+
+            if (currentIndex < 0) currentIndex = 0;
+
+            let autoplayTimer = null;
+
+            function updateCaption() {
+                if (!caption) return;
+
+                caption.textContent =
+                    slides[currentIndex].dataset.caption ||
+                    slides[currentIndex].alt ||
+                    "";
+            }
+
+            function showSlide(index) {
+                currentIndex = (index + slides.length) % slides.length;
+
+                slides.forEach((slide, i) => {
+                    const active = i === currentIndex;
+
+                    slide.classList.toggle("active", active);
+                    slide.setAttribute("aria-hidden", active ? "false" : "true");
+
+                    if ("inert" in slide) {
+                        slide.inert = !active;
+                    }
+                });
+
+                if (dotsContainer) {
+                    $$(".dot", dotsContainer).forEach((dot, i) => {
+                        const active = i === currentIndex;
+
+                        dot.classList.toggle("active", active);
+                        dot.setAttribute("aria-current", active ? "true" : "false");
+                    });
+                }
+
+                updateCaption();
+            }
+
+            function createDots() {
+                if (!dotsContainer) return;
+
+                dotsContainer.innerHTML = "";
+
+                slides.forEach((slide, index) => {
+                    const dot = doc.createElement("button");
+
+                    dot.type = "button";
+                    dot.className = "dot";
+                    dot.setAttribute(
+                        "aria-label",
+                        `Afficher l'image ${index + 1} : ${slide.dataset.caption || slide.alt || "capture"}`
+                    );
+
+                    dot.addEventListener("click", () => {
+                        showSlide(index);
+                        restartAutoplay();
+                    });
+
+                    dotsContainer.appendChild(dot);
+                });
+            }
+
+            function stopAutoplay() {
+                if (autoplayTimer !== null) {
+                    window.clearInterval(autoplayTimer);
+                    autoplayTimer = null;
+                }
+            }
+
+            function startAutoplay() {
+                stopAutoplay();
+
+                if (reduceMotion || slides.length < 2 || doc.hidden) return;
+
+                autoplayTimer = window.setInterval(() => {
+                    showSlide(currentIndex + 1);
+                }, 5000);
+            }
+
+            function restartAutoplay() {
+                startAutoplay();
+            }
+
+            createDots();
+            showSlide(currentIndex);
+            startAutoplay();
+
+            slider.addEventListener("mouseenter", stopAutoplay);
+            slider.addEventListener("mouseleave", startAutoplay);
+            slider.addEventListener("focusin", stopAutoplay);
+
+            slider.addEventListener("focusout", event => {
+                if (!slider.contains(event.relatedTarget)) {
+                    startAutoplay();
+                }
+            });
+
+            doc.addEventListener("visibilitychange", () => {
+                doc.hidden ? stopAutoplay() : startAutoplay();
+            });
+        });
+    }
+
+    /* =========================================================
+       7. AGRANDISSEMENT DES IMAGES (LIGHTBOX)
+       ========================================================= */
+    function initLightbox() {
+        const lightbox = $("#lightbox");
+        const lightboxImage = lightbox ? $("img", lightbox) : null;
+        const closeButton = $("#lightbox-close");
+
+        if (!lightbox || !lightboxImage) return;
+
+        let previousFocus = null;
+
+        function openLightbox(image) {
+            if (!image) return;
+
+            const imageSource = image.currentSrc || image.src;
+            if (!imageSource) return;
+
+            previousFocus = doc.activeElement;
+
+            lightboxImage.src = imageSource;
+            lightboxImage.alt = image.alt || "Image agrandie";
+
+            lightbox.hidden = false;
+            lightbox.classList.add("open", "active");
+            lightbox.setAttribute("aria-hidden", "false");
+            root.classList.add("lightbox-open");
+
+            if (closeButton) closeButton.focus();
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove("open", "active");
+            lightbox.setAttribute("aria-hidden", "true");
+            root.classList.remove("lightbox-open");
+
+            lightbox.hidden = true;
+            lightboxImage.removeAttribute("src");
+
+            if (previousFocus && typeof previousFocus.focus === "function") {
+                previousFocus.focus();
+            }
+        }
+
+        $$("[data-zoom]").forEach(image => {
+            image.style.cursor = "zoom-in";
+            image.setAttribute("tabindex", "0");
+            image.setAttribute("role", "button");
+
+            image.addEventListener("click", () => openLightbox(image));
+
+            image.addEventListener("keydown", event => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openLightbox(image);
+                }
+            });
+        });
+
+        if (closeButton) {
+            closeButton.addEventListener("click", closeLightbox);
+        }
+
+        lightbox.addEventListener("click", event => {
+            if (event.target === lightbox) closeLightbox();
+        });
+
+        doc.addEventListener("keydown", event => {
+            if (
+                event.key === "Escape" &&
+                !lightbox.hidden
+            ) {
+                closeLightbox();
+            }
+        });
+    }
+
+    /* =========================================================
+       8. FORMULAIRE DE CONTACT
+       Ouvre le logiciel de messagerie de l'utilisateur
+       ========================================================= */
+    function initContactForm() {
+        const form = $("#contact-form");
+        if (!form) return;
+
+        const status = $("#form-status");
+
+        function setStatus(message, type = "") {
+            if (!status) return;
+
+            status.textContent = message;
+            status.className = "form-status";
+
+            if (type) status.classList.add(type
